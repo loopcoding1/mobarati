@@ -1,9 +1,9 @@
-# 🎓 إتقان | منصة التحضير لمباريات التعليم بالمغرب (أطر الدعم والمختصين)
-### Itqan - Moroccan Education Examination Preparation Platform
+# 🎓 مباراتي | منصة التحضير لمباريات التعليم بالمغرب
+### Mobarati - Moroccan Education Examination Preparation Platform
 
 منصة تعليمية تفاعلية حديثة وعصرية مبنية بـ **React + Vite + Tailwind CSS** و **Supabase SQL**، مصممة خصيصاً لمساعدة المترشحين لمباريات التعليم وأطر الدعم (مختصي الاقتصاد والإدارة، الملحقين التربويين، والملحقين الاجتماعيين) على اجتياز الاختبارات الكتابية بنجاح عبر محاكاة امتحانات حقيقية مع الشرح والتعليل القانوني المعتمد.
 
-![Preview](https://raw.githubusercontent.com/loopcoding1/itqan/main/public/vite.svg)
+![Preview](https://raw.githubusercontent.com/loopcoding1/mobarati/main/public/vite.svg)
 
 ---
 
@@ -40,10 +40,10 @@
 
 ```bash
 # استنساخ المشروع
-git clone https://github.com/loopcoding1/itqan.git
+git clone https://github.com/loopcoding1/mobarati.git
 
 # الدخول للمجلد
-cd itqan
+cd mobarati
 
 # تثبيت الحزم
 npm install
@@ -70,7 +70,7 @@ npm run dev
 
 تم تجهيز المشروع بملف `vercel.json` جاهز للنشر الفوري:
 1. اذهب إلى [Vercel](https://vercel.com) وسجل الدخول باستخدام GitHub.
-2. اضغط على **Add New Project** ثم اختر المستودع `itqan`.
+2. اضغط على **Add New Project** ثم اختر المستودع `mobarati`.
 3. اضغط على **Deploy** دون الحاجة لأي تعديلات إضافية!
 
 ---

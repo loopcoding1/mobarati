@@ -22,7 +22,7 @@ export default function Header({
           <div>
             <div className="flex items-center gap-2">
               <span className="text-base md:text-lg font-black text-[#191A15] tracking-tight">
-                إتــقــان
+                مـبـاراتـي
               </span>
               <span className="text-[10px] font-extrabold bg-[#F5F6F0] text-[#555A4E] border border-[#DEE2D3] px-2 py-0.5 rounded-full">
                 مباريات التعليم بالمغرب
