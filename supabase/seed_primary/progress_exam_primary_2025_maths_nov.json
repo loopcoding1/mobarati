@@ -1,0 +1,17 @@
+{
+  "exam_id": "exam_primary_2025_maths_nov",
+  "registry_index": 38,
+  "solved_file": "solved/2025/الرياضيات - مادة التخصص - دورة نونبر 2025.md",
+  "status": "done",
+  "questions_inserted": 30,
+  "questions_skipped": [],
+  "flags": [
+    "Q77 option D corrected per PDF: solved file '5√ cm' -> '√5 cm'",
+    "Figure-dependent questions flagged in verification_note: Q73, Q74, Q75, Q76, Q77, Q78, Q80, Q81, Q84, Q88, Q89",
+    "Candidate pen marks on the exam paper ignored (arrows on Q61 A, Q62 D, Q63 D; ticks on Q80 options)",
+    "No official answer key; all 30 answers recomputed and checked one by one against the PDF (incl. histogram Q88 and bar chart Q89 readings verified from enlarged crops)"
+  ],
+  "duration_minutes": 60,
+  "coefficient": 6,
+  "source_type": "third_party"
+}

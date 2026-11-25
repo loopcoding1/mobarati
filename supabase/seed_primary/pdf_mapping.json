@@ -1,0 +1,418 @@
+{
+  "exams": [
+    {
+      "exam_id": "exam_primary_2016_arabic_nov",
+      "pdf": "2016/اللغة العربية - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2016_french_nov",
+      "pdf": "2016/الفرنسية - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2016_maths_nov",
+      "pdf": "2016/الرياضيات - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2016_sciences_nov",
+      "pdf": "2016/العلوم - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2017_arabic_jun",
+      "pdf": "2017/اللغة العربية - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2017_french_jun",
+      "pdf": "2017/اللغة الفرنسية - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2017_maths_jun",
+      "pdf": "2017/الرياضيات - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2017_sciences_edu_jun",
+      "pdf": "2017/مستجدات التعليم - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2017_sciences_jun",
+      "pdf": "2017/العلوم - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2018_arabic_dec",
+      "pdf": "2018/اللغة العربية - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2018_arabic_jan",
+      "pdf": "2018/اللغة العربية - امتحان - دورة يناير 2018.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2018_french_dec",
+      "pdf": "2018/اللغة الفرنسية - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2018_french_jan",
+      "pdf": "2018/اللغة الفرنسية - امتحان - دورة يناير 2018.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2018_maths_dec",
+      "pdf": "2018/الرياضيات - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2018_maths_jan",
+      "pdf": "2018/الرياضيات - امتحان - دورة يناير 2018.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2018_sciences_dec",
+      "pdf": "2018/العلوم - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2018_sciences_edu_dec",
+      "pdf": "2018/مستجدات التعليم - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2018_sciences_edu_jan",
+      "pdf": "2018/مستجدات التعليم - امتحان - دورة يناير 2018.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2019_arabic_nov",
+      "pdf": "2019/اللغة العربية - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2019_french_nov",
+      "pdf": "2019/اللغة الفرنسية - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2019_maths_nov",
+      "pdf": "2019/الرياضيات - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2019_sciences_edu_nov",
+      "pdf": "2019/مستجدات التعليم - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2019_sciences_nov",
+      "pdf": "2019/العلوم - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2020_arabic_nov",
+      "pdf": "2020/اللغة العربية + الرياضيات + اللغة الفرنسية + العلوم - امتحان.pdf",
+      "note": "shared: one combined PDF serves all 7 rows of 2020"
+    },
+    {
+      "exam_id": "exam_primary_2020_didactics_ar_nov",
+      "pdf": "2020/اللغة العربية + الرياضيات + اللغة الفرنسية + العلوم - امتحان.pdf",
+      "note": "shared: one combined PDF serves all 7 rows of 2020 (didactics part inside)"
+    },
+    {
+      "exam_id": "exam_primary_2020_didactics_fr_nov",
+      "pdf": "2020/اللغة العربية + الرياضيات + اللغة الفرنسية + العلوم - امتحان.pdf",
+      "note": "shared: one combined PDF serves all 7 rows of 2020 (didactics part inside)"
+    },
+    {
+      "exam_id": "exam_primary_2020_didactics_maths_nov",
+      "pdf": "2020/اللغة العربية + الرياضيات + اللغة الفرنسية + العلوم - امتحان.pdf",
+      "note": "shared: one combined PDF serves all 7 rows of 2020 (didactics part inside)"
+    },
+    {
+      "exam_id": "exam_primary_2020_french_nov",
+      "pdf": "2020/اللغة العربية + الرياضيات + اللغة الفرنسية + العلوم - امتحان.pdf",
+      "note": "shared: one combined PDF serves all 7 rows of 2020"
+    },
+    {
+      "exam_id": "exam_primary_2020_maths_nov",
+      "pdf": "2020/اللغة العربية + الرياضيات + اللغة الفرنسية + العلوم - امتحان.pdf",
+      "note": "shared: one combined PDF serves all 7 rows of 2020"
+    },
+    {
+      "exam_id": "exam_primary_2020_sciences_nov",
+      "pdf": "2020/اللغة العربية + الرياضيات + اللغة الفرنسية + العلوم - امتحان.pdf",
+      "note": "shared: one combined PDF serves all 7 rows of 2020"
+    },
+    {
+      "exam_id": "exam_primary_2021_arabic_dec",
+      "pdf": "2021/اللغة العربية - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2021_didactics_arabic_dec",
+      "pdf": "2021/ديداكتيك اللغة العربية.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2021_didactics_fr_dec",
+      "pdf": "2021/ديداكتيك اللغة الفرنسية.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2021_didactics_sciences_dec",
+      "pdf": "2021/ديداكتيك العلوم.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2021_french_dec",
+      "pdf": "2021/اللغة الفرنسية - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2021_maths_dec",
+      "pdf": "2021/الرياضيات + العلوم - امتحان.pdf",
+      "note": "shared: one combined maths+sciences booklet serves both rows"
+    },
+    {
+      "exam_id": "exam_primary_2021_sciences_dec",
+      "pdf": "2021/الرياضيات + العلوم - امتحان.pdf",
+      "note": "shared: one combined maths+sciences booklet serves both rows"
+    },
+    {
+      "exam_id": "exam_primary_2022_arabic_nov",
+      "pdf": "2022/اللغة العربية - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2022_didactics_ar_nov",
+      "pdf": "2022/ديداكتيك اللغة العربية.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2022_didactics_fr_nov",
+      "pdf": "2022/ديداكتيك اللغة الفرنسية.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2022_didactics_maths_nov",
+      "pdf": "2022/ديداكتيك الرياضيات.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2022_didactics_sciences_nov",
+      "pdf": "2022/ديداكتيك العلوم.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2022_french_nov",
+      "pdf": "2022/اللغة الفرنسية - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2022_maths_nov",
+      "pdf": "2022/الرياضيات - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2022_sciences_edu_nov",
+      "pdf": "2022/علوم التربية.pdf",
+      "note": "standalone file gathers the four sciences_edu halves from the subject booklets"
+    },
+    {
+      "exam_id": "exam_primary_2022_sciences_nov",
+      "pdf": "2022/العلوم - امتحان.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2023_arabic_jan",
+      "pdf": "2023/الرياضيات + الفرنسية + العلوم - امتحان.pdf",
+      "note": "shared: one 42-page booklet holds all 4 subjects (Arabic Q1-30 verified in the PDF)"
+    },
+    {
+      "exam_id": "exam_primary_2023_didactics_ar_jan",
+      "pdf": "2023/الديداكتيك - امتحان.pdf",
+      "note": "shared: one didactics booklet holds all 4 didactics parts"
+    },
+    {
+      "exam_id": "exam_primary_2023_didactics_fr_jan",
+      "pdf": "2023/الديداكتيك - امتحان.pdf",
+      "note": "shared: one didactics booklet holds all 4 didactics parts"
+    },
+    {
+      "exam_id": "exam_primary_2023_didactics_maths_jan",
+      "pdf": "2023/الديداكتيك - امتحان.pdf",
+      "note": "shared: one didactics booklet holds all 4 didactics parts"
+    },
+    {
+      "exam_id": "exam_primary_2023_didactics_sciences_jan",
+      "pdf": "2023/الديداكتيك - امتحان.pdf",
+      "note": "shared: one didactics booklet holds all 4 didactics parts"
+    },
+    {
+      "exam_id": "exam_primary_2023_french_jan",
+      "pdf": "2023/الرياضيات + الفرنسية + العلوم - امتحان.pdf",
+      "note": "shared: one 42-page booklet holds all 4 subjects"
+    },
+    {
+      "exam_id": "exam_primary_2023_maths_jan",
+      "pdf": "2023/الرياضيات + الفرنسية + العلوم - امتحان.pdf",
+      "note": "shared: one 42-page booklet holds all 4 subjects"
+    },
+    {
+      "exam_id": "exam_primary_2023_sciences_edu_jan",
+      "pdf": "2023/علوم التربية.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2023_sciences_jan",
+      "pdf": "2023/الرياضيات + الفرنسية + العلوم - امتحان.pdf",
+      "note": "shared: one 42-page booklet holds all 4 subjects"
+    },
+    {
+      "exam_id": "exam_primary_2024_arabic_oct",
+      "pdf": "2024/اللغة العربية - مادة التخصص.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2024_didactics_ar_oct",
+      "pdf": "2024/ديداكتيك اللغة العربية.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2024_didactics_fr_oct",
+      "pdf": "2024/ديداكتيك اللغة الفرنسية.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2024_didactics_maths_oct",
+      "pdf": "2024/ديداكتيك الرياضيات.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2024_didactics_sciences_oct",
+      "pdf": "2024/ديداكتيك العلوم.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2024_french_oct",
+      "pdf": "2024/اللغة الفرنسية - مادة التخصص.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2024_maths_oct",
+      "pdf": "2024/الرياضيات - مادة التخصص.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2024_sciences_edu_oct",
+      "pdf": "2024/علوم التربية.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2024_sciences_oct",
+      "pdf": "2024/العلوم - مادة التخصص.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_arabic_jan",
+      "pdf": "2025/اللغة العربية - مادة التخصص.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_arabic_nov",
+      "pdf": "2025/اللغة العربية - مادة التخصص - دورة نونبر 2025.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_didactics_ar_jan",
+      "pdf": "2025/ديداكتيك اللغة العربية.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_didactics_ar_nov",
+      "pdf": "2025/ديداكتيك اللغة العربية - دورة نونبر 2025.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_didactics_fr_jan",
+      "pdf": "2025/ديداكتيك اللغة الفرنسية.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_didactics_fr_nov",
+      "pdf": "2025/ديداكتيك اللغة الفرنسية - دورة نونبر 2025.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_didactics_maths_jan",
+      "pdf": "2025/ديداكتيك الرياضيات.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_didactics_maths_nov",
+      "pdf": "2025/ديداكتيك الرياضيات - دورة نونبر 2025.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_didactics_sciences_jan",
+      "pdf": "2025/ديداكتيك العلوم.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_didactics_sciences_nov",
+      "pdf": "2025/ديداكتيك العلوم - دورة نونبر 2025.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_french_jan",
+      "pdf": "2025/اللغة الفرنسية - مادة التخصص.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_french_nov",
+      "pdf": "2025/اللغة الفرنسية - مادة التخصص - دورة نونبر 2025.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_maths_jan",
+      "pdf": "2025/الرياضيات - مادة التخصص.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_maths_nov",
+      "pdf": "2025/الرياضيات - مادة التخصص - دورة نونبر 2025.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_sciences_edu_jan",
+      "pdf": "2025/علوم التربية.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_sciences_edu_nov",
+      "pdf": "2025/علوم التربية - دورة نونبر 2025.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_sciences_jan",
+      "pdf": "2025/العلوم - مادة التخصص.pdf",
+      "note": ""
+    },
+    {
+      "exam_id": "exam_primary_2025_sciences_nov",
+      "pdf": "2025/العلوم - مادة التخصص - دورة نونبر 2025.pdf",
+      "note": ""
+    }
+  ],
+  "econ_pdfs_downloaded": [
+    "exam_2022_mgmt",
+    "exam_2022_tasks"
+  ]
+}

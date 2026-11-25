@@ -1,0 +1,175 @@
+{
+  "batch": "2024",
+  "exams": {
+    "exam_primary_2024_didactics_sciences_oct": {
+      "status": "done",
+      "solved_file": "solved/2024/ديداكتيك العلوم - دورة أكتوبر 2024.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2024_didactics_sciences_oct.sql",
+      "questions_inserted": 25,
+      "questions_expected": 25,
+      "skipped": [],
+      "flags": [
+        "Q84,Q85,Q86,Q89 E-answers (true reason not among options)",
+        "Q83-Q91,Q94 figure/document-dependent (images only in PDF)",
+        "Q92 RTL option order",
+        "Q99 underlined phrase in parentheses",
+        "Q77 leading '- ' marker kept from MD",
+        "duration 45min from توصيف + Nov 2025 listing (cover missing from PDF)"
+      ],
+      "source_type": "third_party",
+      "verified": true,
+      "validated_by_parent": true
+    },
+    "exam_primary_2024_didactics_ar_oct": {
+      "status": "done",
+      "solved_file": "solved/2024/ديداكتيك اللغة العربية - دورة أكتوبر 2024.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2024_didactics_ar_oct.sql",
+      "questions_inserted": 25,
+      "questions_expected": 25,
+      "skipped": [],
+      "flags": [
+        "Q3,Q6,Q11,Q16,Q23 answers contested: mesconcours parallel Amazigh-track correction disagrees; MD answers kept with reasoning, flagged in verification_note",
+        "duration 45min coef 1 via mesconcours.ma 2024-1000 + educoncours.com (cover missing from PDF)",
+        "paper marked 25 points; scan starts p2/7; pen marks ignored"
+      ],
+      "source_type": "third_party",
+      "verified": true,
+      "validated_by_parent": true
+    },
+    "exam_primary_2024_sciences_edu_oct": {
+      "status": "done",
+      "solved_file": "solved/2024/علوم التربية - دورة أكتوبر 2024.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2024_sciences_edu_oct.sql",
+      "questions_inserted": 20,
+      "questions_expected": 25,
+      "skipped": [
+        111,
+        112,
+        113,
+        114,
+        115
+      ],
+      "skipped_reason": "Booklet page 4/6 (Q111-Q115) MISSING from PDF (merged scan; PDF p6 is Feb 2024 session, different questions). MD claim 'no missing pages' is wrong. Q111-Q115 text verified vs mesconcours only (site Q11-15, answers D/A/A/A/B) - ready to add if parent accepts site-only verification or missing page is found.",
+      "flags": [
+        "Q101,Q105,Q107,Q119,Q121 site caution flags carried in verification_note",
+        "Q112 A-vs-C ambiguity noted in header (question skipped)",
+        "duration 60min coef 8 from PDF cover + mesconcours"
+      ],
+      "source_type": "third_party",
+      "source_url": "https://mesconcours.ma/ar/concours/enseignement/2024-1002/",
+      "verified": true,
+      "validated_by_parent": true
+    },
+    "exam_primary_2024_sciences_oct": {
+      "status": "done",
+      "solved_file": "solved/2024/العلوم - مادة التخصص - دورة أكتوبر 2024.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2024_sciences_oct.sql",
+      "questions_inserted": 30,
+      "questions_expected": 30,
+      "skipped": [],
+      "flags": [
+        "Q91,Q93,Q105,Q106,Q108,Q118 E-answers (Q105 correct 384000 km absent; Q106 correct 1.04g/0.26g absent)",
+        "13 figure-dependent questions (docs 1-9, images only in PDF)",
+        "Q107 scan plateau reads ~1.5C not 0C, answer unaffected",
+        "typographic diffs PDF vs MD (438 000 km, c=3.10^8, NADP+) kept MD text, noted in header",
+        "duration 60min coef 2 from PDF cover"
+      ],
+      "source_type": "third_party",
+      "verified": true,
+      "validated_by_parent": true
+    },
+    "exam_primary_2024_arabic_oct": {
+      "status": "done",
+      "solved_file": "solved/2024/اللغة العربية - مادة التخصص - دورة أكتوبر 2024.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2024_arabic_oct.sql",
+      "questions_inserted": 30,
+      "questions_expected": 30,
+      "skipped": [],
+      "flags": [
+        "Q12 ambiguity (B kept, C also defensible) flagged in verification_note",
+        "Q18 'مفاتح' also correct plural, intended C flagged",
+        "Q2,Q5,Q8,Q16,Q19 analytical/text-comprehension flagged",
+        "cover numbers 11 pages, PDF has 10 (missing p11 is answer sheet, all 30 Qs present)",
+        "duration 60min coef 6 from PDF cover"
+      ],
+      "source_type": "third_party",
+      "verified": true,
+      "validated_by_parent": true
+    },
+    "exam_primary_2024_french_oct": {
+      "status": "done",
+      "solved_file": "solved/2024/اللغة الفرنسية - مادة التخصص - دورة أكتوبر 2024.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2024_french_oct.sql",
+      "questions_inserted": 30,
+      "questions_expected": 30,
+      "skipped": [],
+      "flags": [
+        "Q47,Q50,Q52,Q53 interpretive text-reading answers flagged",
+        "CORRECTION: no -1 penalty in this exam - cover says wrong answer = 0 points (registry/MD claim wrong)",
+        "long excerpts kept as '(Extrait: ...)' summaries; underline/bold not preservable in plain text",
+        "duration 60min coef 6 from PDF cover"
+      ],
+      "source_type": "third_party",
+      "verified": true,
+      "validated_by_parent": true
+    },
+    "exam_primary_2024_didactics_maths_oct": {
+      "status": "done",
+      "solved_file": "solved/2024/ديداكتيك الرياضيات - دورة أكتوبر 2024.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2024_didactics_maths_oct.sql",
+      "questions_inserted": 25,
+      "questions_expected": 25,
+      "skipped": [],
+      "flags": [
+        "Q61,Q67 E-answers (required item not among options)",
+        "Q66 الوضعية 3 print flaw: no valid pair of angles smaller than right angle as printed; Q66-Q68 unaffected",
+        "3 linked situations embedded in full in question stems",
+        "Q75 options carry MD reading-direction gloss not on paper",
+        "duration 45min coef 3 (cover missing; confirmed via cover description + mesconcours Nov 2025 didactics maths)"
+      ],
+      "source_type": "third_party",
+      "verified": true,
+      "validated_by_parent": true
+    },
+    "exam_primary_2024_didactics_fr_oct": {
+      "status": "done",
+      "solved_file": "solved/2024/ديداكتيك اللغة الفرنسية - دورة أكتوبر 2024.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2024_didactics_fr_oct.sql",
+      "questions_inserted": 25,
+      "questions_expected": 25,
+      "skipped": [],
+      "flags": [
+        "Q31,Q44,Q46,Q47 E-answers by elimination (correct category absent from A-D)",
+        "18 truncated stems/options recovered in full from PDF",
+        "Q50A MD-vs-PDF discrepancy fixed per PDF (zoomed crop re-check)",
+        "coefficient UNRESOLVED: official timetable says 3, mesconcours says 1 (not stored, no column)",
+        "duration 45min via ministry timetable + mesconcours 2024-1003 (PDF has no cover; scan starts p2/13 of combined booklet COct24-S06)"
+      ],
+      "source_type": "third_party",
+      "verified": true,
+      "validated_by_parent": true
+    },
+    "exam_primary_2024_maths_oct": {
+      "status": "done",
+      "solved_file": "solved/2024/الرياضيات - مادة التخصص - دورة أكتوبر 2024.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2024_maths_oct.sql",
+      "questions_inserted": 30,
+      "questions_expected": 30,
+      "skipped": [],
+      "flags": [
+        "Q69 CORRECTION: MD says E, PDF (300dpi zoom) shows B correct f(4/3)=-5/27; SQL records B, explanation rewritten; MD still says E - needs upstream fix",
+        "CORRECTION: no -1 penalty - cover rule 10 says wrong answer = 0 (same as French)",
+        "Q65 opt C, Q80 opts B/C, Q77/Q78 opt E corrected per PDF; Q63,Q64,Q67,Q73 stems recovered from PDF",
+        "Q72 compound interest E (simple interest would give B)",
+        "9 figure-dependent questions with figure data described in stems",
+        "duration 60min coef 6 from PDF cover"
+      ],
+      "source_type": "third_party",
+      "verified": true,
+      "validated_by_parent": true
+    }
+  },
+  "batch_status": "complete",
+  "total_questions_inserted": 240,
+  "total_questions_expected": 245
+}

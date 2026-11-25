@@ -1,0 +1,333 @@
+{
+  "batch": "phaseA_2025",
+  "exams": [
+    {
+      "coefficient": 6,
+      "duration_minutes": 60,
+      "exam_id": "exam_primary_2025_arabic_nov",
+      "flags": [
+        "Q1 interpretive: text is explanatory (تفسيري), not among options A-D, so answer E; no official key",
+        "Q8 interpretive: text domain per curriculum (المواطنة والسلوك المدني); no official key",
+        "Q12 interpretive: general idea of the text; no official key",
+        "Q15: no correct hamzated sound verb among options (أَدَّى is hamzated but defective); answer E",
+        "Q17 interpretive: meaning of معيارية from context; no official key",
+        "Q24 convention-dependent: school convention (Moroccan curriculum) treats كان-clauses as nominal sentences, answer D; classical view (Ibn Hisham) would make it verbal, answer E; flagged in verification_note",
+        "Q27 verified directly against paragraph 1 of the exam text",
+        "Q29 interpretive: antonym of الارتقاء is الانحدار (not الانخفاض); no official key"
+      ],
+      "questions_inserted": 30,
+      "questions_skipped": [],
+      "solved_file": "solved/2025/اللغة العربية - مادة التخصص - دورة نونبر 2025.md",
+      "source_type": "third_party",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2025_didactics_ar_jan",
+      "solved_file": "solved/2025/ديداكتيك اللغة العربية - دورة يناير 2025.md",
+      "status": "done",
+      "questions_inserted": 25,
+      "questions_skipped": [],
+      "flags": [
+        "Q4",
+        "Q9",
+        "Q19"
+      ],
+      "duration_minutes": 45,
+      "coefficient": 3,
+      "source_type": "third_party"
+    },
+    {
+      "coefficient": 3,
+      "duration_minutes": 45,
+      "exam_id": "exam_primary_2025_didactics_ar_nov",
+      "flags": [
+        "Q11: exam paper itself labels the last option F (typo in the paper, skips E); options stored as A-D + F, correct answer F; flagged in verification_note",
+        "Q8/Q12/Q24/Q25: answer E by elimination (correct curriculum value not among the options); flagged in verification_note",
+        "Cover page (1/8) missing from the scan, so duration 45 min / coefficient 3 verified from two independent sources: Exammaroc page for this exact exam and the official national exam timetable (didactics Arabic 45 min, coef 3)",
+        "Solved with the OLD prompt (مختصي الاقتصاد والإدارة) but the model self-corrected to the primary-education context and based the solution on the July 2021 primary curriculum",
+        "Candidate pen marks on the paper (ticks/crosses on Q1, Q5, Q8, Q12, Q19, etc.) ignored"
+      ],
+      "questions_inserted": 25,
+      "questions_skipped": [],
+      "solved_file": "solved/2025/ديداكتيك اللغة العربية - دورة نونبر 2025.md",
+      "source_type": "third_party",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2025_didactics_fr_jan",
+      "solved_file": "solved/2025/ديداكتيك اللغة الفرنسية - دورة يناير 2025.md",
+      "status": "done",
+      "questions_inserted": 25,
+      "questions_skipped": [],
+      "flags": [
+        "Q37",
+        "Q45"
+      ],
+      "duration_minutes": 45,
+      "coefficient": 3,
+      "source_type": "third_party"
+    },
+    {
+      "coefficient": 3,
+      "duration_minutes": 45,
+      "exam_id": "exam_primary_2025_didactics_fr_nov",
+      "flags": [
+        "No official correction key exists for this exam (registry note); source_type third_party (Gemini 4 Neon via AI Studio, 2026-11-20).",
+        "Duration 45 min / coefficient 3 read directly from the exam cover page in the PDF. exams table has no coefficient column; coefficient recorded here only.",
+        "Cover instructions: 25 items (Q26-Q50), one correct answer per question.",
+        "Methodological/curriculum-dependent questions flagged in verification_note: Q32, Q35, Q38, Q44, Q45, Q48, Q49.",
+        "Q49 stem slightly clipped at the right edge of the scan ('classe de la ... annee'); solved file's '6e annee' accepted as consistent with the pattern and context.",
+        "No Recitation block or conflict recorded in the solved file for this exam."
+      ],
+      "questions_inserted": 25,
+      "questions_skipped": [],
+      "solved_file": "solved/2025/ديداكتيك اللغة الفرنسية - دورة نونبر 2025.md",
+      "source_type": "third_party",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2025_didactics_maths_jan",
+      "solved_file": "solved/2025/ديداكتيك الرياضيات - دورة يناير 2025.md",
+      "status": "done",
+      "questions_inserted": 25,
+      "questions_skipped": [],
+      "flags": [
+        "Q59: السؤال مرتبط بالوضعية 1 (رسم 9 بالونات؛ الباقي بعد تفجير 4 منها هو 5)؛ نص الوضعية مدمج في نص السؤال أعلاه.",
+        "Q60: السؤال مرتبط بالوضعية 1؛ نص الوضعية مدمج في نص السؤال أعلاه.",
+        "Q61: السؤال مرتبط بالوضعية 1 (9 بالونات، تفجير 4، أي 9 − 4)؛ نص الوضعية مدمج في نص السؤال أعلاه.",
+        "Q62: السؤال مرتبط بالوضعية 2 (المضامين ①–④)؛ نص الوضعية مدمج في نص السؤال أعلاه.",
+        "Q66: السؤال مرتبط بالوضعية 3 (الحصة الثالثة)؛ نص الوضعية مدمج في نص السؤال أعلاه. الجواب لا يتطلب قراءة المبيانات بالأعمدة.",
+        "Q67: السؤال مرتبط بالوضعية 3 (جرد الأشكال الهندسية وتمثيلها مبيانياً: 3 مثلثات، 3 مربعات، 4 أقراص)؛ نص الوضعية مدمج في نص السؤال أعلاه. المجال هو «تنظيم ومعالجة البيانات» غير الوارد في الاختيارات.",
+        "Q73: الاختياران A و C متطابقان حرفياً في ورقة الامتحان نفسها («القراءة ← التمثيل ← المقارنة والترتيب ← التوظيف»)؛ والجواب الصحيح B غير متأثر بذلك."
+      ],
+      "duration_minutes": 45,
+      "coefficient": 3,
+      "source_type": "third_party"
+    },
+    {
+      "exam_id": "exam_primary_2025_didactics_maths_nov",
+      "registry_index": 39,
+      "solved_file": "solved/2025/ديداكتيك الرياضيات - دورة نونبر 2025.md",
+      "status": "done",
+      "questions_inserted": 25,
+      "questions_skipped": [],
+      "flags": [
+        "Q68 options B and C corrected per PDF: B '3/4 و 2/3' (solved file had reversed order), C decimals '(0.66 + 0.75)' (solved file had '(0.75 + 0.66)')",
+        "All 25 answers are interpretive didactic judgments (no official key); each flagged in verification_note",
+        "Situation texts 1-5 embedded verbatim in question text (Q51-Q72); Q73-Q75 are general questions with no situation",
+        "Candidate pen marks on the exam paper ignored (X/ticks on scattered options, incl. Q51, Q54, Q57, Q63, Q70, Q72, Q73)"
+      ],
+      "duration_minutes": 45,
+      "coefficient": 3,
+      "source_type": "third_party"
+    },
+    {
+      "coefficient": 3,
+      "duration_minutes": 45,
+      "exam_id": "exam_primary_2025_didactics_sciences_jan",
+      "flags": [
+        "Q79 (mesconcours flags it, answer C kept)",
+        "Q82 SKIPPED (see questions_skipped)",
+        "Q84 (mesconcours flags it, answer E kept)",
+        "Q96 (mesconcours flags it, answer A kept)",
+        "Q98 (mesconcours flags it, answer E kept)",
+        "Q99 (mesconcours answers A and flags it as judgment-based; answer E kept, conflict in verification_note)"
+      ],
+      "questions_inserted": 24,
+      "questions_skipped": [
+        {
+          "number": 82,
+          "reason": "Answer not verifiable: solved file answers E (prior acquisitions are (2),(4),(5),(6),(8); objective (9) is a year-6 'rocks and minerals' objective) but mesconcours.ma answers D ((2),(4),(5),(9)). Deciding needs the 2021 منهاج مصفوفة المدى والتتابع (which year each of the 10 objectives is taught); not found via web search. Skipped pending the matrix or an official key."
+        }
+      ],
+      "solved_file": "solved/2025/ديداكتيك العلوم - دورة يناير 2025.md",
+      "source_type": "third_party",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2025_didactics_sciences_nov",
+      "solved_file": "solved/2025/ديداكتيك العلوم - دورة نونبر 2025.md",
+      "status": "done",
+      "questions_inserted": 25,
+      "questions_skipped": [],
+      "flags": [],
+      "duration_minutes": 45,
+      "coefficient": 3,
+      "source_type": "third_party"
+    },
+    {
+      "exam_id": "exam_primary_2025_french_jan",
+      "solved_file": "solved/2025/اللغة الفرنسية - مادة التخصص - دورة يناير 2025.md",
+      "status": "done",
+      "questions_inserted": 30,
+      "questions_skipped": [],
+      "flags": [
+        "Q32",
+        "Q42",
+        "Q45",
+        "Q54",
+        "Q58",
+        "Q60"
+      ],
+      "duration_minutes": 60,
+      "coefficient": 6,
+      "source_type": "third_party"
+    },
+    {
+      "coefficient": 6,
+      "duration_minutes": 60,
+      "exam_id": "exam_primary_2025_french_nov",
+      "flags": [
+        "No official correction key exists for this exam (registry note); source_type third_party (Gemini 4 Neon via AI Studio, 2026-11-20).",
+        "PDF pages are shuffled inside the file (PDF p.1 = exam p.2, PDF p.2 = exam p.12); all 12 pages read and verified.",
+        "Last PDF page is a duplicate of the first (Q31-Q34), as noted in the solved file.",
+        "Cover page missing from the PDF; duration 60 min / coefficient 6 taken from the official primary double-specialty structure (mesconcours.ma 2023 entry: 1h, coef 6; Nov 2026 announcement: French specialty 60 min, coef 6). exams table has no coefficient column; coefficient recorded here only.",
+        "Stems enriched from the PDF (PDF wins): full excerpts for Q46/Q49/Q50/Q53/Q58, author attributions for Q50/Q55/Q56, Q60 intro line; (A)/(B) rhyme markers from the solved file's Q55 removed (not in the paper).",
+        "Q58 letter: candidate personal data is redacted in the paper itself; rendered with [...] at the redactions, matching the solved file's [...] for the company name.",
+        "Interpretive questions flagged in verification_note: Q35, Q36, Q46, Q47, Q48, Q50, Q51, Q52, Q53, Q55, Q56.",
+        "No Recitation block or conflict recorded in the solved file for this exam."
+      ],
+      "questions_inserted": 30,
+      "questions_skipped": [],
+      "solved_file": "solved/2025/اللغة الفرنسية - مادة التخصص - دورة نونبر 2025.md",
+      "source_type": "third_party",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2025_maths_jan",
+      "solved_file": "solved/2025/الرياضيات - مادة التخصص - دورة يناير 2025.md",
+      "status": "done",
+      "questions_inserted": 30,
+      "questions_skipped": [],
+      "flags": [
+        "Q62: نص السؤال في ورقة الامتحان هو (√10/8)² وليس (10/8)² كما ورد في ملف الحل؛ التعليل أعلاه صُحح تبعاً لذلك (√10/8)² = 10/8².",
+        "Q66: السؤال ناقص الصياغة رياضياً: المقسوم عليه d غير وحيد (23 أو 46 أو 69 أو 138) فيكون الباقي 1 أو 24 أو 93؛ لذا لا يوجد جواب وحيد من A إلى D والجواب الدقيق هو E. يُرجَّح أن واضع الامتحان افترض d = 23 فيكون الجواب D (الباقي 1).",
+        "Q70: الجواب يعتمد على قراءة التمثيل المبياني في ورقة الامتحان: الشلجم (Cf) موجّه نحو الأعلى (a > 0) ويمر من النقط (0; 0) و(1/2; 0) و(1; 1)، أي f(x) = 2x² − x؛ فلا يوجد (a = 2; b = −1) في الاختيارات.",
+        "Q79: الجواب يعتمد على الشكل في ورقة الامتحان (OM = 2,2 cm، LM = 3 cm، SL = 6 cm)؛ بتطبيق مبرهنة طاليس SN = 4,4 cm فتكون المساحة 13,2 cm² غير الواردة في الاختيارات.",
+        "Q80: الجواب يعتمد على شكل شبه المنحرف القائم الزاوية في ورقة الامتحان (LN = 4 cm، OM = 5 cm، MN = √3 cm).",
+        "Q81: الجواب يعتمد على شكل المربع المقسّم إلى 5 أجزاء متساوية في ورقة الامتحان.",
+        "Q82: الجواب يعتمد على شكل الأقواس (نصفا دائرة) والسلم (كل وحدة = 2 cm) في ورقة الامتحان.",
+        "Q83: الجواب يعتمد على شكل الدائرتين المتماستين في ورقة الامتحان (KJM = 75°، MNK = 53°).",
+        "Q85: الجواب يعتمد على نشور المكعب الأربعة (1–4) في ورقة الامتحان.",
+        "Q86: الجواب يعتمد على نشر المخروط في ورقة الامتحان (شعاع القاعدة 3 cm، العامد 5 cm).",
+        "Q87: الجواب يعتمد على شكل الهرم في ورقة الامتحان (مساحة FGH ‏= 300 cm²، SG = 100 cm)؛ كمية العصير 8000 cm³ = 800 cl غير الواردة في الاختيارات.",
+        "Q90: الجواب يعتمد على قراءة المبيان بالأعمدة في ورقة الامتحان (حصيصات النقط 2، 4، 5، 7، 8، 9، 10 هي 1، 2، 3، 2، 3، 4، 5)؛ انتبه: حصيص النقطة 5 في المبيان هو 3 وليس 4 كما في السؤال السابق."
+      ],
+      "duration_minutes": 60,
+      "coefficient": 6,
+      "source_type": "third_party"
+    },
+    {
+      "exam_id": "exam_primary_2025_maths_nov",
+      "registry_index": 38,
+      "solved_file": "solved/2025/الرياضيات - مادة التخصص - دورة نونبر 2025.md",
+      "status": "done",
+      "questions_inserted": 30,
+      "questions_skipped": [],
+      "flags": [
+        "Q77 option D corrected per PDF: solved file '5√ cm' -> '√5 cm'",
+        "Figure-dependent questions flagged in verification_note: Q73, Q74, Q75, Q76, Q77, Q78, Q80, Q81, Q84, Q88, Q89",
+        "Candidate pen marks on the exam paper ignored (arrows on Q61 A, Q62 D, Q63 D; ticks on Q80 options)",
+        "No official answer key; all 30 answers recomputed and checked one by one against the PDF (incl. histogram Q88 and bar chart Q89 readings verified from enlarged crops)"
+      ],
+      "duration_minutes": 60,
+      "coefficient": 6,
+      "source_type": "third_party"
+    },
+    {
+      "coefficient": 8,
+      "duration_minutes": 60,
+      "exam_id": "exam_primary_2025_sciences_edu_jan",
+      "flags": [
+        "Q103 (solved B vs mesconcours A, flagged by mesconcours; B kept, conflict in verification_note)",
+        "Q105 CORRECTED C->A (PDF wording 'تحقيق هدف عام' is the textbook definition of الهدف الوسيط; solved file had invented '[التصرف في وضعية معينة]'; mesconcours also answers A)",
+        "Q105/Q109/Q120/Q121 stems corrected to exact PDF wording (solved file had bracketed reconstructions)",
+        "Q106 (solved E vs mesconcours B, flagged by mesconcours; E kept, conflict in verification_note)",
+        "Q112 (solved C vs mesconcours A, flagged by mesconcours; C kept, conflict in verification_note)",
+        "Q116 (answer B rests on decree 2.24.328 art. 12; mesconcours flags it)",
+        "Q120 (solved E vs mesconcours B; E kept, conflict in verification_note)",
+        "PDF also contains a didactics_ar fragment Q1-Q8 (already covered by exam_primary_2025_didactics_ar_jan.sql, not duplicated here)"
+      ],
+      "questions_inserted": 25,
+      "questions_skipped": [],
+      "solved_file": "solved/2025/علوم التربية - دورة يناير 2025.md",
+      "source_type": "third_party",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2025_sciences_edu_nov",
+      "solved_file": "solved/2025/علوم التربية - دورة نونبر 2025.md",
+      "status": "done",
+      "questions_inserted": 25,
+      "questions_skipped": [],
+      "flags": [],
+      "duration_minutes": 60,
+      "coefficient": 8,
+      "source_type": "third_party"
+    },
+    {
+      "exam_id": "exam_primary_2025_sciences_jan",
+      "solved_file": "solved/2025/العلوم - مادة التخصص - دورة يناير 2025.md",
+      "status": "done",
+      "questions_inserted": 30,
+      "questions_skipped": [],
+      "flags": [
+        "Q91: L'option D porte « appareil de Glogi » dans la feuille d'examen elle-même (coquille pour Golgi) ; le texte est transcrit tel qu'imprimé.",
+        "Q96: Réponse vérifiée sur le document 1 (cycle de développement de l'amandier) : 1- pistil ; 2- étamine ; 3- gamète femelle ; 4- grain de pollen ; 5- pollinisation ; 6- ovule ; 7- ovaire ; 8- graine ; 9- fruit.",
+        "Q98: Réponse vérifiée sur le document 2 (tableaux éléments / définitions) : 1- Producteur → c ; 2- Décomposeur → d ; 3- Consommateur secondaire → a ; 4- Consommateur primaire → b.",
+        "Q100: Réponse vérifiée sur le document 3 (3 figures de failles) : Figure 1 faille normale (bloc b descendu), Figure 2 faille inverse (bloc b remonté), Figure 3 décrochement dextre.",
+        "Q101: Réponse vérifiée sur le document 4 (éléments d'un pli) : 1- pli anticlinal ; 2- pli synclinal ; 3- axe de pli ; 4- charnière ; 5- plan axial ; 6- flanc du pli.",
+        "Q103: Réponse vérifiée sur le document 5 (cycle de l'eau) : 1- Évaporation ; 2- Condensation ; 3- Précipitation ; 4- Évapotranspiration ; 5- Déplacement ; 6- Ruissellement ; 7- Infiltration.",
+        "Q111: Réponse vérifiée sur le document 6 (circuit : lampe L en série avec L1 et L2 identiques en parallèle, intensité nominale 1 A par lampe) : I1 = I2 = I/2.",
+        "Q112: Réponse vérifiée sur le document 6 : la lampe L porte le courant total I (1 A nominal) ; un fusible de 1,8 A ou plus ne la protégerait pas ; aucune valeur proposée ne convient.",
+        "Q113: Réponse lue graphiquement sur le document 7 (caractéristique tension-courant) : pour I = 0,5 A, U = 0,5 V.",
+        "Q114: Réponse vérifiée sur le document 8 (électroaimant : clou en acier, bobine, interrupteur K, boule métallique) : seul le fer est ferromagnétique ; toutes les options contiennent un métal non magnétique.",
+        "Q116: L'énoncé (paragraphe 19) emploie la dénomination simplifiée « jaune, bleue et violette » pour les couleurs primaires de la synthèse soustractive ; la dénomination physique précise est jaune, cyan et magenta.",
+        "Q118: Réponse vérifiée sur le document 9 (diapason en vibration, air, microphone 1, microphone 2 ; l'oscilloscope n'est pas un élément de la chaîne de production-réception elle-même).",
+        "Q120: Réponse lue graphiquement sur le document 10 (oscillogramme) : l'indication 2 ms couvre 2 divisions, soit 1 ms par division ; une période couvre 10,5 divisions, soit T = 10,5 ms et f ≈ 95 Hz."
+      ],
+      "duration_minutes": 60,
+      "coefficient": 2,
+      "source_type": "third_party"
+    },
+    {
+      "exam_id": "exam_primary_2025_sciences_nov",
+      "solved_file": "solved/2025/العلوم - مادة التخصص - دورة نونبر 2025.md",
+      "status": "done",
+      "questions_inserted": 26,
+      "questions_skipped": [
+        {
+          "number": 99,
+          "reason": "السؤال غير موجود في ملف PDF — الصفحة 5 من 14 مفقودة من الملف الأصلي"
+        },
+        {
+          "number": 100,
+          "reason": "السؤال غير موجود في ملف PDF — الصفحة 5 من 14 مفقودة من الملف الأصلي"
+        },
+        {
+          "number": 101,
+          "reason": "لا يوجد جواب في ملف الحل — الوثيقة 3 (Document 3) في الصفحة 5 المفقودة من ملف PDF"
+        },
+        {
+          "number": 102,
+          "reason": "لا يوجد جواب في ملف الحل — الوثيقة 3 (Document 3) في الصفحة 5 المفقودة من ملف PDF"
+        }
+      ],
+      "flags": [
+        "Q95: ملاحظة علمية دقيقة: علمياً تبدأ المرحلة الجريبية في المبيض منذ اليوم الأول للحيض (أثناء الحيض) وتستمر بعده إلى غاية الإباضة (اليوم 14)، بينما المرحلة التي تبدأ بعد الحيض هي المرحلة التكاثرية في الدورة الرحمية؛ غير أن كثيراً من المراجع المدرسية المبسطة تصيغ العبارة كما وردت في B.",
+        "Q113: الخياران A وD متطابقان في ورقة الامتحان (كلاهما «A, mV et mΩ»)؛ الثلاثية الصحيحة في النظام العالمي (A, V, Ω) غير واردة في أي اختيار.",
+        "Q116: الخياران A وC متطابقان في ورقة الامتحان (كلاهما: الهيماتيت لا تجذب الحديد والفلوريت تجذب الحديد). ملاحظة علمية: في علم المعادن الدقيق، المغنتيت Fe3O4 هو المغناطيس الطبيعي القوي بينما الهيماتيت الطبيعي Fe2O3 مغناطيسيته ضعيفة جداً ما لم يُمغنط، لكن صياغة نص السؤال وتكرار A وC يؤكدان أن الجواب المعتمد في التصحيح هو D.",
+        "Q99 متخطى: السؤال غير موجود في ملف PDF — الصفحة 5 من 14 مفقودة من الملف الأصلي",
+        "Q100 متخطى: السؤال غير موجود في ملف PDF — الصفحة 5 من 14 مفقودة من الملف الأصلي",
+        "Q101 متخطى: لا يوجد جواب في ملف الحل — الوثيقة 3 (Document 3) في الصفحة 5 المفقودة من ملف PDF",
+        "Q102 متخطى: لا يوجد جواب في ملف الحل — الوثيقة 3 (Document 3) في الصفحة 5 المفقودة من ملف PDF"
+      ],
+      "duration_minutes": 60,
+      "coefficient": 2,
+      "source_type": "third_party"
+    }
+  ],
+  "exams_total": 17,
+  "questions_total": 455,
+  "questions_skipped_total": 5
+}

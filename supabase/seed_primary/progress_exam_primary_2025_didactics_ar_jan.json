@@ -1,0 +1,15 @@
+{
+  "exam_id": "exam_primary_2025_didactics_ar_jan",
+  "solved_file": "solved/2025/ديداكتيك اللغة العربية - دورة يناير 2025.md",
+  "status": "done",
+  "questions_inserted": 25,
+  "questions_skipped": [],
+  "flags": [
+    "Q4",
+    "Q9",
+    "Q19"
+  ],
+  "duration_minutes": 45,
+  "coefficient": 3,
+  "source_type": "third_party"
+}

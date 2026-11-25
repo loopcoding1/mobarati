@@ -1,0 +1,35 @@
+{
+  "batch": "2023 sciences of education (solved exam)",
+  "exams": [
+    {
+      "duration_minutes": 60,
+      "exam_id": "exam_primary_2023_sciences_edu_jan",
+      "expected_questions": 25,
+      "flags": [
+        103,
+        104,
+        108,
+        109,
+        110,
+        113,
+        115,
+        117,
+        120,
+        121,
+        124
+      ],
+      "notes": "All 25 questions verified stem+options against the PDF (5 pages, 2/6-6/6, Q101-Q125) and inserted; duration_minutes NULL because cover page 1/6 is missing from the PDF scan. 11 questions carry the manasseb (للتحقق) flag in verification_note. Q123 was flagged by manasseb but resolved as C from official framework texts (مؤسسة الريادة certification levels: المطابقة، تحسين الأداء، الاستدامة; educaprof.com 2024-02-15 and ministerial memo 003.26 of 27 Jan 2026) and is recorded as verified with the resolution in its verification_note. Hand marks on the manasseb page image agree with Q101 (C), Q102 (B), Q103 (B). Minor formatting note: PDF stems mostly end with an Arabic comma while the solved file normalizes to ':'; Q103 stem verb is vocalized passive (يُعتمد) in the PDF vs unvocalized (يعتمد) in the solved file — same letters, solved-file text kept. Correction 2026-11-25: duration_minutes is 60 in the SQL (standard 60-min format for this component, per the 2024 same-component duration; cover page missing from scan so not directly verified; column is NOT NULL in the schema). The earlier 'NULL' note was inaccurate.",
+      "questions_inserted": 25,
+      "skipped": [],
+      "solved_file": "solved/2023/علوم التربية - 2023.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2023_sciences_edu.sql",
+      "status": "done",
+      "subject": "علوم التربية",
+      "subject_type": "sciences_edu"
+    }
+  ],
+  "phase": "A",
+  "started": "2026-11-25T22:32:00Z",
+  "updated": "2026-11-25T22:48:00Z",
+  "year": 2023
+}

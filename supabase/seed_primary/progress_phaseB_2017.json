@@ -1,0 +1,131 @@
+{
+  "batch": "Phase B — 2017",
+  "year": 2017,
+  "total_exams": 5,
+  "solved_sql": 5,
+  "needs_ai_studio": 0,
+  "total_questions": 164,
+  "exams": [
+    {
+      "exam_id": "exam_primary_2017_arabic_jun",
+      "files": {
+        "solved_md": "exams-ibtida2i/solved/2017/اللغة العربية - 2017.md",
+        "sql": "mobarati/supabase/seed_primary/exam_primary_2017_arabic_jun.sql"
+      },
+      "flags": [
+        "Session is June 2017 (دورة يونيو 2017), not November — cover + mesconcours + blogs agree",
+        "Q12: exam PDF prints the غَرَضَ family; mesconcours transcribes عَرَضَ — letters/matching identical; PDF wording used",
+        "Q2/Q10: option ordering differs in web transcriptions; PDF wording used",
+        "Official key covers Q14-Q30 only; Q1-Q13 answers from mesconcours.ma (third_party) — the two sources agree 17/17 on Q14-Q30",
+        "Duration 180 min is the whole test (specialty + didactics); didactics (pp. 10-13) out of scope, separate exam row",
+        "Matching questions (Q7,Q9,Q12,Q16,Q24,Q26,Q28) use the 2018-Arabic matching convention (is_multiple=false, correct_answers ordered array)"
+      ],
+      "index": 5,
+      "questions": 30,
+      "sources": [
+        "https://mesconcours.ma/ar/concours/enseignement/2017-992/",
+        "workspace correction PDF: exams-ibtida2i/2017/تصحيح اللغة العربية.pdf (official key Q14-Q30)"
+      ],
+      "status": "solved+sql",
+      "subject": "اللغة العربية",
+      "year": 2017
+    },
+    {
+      "exam_id": "exam_primary_2017_maths_jun",
+      "files": {
+        "solved_md": "~/workspace/exams-ibtida2i/solved/2017/الرياضيات - 2017.md",
+        "sql": "~/workspace/mobarati/supabase/seed_primary/exam_primary_2017_maths_jun.sql"
+      },
+      "flags": [
+        "No published third-party solution found for this exact exam (mesconcours.ma only covers the May 2017 inspection concours; concoursmarocofficiel.com links only a PDF bundle, no written solution)",
+        "duration_minutes NULL: cover's 4 hours / coefficient 2 cover the combined sciences+maths paper, no maths-only duration given — not guessed",
+        "Q11 (didactics Q3): justification is interpretive, flagged للتحقق in verification_note",
+        "Q17 (didactics open Q6): official correction elements truncated at bottom of scan page 3; proposed treatment steps flagged للتحقق in verification_note",
+        "Price list in didactics Q3 activity is faint in the scan; not transcribed verbatim in the MD"
+      ],
+      "index": 6,
+      "questions": 17,
+      "sources": [
+        "official correction (workspace file تصحيح الرياضيات.pdf, 3 pages, scanned)",
+        "exam PDF (workspace file الرياضيات - امتحان.pdf, 4 pages, scanned)",
+        "Google search (Arabic + French; mesconcours.ma, manasseb.com, concoursmarocofficiel.com checked — no complete published solution found)"
+      ],
+      "status": "solved+sql",
+      "subject": "الرياضيات",
+      "year": 2017
+    },
+    {
+      "exam_id": "exam_primary_2017_sciences_jun",
+      "files": {
+        "solved_md": "exams-ibtida2i/solved/2017/العلوم - 2017.md",
+        "sql": "mobarati/supabase/seed_primary/exam_primary_2017_sciences_jun.sql"
+      },
+      "flags": [
+        "Part 1 points sum to 19 vs header '20 points' — للتحقق",
+        "duration_minutes NULL: 4h on cover is for the combined Sciences+Maths test, sciences-only duration not stated",
+        "Part 2 Q1 مهاري objective wording partially legible in correction scan — للتحقق",
+        "Part 2 Q4-ب teacher-tasks wording in 2nd row partially legible — للتحقق",
+        "No published detailed solution found on mesconcours.ma/manasseb.com; answers all from the official correction PDF in workspace",
+        "Exam is June 2017 (دورة يونيو), not November; mixed format, not 30-QCM: 10 MCQ + 43 true/false statements + 5 open didactics questions = 56 rows"
+      ],
+      "index": 9,
+      "questions": 56,
+      "sources": [
+        "official correction PDF: exams-ibtida2i/2017/تصحيح العلوم.pdf (4 pages, ministry answer key)",
+        "exam PDF: exams-ibtida2i/2017/العلوم - امتحان.pdf (8 pages)",
+        "https://jarida-tarbiya.blogspot.com/2018/09/sciences-primaire-contrat-2017.html (links the same two PDFs only)"
+      ],
+      "status": "solved+sql",
+      "subject": "العلوم",
+      "year": 2017
+    },
+    {
+      "exam_id": "exam_primary_2017_french_jun",
+      "files": {
+        "solved_md": "exams-ibtida2i/solved/2017/اللغة الفرنسية - 2017.md",
+        "sql": "mobarati/supabase/seed_primary/exam_primary_2017_french_jun.sql"
+      },
+      "flags": [
+        "Q2c: official key marks 'Monsieur Marsay est le mari de Delphine' Vrai, contradicting the novel and the exam text (Delphine married Nucingen, the Alsatian); official key kept as authority, conflict recorded in MD and verification_note",
+        "Q22: official key transcribes answer (a) with added 'des romans' not present in the exam PDF; PDF wording used",
+        "Q24d: item barely legible on the scan ('Il a achevé son travail'); reading confirmed by the official key pairing (d, 1) passé composé",
+        "No complete published third-party solution found for this exact exam (mesconcours.ma June 2017 entry is the Didactique du français exam, 63 questions — a different exam)",
+        "Exam is NOT pure QCM: Part 1 has Vrai/Faux (Q2), matching (Q11, Q13, Q15, Q16, Q18, Q19, Q24) and ordering (Q31, Q33) items plus 3 open didactics questions in Part 2; non-QCM items stored as question_type 'open' with the full answer in explanation",
+        "Session is June 2017 (30 June 2017, 3h, coefficient 2) — slug 'jun'"
+      ],
+      "index": 11,
+      "questions": 36,
+      "sources": [
+        "Official correction PDF in workspace: exams-ibtida2i/2017/تصحيح الفرنسية.pdf (5 pages) — answer authority",
+        "Exam PDF: exams-ibtida2i/2017/اللغة الفرنسية - امتحان.pdf (13 pages), read page by page as images",
+        "Google search (Arabic + French): manasseb.com, mesconcours.ma — no published solution for this exact exam"
+      ],
+      "status": "solved+sql",
+      "subject": "اللغة الفرنسية",
+      "year": 2017
+    },
+    {
+      "exam_id": "exam_primary_2017_sciences_edu_jun",
+      "files": {
+        "solved_md": "workspace/exams-ibtida2i/solved/2017/مستجدات التعليم - 2017.md",
+        "sql": "workspace/mobarati/supabase/seed_primary/exam_primary_2017_sciences_edu_jun.sql"
+      },
+      "flags": [
+        "Q11-Q14 ordering rendered as rank-choice QCM (1-6) because question_type CHECK has no ordering type; noted in verification_note",
+        "Q19/Q20: answer (خطأ) from official key; justification written by agent, flagged in verification_note",
+        "PIRLS conflict: i-taalim blog says 223 points, official key says 323 — official key wins (323, historically correct for PIRLS 2011)",
+        "Official key table photo is tilted; key letters re-verified at 300 dpi and cross-checked against known facts (Oct 1999, COSEF, 2009-2012, Thorndike, Bloom)"
+      ],
+      "index": 13,
+      "questions": 25,
+      "sources": [
+        "official correction PDF in workspace (تصحيح مستجدات التعليم.pdf) — answer authority",
+        "https://i-taalim.blogspot.com/2018/08/education-primaire-contractuel-aref-men-2017-rep.html — published transcription of the official key (situation 2 only)",
+        "exam PDF verified page by page at 150 dpi"
+      ],
+      "status": "solved+sql",
+      "subject": "مستجدات التعليم",
+      "year": 2017
+    }
+  ]
+}

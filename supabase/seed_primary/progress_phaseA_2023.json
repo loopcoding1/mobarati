@@ -1,0 +1,114 @@
+{
+  "phase": "A",
+  "year": 2023,
+  "started": "2026-11-25T22:32:00Z",
+  "updated": "2026-11-25T23:08:00Z",
+  "status": "done",
+  "exams": [
+    {
+      "exam_id": "exam_primary_2023_arabic_jan",
+      "subject_type": "arabic",
+      "subject_title": "مادة التخصص: اللغة العربية",
+      "duration_minutes": 60,
+      "questions_inserted": 30,
+      "numbers": "1-30",
+      "skipped": [],
+      "source_url": "https://www.manasseb.com/sujet/sujet-41824-enseignant-2023/",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2023_french_jan",
+      "subject_type": "french",
+      "subject_title": "مادة التخصص: اللغة الفرنسية",
+      "duration_minutes": 60,
+      "questions_inserted": 30,
+      "numbers": "31-60",
+      "skipped": [],
+      "source_url": "https://www.manasseb.com/sujet/sujet-41825-enseignant-2023/",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2023_maths_jan",
+      "subject_type": "maths",
+      "subject_title": "مادة التخصص: الرياضيات",
+      "duration_minutes": 60,
+      "questions_inserted": 30,
+      "numbers": "61-90",
+      "skipped": [],
+      "source_url": "https://www.manasseb.com/sujet/sujet-42525-enseignant-2023/",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2023_sciences_jan",
+      "subject_type": "sciences",
+      "subject_title": "مادة التخصص: العلوم",
+      "duration_minutes": 60,
+      "questions_inserted": 30,
+      "numbers": "91-120",
+      "skipped": [],
+      "source_url": "https://www.manasseb.com/sujet/sujet-42526-enseignant-2023/",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2023_didactics_ar_jan",
+      "subject_type": "didactics_ar",
+      "subject_title": "ديداكتيك اللغة العربية",
+      "duration_minutes": 45,
+      "questions_inserted": 25,
+      "numbers": "1-25",
+      "skipped": [],
+      "source_url": "https://www.manasseb.com/sujet/sujet-42527-enseignant-2023/",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2023_didactics_fr_jan",
+      "subject_type": "didactics_fr",
+      "subject_title": "ديداكتيك اللغة الفرنسية",
+      "duration_minutes": 45,
+      "questions_inserted": 25,
+      "numbers": "26-50",
+      "skipped": [],
+      "source_url": "https://www.manasseb.com/sujet/sujet-41822-enseignant-2023/",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2023_didactics_maths_jan",
+      "subject_type": "didactics_maths",
+      "subject_title": "ديداكتيك الرياضيات",
+      "duration_minutes": 45,
+      "questions_inserted": 25,
+      "numbers": "51-75",
+      "skipped": [],
+      "source_url": "https://www.manasseb.com/sujet/sujet-42529-enseignant-2023/",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2023_didactics_sciences_jan",
+      "subject_type": "didactics_sciences",
+      "subject_title": "ديداكتيك النشاط العلمي",
+      "duration_minutes": 45,
+      "questions_inserted": 25,
+      "numbers": "76-100",
+      "skipped": [],
+      "source_url": "https://www.manasseb.com/sujet/sujet-42530-enseignant-2023/",
+      "status": "done"
+    },
+    {
+      "exam_id": "exam_primary_2023_sciences_edu_jan",
+      "subject_type": "sciences_edu",
+      "subject_title": null,
+      "duration_minutes": 60,
+      "questions_inserted": 25,
+      "numbers": null,
+      "skipped": [],
+      "source_url": null,
+      "status": "done"
+    }
+  ],
+  "totals": {
+    "exam_rows": 9,
+    "questions": 245,
+    "skipped": []
+  },
+  "notes": "Phase A 2023 batch: 3 solved exams -> 9 exam rows, 245 questions, 0 skipped. All source_type third_party (manasseb proposed corrections; wadifa-info for 4 didactics questions). Combined booklet: full Sciences part Q91-Q120 re-transcribed from PDF after repair (original transcription was from another source); Q92 answer corrected C->D. See per-exam progress files for detail."
+}

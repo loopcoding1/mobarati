@@ -1,4 +1,4 @@
-// عميل Supabase لمنصة «إتقان» — قراءة فقط (RLS يمنع الكتابة للزوار).
+// عميل Supabase لمنصة «مباراتي» — قراءة فقط (RLS يمنع الكتابة للزوار).
 // يستخدم publishable key الآمن للواجهة فقط. لا تستعمل service_role هنا أبداً.
 import { createClient } from '@supabase/supabase-js';
 

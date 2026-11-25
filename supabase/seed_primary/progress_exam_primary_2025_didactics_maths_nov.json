@@ -1,0 +1,17 @@
+{
+  "exam_id": "exam_primary_2025_didactics_maths_nov",
+  "registry_index": 39,
+  "solved_file": "solved/2025/ديداكتيك الرياضيات - دورة نونبر 2025.md",
+  "status": "done",
+  "questions_inserted": 25,
+  "questions_skipped": [],
+  "flags": [
+    "Q68 options B and C corrected per PDF: B '3/4 و 2/3' (solved file had reversed order), C decimals '(0.66 + 0.75)' (solved file had '(0.75 + 0.66)')",
+    "All 25 answers are interpretive didactic judgments (no official key); each flagged in verification_note",
+    "Situation texts 1-5 embedded verbatim in question text (Q51-Q72); Q73-Q75 are general questions with no situation",
+    "Candidate pen marks on the exam paper ignored (X/ticks on scattered options, incl. Q51, Q54, Q57, Q63, Q70, Q72, Q73)"
+  ],
+  "duration_minutes": 45,
+  "coefficient": 3,
+  "source_type": "third_party"
+}

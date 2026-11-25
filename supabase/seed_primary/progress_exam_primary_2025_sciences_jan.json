@@ -1,0 +1,25 @@
+{
+  "exam_id": "exam_primary_2025_sciences_jan",
+  "solved_file": "solved/2025/العلوم - مادة التخصص - دورة يناير 2025.md",
+  "status": "done",
+  "questions_inserted": 30,
+  "questions_skipped": [],
+  "flags": [
+    "Q91: L'option D porte « appareil de Glogi » dans la feuille d'examen elle-même (coquille pour Golgi) ; le texte est transcrit tel qu'imprimé.",
+    "Q96: Réponse vérifiée sur le document 1 (cycle de développement de l'amandier) : 1- pistil ; 2- étamine ; 3- gamète femelle ; 4- grain de pollen ; 5- pollinisation ; 6- ovule ; 7- ovaire ; 8- graine ; 9- fruit.",
+    "Q98: Réponse vérifiée sur le document 2 (tableaux éléments / définitions) : 1- Producteur → c ; 2- Décomposeur → d ; 3- Consommateur secondaire → a ; 4- Consommateur primaire → b.",
+    "Q100: Réponse vérifiée sur le document 3 (3 figures de failles) : Figure 1 faille normale (bloc b descendu), Figure 2 faille inverse (bloc b remonté), Figure 3 décrochement dextre.",
+    "Q101: Réponse vérifiée sur le document 4 (éléments d'un pli) : 1- pli anticlinal ; 2- pli synclinal ; 3- axe de pli ; 4- charnière ; 5- plan axial ; 6- flanc du pli.",
+    "Q103: Réponse vérifiée sur le document 5 (cycle de l'eau) : 1- Évaporation ; 2- Condensation ; 3- Précipitation ; 4- Évapotranspiration ; 5- Déplacement ; 6- Ruissellement ; 7- Infiltration.",
+    "Q111: Réponse vérifiée sur le document 6 (circuit : lampe L en série avec L1 et L2 identiques en parallèle, intensité nominale 1 A par lampe) : I1 = I2 = I/2.",
+    "Q112: Réponse vérifiée sur le document 6 : la lampe L porte le courant total I (1 A nominal) ; un fusible de 1,8 A ou plus ne la protégerait pas ; aucune valeur proposée ne convient.",
+    "Q113: Réponse lue graphiquement sur le document 7 (caractéristique tension-courant) : pour I = 0,5 A, U = 0,5 V.",
+    "Q114: Réponse vérifiée sur le document 8 (électroaimant : clou en acier, bobine, interrupteur K, boule métallique) : seul le fer est ferromagnétique ; toutes les options contiennent un métal non magnétique.",
+    "Q116: L'énoncé (paragraphe 19) emploie la dénomination simplifiée « jaune, bleue et violette » pour les couleurs primaires de la synthèse soustractive ; la dénomination physique précise est jaune, cyan et magenta.",
+    "Q118: Réponse vérifiée sur le document 9 (diapason en vibration, air, microphone 1, microphone 2 ; l'oscilloscope n'est pas un élément de la chaîne de production-réception elle-même).",
+    "Q120: Réponse lue graphiquement sur le document 10 (oscillogramme) : l'indication 2 ms couvre 2 divisions, soit 1 ms par division ; une période couvre 10,5 divisions, soit T = 10,5 ms et f ≈ 95 Hz."
+  ],
+  "duration_minutes": 60,
+  "coefficient": 2,
+  "source_type": "third_party"
+}

@@ -1,0 +1,183 @@
+{
+  "batch": "2022 solved exams (registry indices 64-72)",
+  "exams": [
+    {
+      "duration_minutes": 60,
+      "exam_id": "exam_primary_2022_maths_nov",
+      "expected_questions": 30,
+      "flags": [
+        "Q70 verified=true + note",
+        "Q79 verified=false (shaded region invisible on scan)",
+        "Q86 verified=true + note",
+        "Q88 verified=true + note"
+      ],
+      "notes": "Session nov from PDF cover (دورة نونبر 2022). Coefficient 2 (header comment). source third_party (mesconcours + manasseb agree on all 30). 11 PDF-wins wording corrections documented in header (Q62,Q68,Q69,Q71,Q74,Q78,Q80,Q81,Q82,Q83,Q85,Q88).",
+      "questions_inserted": 30,
+      "registry_index": 64,
+      "skipped": [],
+      "solved_file": "solved/2022/الرياضيات - 2022.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2022_maths_nov.sql",
+      "status": "done",
+      "subject": "الرياضيات",
+      "subject_type": "maths"
+    },
+    {
+      "duration_minutes": 60,
+      "exam_id": "exam_primary_2022_didactics_maths_nov",
+      "expected_questions": 15,
+      "flags": [
+        "Q61,Q64,Q75 verified=false (إجابة مرجّحة)",
+        "Q68 verified=false (إجابة مرجّحة + depends on paper figures)",
+        "Q72 verified=false (إجابة مرجّحة)",
+        "Q73 conflict manasseb A vs askfilo D, A adopted",
+        "Q74 conflict manasseb A vs askfilo B, A adopted"
+      ],
+      "notes": "Session nov from PDF cover (دورة نونبر 2022). Coefficient 2 (header comment; applies to joint test Q61-Q90). source third_party (manasseb primary, askfilo Q72-Q75). Situation texts prepended to Q66-Q68/Q69-Q71. Validator at ~/workspace/dm2022-scratch/validate.py (tmp was full).",
+      "questions_inserted": 15,
+      "registry_index": 65,
+      "skipped": [],
+      "solved_file": "solved/2022/ديداكتيك الرياضيات - 2022.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2022_didactics_maths_nov.sql",
+      "status": "done",
+      "subject": "ديداكتيك الرياضيات",
+      "subject_type": "didactics_maths"
+    },
+    {
+      "duration_minutes": 60,
+      "exam_id": "exam_primary_2022_sciences_nov",
+      "expected_questions": 30,
+      "flags": [
+        "Q111 note: explanation says «donc A» but answer is B (formula gives B)",
+        "Q102 note: D is syllabus answer; scientifically only outer core is liquid"
+      ],
+      "notes": "Session nov from PDF cover (دورة نونبر 2022). Coefficient 2 (header comment). source third_party (mesconcours sole). PDF-wins: Q115 wording per paper; Q119 «Jbel Toubkai» typo in paper kept as printed. Validated with custom tokenizer (no local Postgres).",
+      "questions_inserted": 30,
+      "registry_index": 66,
+      "skipped": [],
+      "solved_file": "solved/2022/العلوم - 2022.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2022_sciences_nov.sql",
+      "status": "done",
+      "subject": "العلوم",
+      "subject_type": "sciences"
+    },
+    {
+      "duration_minutes": 60,
+      "exam_id": "exam_primary_2022_didactics_sciences_nov",
+      "expected_questions": 15,
+      "flags": [
+        "Q96 verified=true + note (TIMSS vs Bloom ambiguity, mesconcours caveat)",
+        "Q94-Q105 figure/table-dependency notes (stems describe PDF figures)"
+      ],
+      "notes": "Session nov from PDF cover (دورة نونبر 2022). Coefficient 2 (header comment; applies to combined 30Q test Q91-Q120). source third_party (mesconcours). All stems/options match PDF literally.",
+      "questions_inserted": 15,
+      "registry_index": 67,
+      "skipped": [],
+      "solved_file": "solved/2022/ديداكتيك العلوم - 2022.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2022_didactics_sciences_nov.sql",
+      "status": "done",
+      "subject": "ديداكتيك العلوم",
+      "subject_type": "didactics_sciences"
+    },
+    {
+      "duration_minutes": 60,
+      "exam_id": "exam_primary_2022_arabic_nov",
+      "expected_questions": 30,
+      "flags": [
+        "Q2 verified=true + note (إجابة مرجّحة)",
+        "Q5 verified=true + note (إجابة مرجّحة)",
+        "Q6 verified=true + note (تحفظ)",
+        "Q22 verified=true + note (إجابة مرجّحة)"
+      ],
+      "notes": "Session nov from PDF cover (دورة نونبر 2022). Coefficient 3 (header comment). source third_party (mesconcours primary + manasseb agree on all 30). Text «الرياضة والمجتمع». All stems/options match PDF exactly, zero discrepancies.",
+      "questions_inserted": 30,
+      "registry_index": 68,
+      "skipped": [],
+      "solved_file": "solved/2022/اللغة العربية - 2022.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2022_arabic_nov.sql",
+      "status": "done",
+      "subject": "اللغة العربية",
+      "subject_type": "arabic"
+    },
+    {
+      "duration_minutes": 60,
+      "exam_id": "exam_primary_2022_didactics_ar_nov",
+      "expected_questions": 15,
+      "flags": [
+        "Q1,Q3,Q4,Q5,Q7,Q8,Q10 verified=false (للتحقق per manasseb)",
+        "Q7 options B and C identical in original paper (printing duplication)"
+      ],
+      "notes": "Session nov from PDF cover (دورة نونبر 2022). Coefficient 3 (header comment; applies to whole shared 30Q test incl. sciences-edu half). source third_party (manasseb sole). 8/15 verified=true.",
+      "questions_inserted": 15,
+      "registry_index": 69,
+      "skipped": [],
+      "solved_file": "solved/2022/ديداكتيك اللغة العربية - 2022.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2022_didactics_ar_nov.sql",
+      "status": "done",
+      "subject": "ديداكتيك اللغة العربية",
+      "subject_type": "didactics_ar"
+    },
+    {
+      "duration_minutes": 60,
+      "exam_id": "exam_primary_2022_french_nov",
+      "expected_questions": 30,
+      "flags": [
+        "Q38 verified=true + note (إجابة مرجّحة: participe passé composé)",
+        "Q45 verified=true + note (إجابة مرجّحة; IPA re-checked at 300 dpi)",
+        "Q56 verified=true + note (إجابة مرجّحة)"
+      ],
+      "notes": "Session nov from PDF cover (دورة نونبر 2022). Coefficient 3 (header comment). source third_party (manasseb sole). Q60 sentence 3 typo «na» in original paper copied as printed, noted in header.",
+      "questions_inserted": 30,
+      "registry_index": 70,
+      "skipped": [],
+      "solved_file": "solved/2022/اللغة الفرنسية - 2022.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2022_french_nov.sql",
+      "status": "done",
+      "subject": "اللغة الفرنسية",
+      "subject_type": "french"
+    },
+    {
+      "duration_minutes": 60,
+      "exam_id": "exam_primary_2022_didactics_fr_nov",
+      "expected_questions": 15,
+      "flags": [
+        "Q37 verified=false (إجابة مرجّحة)",
+        "Q38 verified=false (إجابة مرجّحة)"
+      ],
+      "notes": "Session nov from PDF cover (دورة نونبر 2022). Coefficient 3 (header comment). source third_party (manasseb). PDF-wins deviation: Q45 option A trailing period per PDF. 13/15 verified=true.",
+      "questions_inserted": 15,
+      "registry_index": 71,
+      "skipped": [],
+      "solved_file": "solved/2022/ديداكتيك اللغة الفرنسية - 2022.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2022_didactics_fr_nov.sql",
+      "status": "done",
+      "subject": "ديداكتيك اللغة الفرنسية",
+      "subject_type": "didactics_fr"
+    },
+    {
+      "duration_minutes": null,
+      "exam_id": "exam_primary_2022_sciences_edu_nov",
+      "expected_questions": 60,
+      "flags": [
+        "Q15,Q26,Q28,Q30,Q38,Q40,Q47,Q52,Q54 verified=true + notes (site reservations)"
+      ],
+      "notes": "Session nov (PDF headers + mesconcours title). Duration NULL: compiled 60Q component from 4 booklets, no single duration applies. Numbering mapping verified: solved 1-15=Q16-30, 16-30=Q46-60, 31-45=Q76-90, 46-60=Q106-120 (in header + every verification_note). source third_party (mesconcours). Barème 1pt/answer. PDF has no cover (starts p.5/7), educaprof.com watermark.",
+      "questions_inserted": 60,
+      "registry_index": 72,
+      "skipped": [],
+      "solved_file": "solved/2022/علوم التربية - 2022.md",
+      "sql_file": "supabase/seed_primary/exam_primary_2022_sciences_edu_nov.sql",
+      "status": "done",
+      "subject": "علوم التربية",
+      "subject_type": "sciences_edu"
+    }
+  ],
+  "phase": "A",
+  "started": "2026-11-25T22:31:10Z",
+  "year": 2022,
+  "completed": "2026-11-25T22:57:32Z",
+  "totals": {
+    "exams": 9,
+    "questions": 240,
+    "skipped": 0
+  }
+}

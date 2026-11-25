@@ -1,0 +1,18 @@
+{
+  "exam_id": "exam_primary_2025_french_jan",
+  "solved_file": "solved/2025/اللغة الفرنسية - مادة التخصص - دورة يناير 2025.md",
+  "status": "done",
+  "questions_inserted": 30,
+  "questions_skipped": [],
+  "flags": [
+    "Q32",
+    "Q42",
+    "Q45",
+    "Q54",
+    "Q58",
+    "Q60"
+  ],
+  "duration_minutes": 60,
+  "coefficient": 6,
+  "source_type": "third_party"
+}

@@ -37,7 +37,7 @@ export default function App() {
   // Sound effects preference
   const [soundEnabled, setSoundEnabled] = useState(() => {
     try {
-      return localStorage.getItem('itqan_sound') !== 'false';
+      return localStorage.getItem('mobarati_sound') !== 'false';
     } catch {
       return true;
     }
@@ -47,7 +47,7 @@ export default function App() {
 
   useEffect(() => {
     try {
-      localStorage.setItem('itqan_sound', soundEnabled.toString());
+      localStorage.setItem('mobarati_sound', soundEnabled.toString());
       sound.enabled = soundEnabled;
     } catch {}
   }, [soundEnabled]);
@@ -111,7 +111,7 @@ export default function App() {
     return (
       <div className="min-h-screen bg-[#F5F6F0] flex items-center justify-center text-[#191A15]" dir="rtl">
         <div className="text-center space-y-3">
-          <div className="text-2xl font-black">منصة «إتقان»</div>
+          <div className="text-2xl font-black">منصة «مباراتي»</div>
           <p className="text-sm text-[#73786D]">جارٍ تحميل الامتحانات...</p>
         </div>
       </div>
@@ -165,7 +165,7 @@ export default function App() {
       {/* Simple Footer */}
       {currentTab !== 'exam' && (
         <footer className="border-t border-[#E6E8DE] bg-white py-4 text-center text-xs text-[#73786D]">
-          منصة «إتقان» • التحضير لمباريات المراكز الجهوية لمهن التربية والتكوين CRMEF بالمغرب
+          منصة «مباراتي» • التحضير لمباريات المراكز الجهوية لمهن التربية والتكوين CRMEF بالمغرب
         </footer>
       )}
 

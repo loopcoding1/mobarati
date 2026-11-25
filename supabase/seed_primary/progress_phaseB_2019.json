@@ -1,0 +1,129 @@
+{
+ "batch": "Phase B 2019",
+ "exams": [
+  {
+   "exam_id": "exam_primary_2019_maths_nov",
+   "flags": [
+    "Mixed exam: maths field (10 pts, 12 exercises) + didactics maths (10 pts) in one PDF; single exam row subject_type=maths, fields split by category",
+    "Duration 90 min / coefficient 2 from official key header (combined test 'اختبار في العلوم والرياضيات')",
+    "Q3 matching; Q12 two correct answers (B+D); Q7 options b/d garbled as printed in original paper",
+    "Cover page 1/10 missing from scan"
+   ],
+   "name": "الرياضيات - امتحان.pdf",
+   "questions": 33,
+   "registry_index": 84,
+   "solved_md": "solved/2019/الرياضيات - 2019.md",
+   "sources": [
+    "official key: 2019/تصحيح الرياضيات.pdf (4 pages)",
+    "https://concoursmarocofficiel.com/exams-concours-enseignement-crmef/"
+   ],
+   "sql": "supabase/seed_primary/exam_primary_2019_maths_nov.sql",
+   "status": "solved+sql",
+   "subject": "الرياضيات"
+  },
+  {
+   "exam_id": "exam_primary_2019_sciences_nov",
+   "flags": [
+    "Mixed exam: sciences field (20 pts: topic 1 = 5, topic 2 = 5, didactics sciences = 10) in one PDF; single exam row subject_type=sciences, fields split by category",
+    "Duration 90 min / coefficient 2 from official key header (combined test)",
+    "Q1/Q5 are mark-each-correct format; Q1 one correct (A), Q5 two correct (C+D)",
+    "Exam pages carry a diagonal watermark mti7anati",
+    "Q9: paper writes الجسفرون for progestérone"
+   ],
+   "name": "العلوم - امتحان.pdf",
+   "questions": 16,
+   "registry_index": 86,
+   "solved_md": "solved/2019/العلوم - 2019.md",
+   "sources": [
+    "official key: 2019/تصحيح العلوم.pdf (2 pages)",
+    "https://concoursmarocofficiel.com/exams-concours-enseignement-crmef/"
+   ],
+   "sql": "supabase/seed_primary/exam_primary_2019_sciences_nov.sql",
+   "status": "solved+sql",
+   "subject": "العلوم"
+  },
+  {
+   "exam_id": "exam_primary_2019_french_nov",
+   "flags": [
+    "Part 1 40 pts (comprehension 12 + langue 20 + production 8) + Part 2 40 pts (didactics French, COD/COI, 4th year primary, 'La forêt'); single exam row subject_type=french, fields split by category; didactics numbered Q36-Q42 (original labels 1.1-2.2)",
+    "Duration 90 min / coefficient 2 from official key header + exam cover; final mark out of 20",
+    "SCAN DEFECT: PDF duplicates printed page 7 (PDF pages 7 and 10 byte-identical) and printed page 12 is MISSING — Q34/Q35 wording unverifiable; answers exist in official key and are recorded in the MD only, NOT in SQL (questions 34-35 absent from SQL by design; questions_count=40)",
+    "Q18 CONFLICT: official key marks list (c) correct, but standard compound-plural rules (verb invariable: monte-plats, porte-documents, gagne-pains) make lists (a), (b), (d) correct too — question flawed as printed; answer recorded as the key states it, with flag in MD + verification_note",
+    "Q19 verified at 300dpi: paper writes 'préfette' and 'désuette' (double t, wrong); key lists correct spellings",
+    "Q14: official key itself misspells 'doneur' (should be 'donneur') — typo in the key",
+    "Q20: key leaves column-B item 2 ('... dimanche, je fais du sport') unmatched though 'Tout dimanche' is grammatical; Q31: item 3 unmatched (needs 'à laquelle')",
+    "Q22 options b/c distinguished at 300dpi (b: 'trois cent', c: 'trois cents')",
+    "Comprehension text: excerpt from Émile Zola, L'Assommoir (Gervaise waiting for Lantier)",
+    "Scribd copy checked: same defective scan, also lacks page 12"
+   ],
+   "name": "اللغة الفرنسية - امتحان.pdf",
+   "questions": 40,
+   "questions_in_exam": 42,
+   "questions_skipped": [34, 35],
+   "registry_index": 88,
+   "solved_md": "solved/2019/اللغة الفرنسية - 2019.md",
+   "sources": [
+    "official key: 2019/تصحيح الفرنسية.pdf (6 pages)",
+    "https://concoursmarocofficiel.com/exams-concours-enseignement-crmef/",
+    "https://www.scribd.com/document/791409600/francais (same scan, no page 12)"
+   ],
+   "sql": "supabase/seed_primary/exam_primary_2019_french_nov.sql",
+   "status": "solved+sql",
+   "subject": "اللغة الفرنسية"
+  },
+  {
+   "exam_id": "exam_primary_2019_arabic_nov",
+   "flags": [
+    "Specialty 36 pts (Q1-Q27 x 1pt + Q28 2pts + Q29 3pts + Q30 4pts) + didactics 24 pts (situation 1: 9 = 2+3+4; situation 2: 7 = 3+4; situation 3: 8 = 4+4); single exam row subject_type=arabic, fields split by category; didactics numbered Q31-Q37",
+    "Duration 90 min / coefficient 2 from official key header + exam cover; final mark out of 60",
+    "SCAN DEFECT: PDF has 14 pages numbered 1-15; printed page 14 is MISSING (scan jumps from printed p.13, situation 3 text, to printed p.15, tail of situation 3 Q2) — situation 3 Q1 wording reconstructed from the official key's answer elements, recorded in SQL with verification_note",
+    "Q4: options (c) and (d) differ in a single diacritic detail not legible in the scan; both wrong anyway",
+    "Q9: official key classifies 'يعي' as ناقص (B) — read as present of 'عَيَّ'; read as present of 'وعى' it would be لفيف مفروق; answer recorded as the key states it",
+    "Q11: options (A) and (C) differ in one diacritic not legible in the scan; key selects (A)",
+    "Q23: options (B) 'هُدًى' and (D) 'هُدى' both end in alif (مقصور); key selects (D) as the مقصور example",
+    "Q25: 'استمع' is افتعل not استفعل (the س and ت are root letters of سمع)",
+    "Q26: options (A) 'مَجِيءٍ' and (B) 'مَجِيءٌ' differ only in the tanwin; key selects (B)",
+    "Starting text: التعلم مدى الحياة, from نبيل علي ونادية حجازي, «الفجوة الرقمية», سلسلة عالم المعرفة, عدد 318, غشت 2005, ص. 267",
+    "Situation 2 Q2 word is «وَلَجَ» (فعل؛ مرادف: دخل؛ ضد: خرج؛ جملة: لا يلج هذه القاعة إلا الراشدون)"
+   ],
+   "name": "اللغة العربية - امتحان.pdf",
+   "questions": 37,
+   "registry_index": 90,
+   "solved_md": "solved/2019/اللغة العربية - 2019.md",
+   "sources": [
+    "official key: 2019/تصحيح اللغة العربية.pdf (9 pages)",
+    "https://concoursmarocofficiel.com/exams-concours-enseignement-crmef/"
+   ],
+   "sql": "supabase/seed_primary/exam_primary_2019_arabic_nov.sql",
+   "status": "solved+sql",
+   "subject": "اللغة العربية"
+  },
+  {
+   "exam_id": "exam_primary_2019_sciences_edu_nov",
+   "flags": [
+    "Structure: Part 1 Q1-Q30 (30 x 1pt) + Part 2 Q31-Q36 true/false (6 x 1pt) + Part 3 Q37-Q40 matching (4 x 1pt); single exam row subject_type=sciences_edu; total 40 pts",
+    "Duration 90 min / coefficient 2 from official key header + exam cover; final mark out of 40",
+    "Starting text (Q1-Q6): excerpt from the primary-school curriculum (المنهاج الدراسي للتعليم الابتدائي) on the primary school and the learner's profile",
+    "Key table read twice at high magnification (300/600dpi crops) — all 40 answers confirmed",
+    "CONFLICTS (answer recorded as the official key states it, flagged in MD + verification_note): Q23 key says (D) المذكرات الوزارية (textbook (A) is the closer practical translation); Q24 key says (A) مادة التربية الإسلامية (values education is cross-curricular); Q25 key says (D) تقويمي (training literature usually calls the مجلس التدبير role تقريري); Q29 key says (B) «مجالها العام إلى مجال خاص» (standard Chevallard definition of didactic transposition is closer to (A))",
+    "Q13: word «الفاعلية» in the question stem is blurry in the scan (may be «القاعدة»); answer (D) الجشطالتية as in the key",
+    "Q18: key says (C) — civic-behaviour domain groups التربية الإسلامية، الاجتماعيات، التربية الفنية، التفتح التكنولوجي",
+    "Q31: two words in the middle of the statement are blurry even at 600dpi («التوجيه والملفات» as read); answer (صحيح) confirmed from the key",
+    "Q37-Q40 (Part 3): one matching exercise with 4 items (1pt each); each item entered as its own question with the 5 second-list options (A-E); the extra second-list item is (E) الأنشطة المندمجة. Q31-Q36 (Part 2): true/false with 2 options (A. صحيح / B. خطأ)",
+    "Google search 2026-11-25 found NO complete published solution for this exam (mesconcours Arabic 2019 page, a different law-17.51 practice test on wadifa.barlamane.com, a Play Store correction app) — solved from the official key in the workspace"
+   ],
+   "name": "مستجدات التعليم - امتحان.pdf",
+   "questions": 40,
+   "registry_index": 92,
+   "solved_md": "solved/2019/مستجدات التعليم - 2019.md",
+   "sources": [
+    "official key: 2019/تصحيح مستجدات التعليم.jpg (1 page, عناصر الإجابة الرسمية)",
+    "https://concoursmarocofficiel.com/exams-concours-enseignement-crmef/"
+   ],
+   "sql": "supabase/seed_primary/exam_primary_2019_sciences_edu_nov.sql",
+   "status": "solved+sql",
+   "subject": "مستجدات التعليم"
+  }
+ ],
+ "updated": "2026-11-25T23:35:00Z"
+}

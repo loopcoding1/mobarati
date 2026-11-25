@@ -1,0 +1,409 @@
+{
+  "batch": "Phase B 2018",
+  "date": "2026-11-25",
+  "year": 2018,
+  "summary": {
+    "total_exams": 9,
+    "solved_sql": 9,
+    "needs_ai_studio": 0,
+    "total_questions_inserted": 247,
+    "total_questions_skipped": 0
+  },
+  "exams": [
+    {
+      "date": "2026-11-25",
+      "exam": "exam_primary_2018_maths_dec",
+      "files": {
+        "solved_md": "workspace/exams-ibtida2i/solved/2018/الرياضيات - امتحان.md",
+        "sql": "workspace/mobarati/supabase/seed_primary/exam_primary_2018_maths_dec.sql"
+      },
+      "flags": [
+        "Q9: official key states only OA = OB = OC = OD (no numeric value); 2√2 cm derived by computation and flagged in verification_note",
+        "Q13, Q15, Q16: official key gives only the acceptance criterion (suitable activity / three prerequisites / some difficulties); answers provided are proposed models, flagged in verification_note",
+        "Q14: given table value is 40 min for 60 km (verified in exam PDF), not 48 km; 48 km -> 32 min, 360 km -> 4 h per official key",
+        "Correction PDF pages 1-2 are the sciences key, not maths — noted in MD and SQL headers to avoid confusion"
+      ],
+      "question_breakdown": {
+        "open": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "qcm": [
+          1,
+          2,
+          3
+        ]
+      },
+      "questions_inserted": 16,
+      "questions_skipped": [],
+      "registry_index": 15,
+      "session": "دورة دجنبر 2018",
+      "sources": {
+        "exam_pdf": "workspace exams-ibtida2i/2018/الرياضيات - امتحان.pdf (6 pages)",
+        "official_key": "workspace exams-ibtida2i/2018/تصحيح الرياضيات.pdf (pages 3-4 are the maths key; pages 1-2 are the sciences key of the same combined paper)",
+        "published_confirmation": "https://jarida-tarbiya.blogspot.com/2018/12/math-primaire-contrat-dec-2018.html (blog republishes the same exam + official key)"
+      },
+      "status": "solved+sql",
+      "subject": "الرياضيات",
+      "validation": "python validator: 1 exam INSERT + 16 question INSERTs; numbers 1-16 unique and complete; all options JSON-parse; every correct_answers id exists among option ids; all stems/options cross-checked against solved MD (LaTeX-canonicalized) — ALL CHECKS PASSED"
+    },
+    {
+      "coefficient": 2,
+      "duration_minutes": 120,
+      "exam": "exam_primary_2018_maths_jan",
+      "files": {
+        "solved_md": "exams-ibtida2i/solved/2018/الرياضيات - امتحان - دورة يناير 2018.md",
+        "sql": "mobarati/supabase/seed_primary/exam_primary_2018_maths_jan.sql"
+      },
+      "flags": [
+        "Q4 (مسألة 1 س4): official key prints 16313 in the numerator, correct is 15313 (87²+88² = 7569+7744 = 15313); 16313 would fall outside the interval. mesconcours.ma confirms. Corrected in MD + SQL, flagged in verification_note.",
+        "Q16 (ديداكتيك س3, حل النشاط 2): official key prints 384÷12=22m, correct is 32m (key's own method 1 gives 15+17=32m; mesconcours.ma confirms 32m). Corrected in MD + SQL, flagged in verification_note.",
+        "Q1 (مسألة 1 س1): the key's proof of the square-root inequality implicitly assumes a and b positive; flagged in verification_note.",
+        "Q13 (مسألة 3 س4): divisor pair (12,12) gives AC=0 and is excluded; flagged in verification_note.",
+        "Q17/Q20/Q21 (ديداكتيك س4/س7/س8): proposed/justified answers per the official key; flagged as اقتراح in verification_note.",
+        "Exam paper is the combined 'اختبار في العلوم والرياضيات' (2 booklets, 2h each); this file covers the maths part only (Q1-Q23). Sciences part (Q24-Q45) is a separate exam."
+      ],
+      "inserted": 23,
+      "question_type": "open (all 23; no QCM in this paper)",
+      "questions": 23,
+      "registry_index": 17,
+      "session": "دورة يناير 2018",
+      "skipped": [],
+      "sources": {
+        "exam_pdf": "exams-ibtida2i/2018/الرياضيات - امتحان - دورة يناير 2018.pdf (4 pages)",
+        "official_correction_workspace": "exams-ibtida2i/2018/تصحيح الرياضيات - دورة يناير 2018.pdf (3 pages, authoritative)",
+        "published_solution": "https://mesconcours.ma/ar/concours/enseignement/2018-1020/ (follows the official key, calculations verified; used for justifications and cross-check)"
+      },
+      "status": "solved+sql",
+      "subject": "الرياضيات (maths) — مادة التخصص وديداكتيك الرياضيات",
+      "validation": "programmatic validation passed: 1 exam INSERT + 23 question INSERTs; numbers 1-23 unique and complete; all options [] valid JSON; all correct_answers empty (open questions); exam row duration 120, questions_count 23; stems match solved MD",
+      "questions_inserted": 23
+    },
+    {
+      "answers": {
+        "1": "C",
+        "10": "open",
+        "11": "open",
+        "12": "open",
+        "13": "open",
+        "2": "B",
+        "3": [
+          "B",
+          "D"
+        ],
+        "4": "A",
+        "5": "A",
+        "6": "C",
+        "7": "A",
+        "8": "C",
+        "9": "D"
+      },
+      "coefficient": 2,
+      "duration_minutes": 90,
+      "exam": "exam_primary_2018_sciences_dec",
+      "files": {
+        "solved_md": "exams-ibtida2i/solved/2018/العلوم - امتحان.md",
+        "sql": "mobarati/supabase/seed_primary/exam_primary_2018_sciences_dec.sql"
+      },
+      "flags": [
+        "Q2: option A looks scientifically correct (the ice does melt), but the official key awards the point to B alone; key adopted as-is.",
+        "Q5: word 'قفصي' in options B/C/D as read from the scan; possibly 'قصبي' — scan unclear.",
+        "Q9: stem phrase 'التكاثر الابتدائي' as read from the scan; intended meaning is asexual/vegetative reproduction.",
+        "Q10: one word in the official key's answer elements is hard to read in the scan; best-effort transcription flagged in the MD and SQL verification_note.",
+        "Q8: figure-to-technique mapping taken from the official key as printed ('التطعيم والانفصال')."
+      ],
+      "multi_answer_questions": [
+        3
+      ],
+      "questions_inserted": 13,
+      "questions_open": 4,
+      "questions_qcm": 9,
+      "questions_skipped": [],
+      "registry_index": 19,
+      "session": "دورة دجنبر 2018",
+      "sources": {
+        "exam_pdf": "exams-ibtida2i/2018/العلوم - امتحان.pdf",
+        "official_key_pdf": "exams-ibtida2i/2018/تصحيح العلوم.pdf",
+        "published_solution_used": null,
+        "search_notes": "Google search found collections hosting the same official key (taalimi.info, concoursmarocofficiel.com, 4ostad.com, educaprof.com) and a video-based applied correction on taalimi.info; no independent text solution with justifications was found, so no published source was used. Official key wins everywhere.",
+        "source_type": "official",
+        "source_url": null
+      },
+      "status": "solved+sql",
+      "subject": "العلوم",
+      "year": 2018
+    },
+    {
+      "coefficient": 2,
+      "duration_minutes": 90,
+      "exam": "exam_primary_2018_french_dec",
+      "exam_id": "exam_primary_2018_french_dec",
+      "files": {
+        "solved_md": "exams-ibtida2i/solved/2018/اللغة الفرنسية - امتحان.md",
+        "sql": "mobarati/supabase/seed_primary/exam_primary_2018_french_dec.sql"
+      },
+      "flags": [
+        "Q4, Q12, Q16, Q17, Q19, Q22, Q26, Q30, Q31, Q32 are matching / true-false / ordering / letter-attribution tasks (not single-X QCM) — stored as question_type 'open' with the full official answer in the explanation field.",
+        "Part 2 didactics answers are the official key's 'Exemple de réponse'; the key notes 'Les réponses non prévues sont laissées à l'appréciation du correcteur' — other correct answers are possible.",
+        "Exam pages carry a blue 'imti7anati' watermark — ignored.",
+        "Q33-Q38 numbering: Part 2 questions 1a-1d and 2a-2b renumbered 33-38; original numbering noted in each question's verification_note."
+      ],
+      "open_count": 16,
+      "qcm_count": 22,
+      "questions_count": 38,
+      "questions_inserted": 38,
+      "questions_skipped": [],
+      "registry_index": 22,
+      "search_notes": "Google search (Arabic + French) found no detailed published solution page: manasseb.com does not cover this exam (site: search returned no results); mesconcours.ma 2018 pages cover the inspectors' concours, not this session. The workspace official correction is the sole and authoritative answer source; no AI Studio used.",
+      "session": "دورة دجنبر 2018",
+      "sources": {
+        "exam_pdf": "exams-ibtida2i/2018/اللغة الفرنسية - امتحان.pdf (16 pages, scanned)",
+        "official_key": "exams-ibtida2i/2018/تصحيح الفرنسية.pdf (6 pages, scanned — عناصر الإجابة الرسمية)",
+        "published_host": "https://www.taalimi.info/2019/08/2018.html (hosts the same exam + official correction PDFs)",
+        "source_type": "official",
+        "source_url": "https://www.taalimi.info/2019/08/2018.html"
+      },
+      "status": "solved+sql",
+      "structure": {
+        "part1_subject_40pts": "Q1-Q32 (Compréhension de l'écrit Q1-Q9, Langue Q10-Q29, Production de l'écrit Q30-Q32)",
+        "part2_didactics_40pts": "Q33-Q38 (official Part 2 questions 1a-1d and 2a-2b, renumbered 33-38 for unique sequential numbering)"
+      },
+      "subject": "اللغة الفرنسية",
+      "subject_type": "french",
+      "validation": "Programmatic validation passed: 1 exam INSERT + 38 question INSERTs; numbers 1-38 unique and complete; every options array JSON-parses; every correct_answers value exists among its option ids; all stems/options/explanation starts match the solved MD verbatim (after stripping point markers).",
+      "year": 2018
+    },
+    {
+      "coefficient": 2,
+      "duration_minutes": 120,
+      "exam": "exam_primary_2018_french_jan",
+      "files": {
+        "solved_md": "exams-ibtida2i/solved/2018/اللغة الفرنسية - امتحان - دورة يناير 2018.md",
+        "sql": "mobarati/supabase/seed_primary/exam_primary_2018_french_jan.sql"
+      },
+      "flags": [
+        "Q8c: key marks Vrai though text says 99/100 vs statement 90% — key answer retained, flagged in verification_note and MD",
+        "Q13: official key prints (b,1) — certain typo (number 1 twice); corrected by elimination to b->4 (Populaire), d->1 (Généreux)",
+        "Q15: official key omits pair (d,4) — completed by elimination (Manuel)",
+        "Q18: official key omits pair (b,1) — completed by elimination (Crépus)",
+        "Q19: genuine conflict — official key B (COI, function of 'dont') vs mesconcours.ma A (Complément du nom, function of the whole relative clause); key wins (B), alternative recorded in verification_note and MD",
+        "Q22: defective item — D (Des gardes-frontières) is also correct; official key B retained",
+        "Q22: key writes 'des porte-fenêtre' without s; exam paper writes 'Des portes-fenêtres' — paper text used",
+        "Matching/ordering questions (Q8, Q11, Q13, Q15, Q18, Q21, Q25, Q28, Q30) encoded as multi-select qcm over the verified pairings/statements (no invented distractors); Q8 correct set = true statements only (C, F, G, H)",
+        "Q31-Q39 are open didactics questions; official key gives 'exemples de réponse' — expected elements stored in explanation"
+      ],
+      "questions_count": 39,
+      "questions_inserted": 39,
+      "questions_skipped": [],
+      "registry_index": 24,
+      "session": "دورة يناير 2018",
+      "source_type": "official",
+      "sources": {
+        "exam_pdf": "exams-ibtida2i/2018/اللغة الفرنسية - امتحان - دورة يناير 2018.pdf (14 pages)",
+        "official_key_pdf": "exams-ibtida2i/2018/تصحيح الفرنسية - دورة يناير 2018.pdf (8 pages, Epreuve de français : éléments de réponse)",
+        "published_solution": "https://mesconcours.ma/concours/enseignement/2018-1019/ (39 questions, justifications; states answers follow the official key)"
+      },
+      "status": "solved+sql",
+      "structure": {
+        "part1_langue_40pts": "Q1-Q30 (compréhension 1-8, langue 9-27, production de l'écrit 28-30)",
+        "part2_didactique_40pts": "Q31-Q39 (1.1, 1.2, 1.3a, 1.3b, 1.3c, 2.1, 2.2, 3a, 3b)"
+      },
+      "subject": "اللغة الفرنسية",
+      "subject_type": "french",
+      "validation": "python validator: 1 exam INSERT + 39 question INSERTs; numbers 1-39 unique and complete; every correct_answers value exists among option ids; all stems/options match the solved MD; duration 120, questions_count 39 — zero errors, zero warnings",
+      "year": 2018
+    },
+    {
+      "coefficient": 2,
+      "counts": {
+        "didactics": 6,
+        "matching": 7,
+        "open": 9,
+        "qcm": 15,
+        "subject_area": 25
+      },
+      "date": "2026-11-25",
+      "duration_minutes": 90,
+      "exam": "exam_primary_2018_arabic_dec",
+      "files": {
+        "solved_md": "exams-ibtida2i/solved/2018/اللغة العربية - امتحان.md",
+        "sql": "mobarati/supabase/seed_primary/exam_primary_2018_arabic_dec.sql"
+      },
+      "flags": [
+        "Q3: verb 2 reading (حدَّبَ) inferred from the key mapping; source ج blurry in scan (recorded as تجويد).",
+        "Q4: fatha/kasra on اللغوية in options A vs D at scan resolution limit; answer D per official key.",
+        "Q9: quoted sentence wording blurry in scan (النقاب/بقيت are the most plausible readings).",
+        "Q11: options A/B/C spellings as read from the blurry scan; D is the only correct form and the key's answer.",
+        "Q13: key line 2 glyph blurry (ج vs د) but grammar forces ج (يجادل is أجوف, يبلغ is سالم).",
+        "Q14: option A also contains a بدل مطابق (الرسائل بدل من تلك); key's answer is C (بدل اشتمال).",
+        "Q15: 4th pairing (أَلَّمَ ↔ عَلِيم) is not grammatically correct as اسم فاعل (اسم فاعل أَلَّمَ is مُؤْلِم; عَلِيم is a صفة مشبهة) and the key's 4th line is ambiguous in the scan; recorded as in the key, flagged.",
+        "Q16: shadda/vowel marks in the options not fully legible in the scan; answer A per official key, option spellings follow the إملاء rule.",
+        "Q21: verb in option A unclear in scan; option A is also خبر إنّ in form but the key leaves it unmatched.",
+        "Q22: option C (نفسها) is also a توكيد معنوي, so the question as printed admits two answers; key's answer is B."
+      ],
+      "questions_inserted": 31,
+      "questions_skipped": 0,
+      "registry_index": 26,
+      "session": "دورة دجنبر 2018",
+      "skipped_numbers": [],
+      "sources": {
+        "exam_pdf": "exams-ibtida2i/2018/اللغة العربية - امتحان.pdf",
+        "notes": "No complete published solution exists for this exact exam (Dec 2018). Only PDF-download aggregators hosting the same official key, and a video for the January 2018 session (different exam). All answers come from the official correction in the workspace.",
+        "official_correction_pdf": "exams-ibtida2i/2018/تصحيح اللغة العربية.pdf",
+        "published_solution_found": false,
+        "source_type": "official",
+        "source_url": null
+      },
+      "status": "solved+sql",
+      "subject": "اللغة العربية",
+      "validation": "python3 /tmp/validate_2018_26.py — ALL CHECKS PASSED (1 exam + 31 question INSERTs; numbers 1-31 complete and unique; every options array JSON-valid; every correct_answers value exists among its option ids; matching answer counts match text items; MD vs SQL answers agree for all 15 QCM and all 7 matching questions)."
+    },
+    {
+      "coefficient": 2,
+      "duration_minutes": 120,
+      "exam": "exam_primary_2018_arabic_jan",
+      "files": {
+        "solved_md": "exams-ibtida2i/solved/2018/اللغة العربية - امتحان - دورة يناير 2018.md",
+        "sql": "mobarati/supabase/seed_primary/exam_primary_2018_arabic_jan.sql"
+      },
+      "flags": [
+        "CRITICAL: workspace correction file 'تصحيح اللغة العربية - دورة يناير 2018.pdf' (9 pages) is actually the correction for دورة نونبر 2019 (cover and every page header say نونبر 2019, duration 1.5h, 30 specialty questions + 7 didactics questions in 3 وضعيات) — NOT the key for this exam. It was NOT used. Answers come from mesconcours.ma (third_party) which states its keys follow the official answer elements.",
+        "Q13 flagged: all four printed options carry hamzat qat' but the correct form in all is hamzat wasl; official key adopted (B) per mesconcours; likely 'الاحمرار' was printed without hamza and distorted by printing.",
+        "Q23 flagged: unvowelled sentence admits two grammatically correct readings (A and B); official key adopted (A) on meaning.",
+        "Didactics numbering in the paper restarts (1, 2, 3.1, 3.2, 4.1-4.4, 5, 6.1, 6.2); sequential numbering Q26-Q36 follows mesconcours.ma: ديداكتيك 1=Q26, 2=Q27, 3.1=Q28, 3.2=Q29, 4.1=Q30, 4.2=Q31, 4.3=Q32, 4.4=Q33, 5=Q34, 6.1=Q35, 6.2=Q36."
+      ],
+      "questions_count": {
+        "matching": 8,
+        "open": 12,
+        "qcm": 16
+      },
+      "questions_inserted": 36,
+      "questions_skipped": [],
+      "registry_index": 28,
+      "session": "دورة يناير 2018",
+      "sources": {
+        "exam_pdf": "exams-ibtida2i/2018/اللغة العربية - امتحان - دورة يناير 2018.pdf (12 pages, verified page by page)",
+        "solution": "https://mesconcours.ma/ar/concours/enseignement/2018-1018/ (mesconcours.ma; states its keys follow the official answer elements)",
+        "source_type": "third_party"
+      },
+      "status": "solved+sql",
+      "subject": "اللغة العربية — التخصص والديداكتيك",
+      "validation": "python /tmp/validate_2018_ar.py — 0 errors, 0 warnings: 1 exam + 36 question INSERTs, numbers 1-36 unique and complete, all options JSON-parse, all correct_answers exist among option ids, all stems/options match the solved MD, expected answers match.",
+      "year": 2018
+    },
+    {
+      "conflicts_official_key_vs_published": {
+        "Q1": "published A (وثيقة دستورية) vs official B (توجهات عامة) — official wins",
+        "Q17": "published letter ج with text 'تجاوز تعثراتهم' (= option د in exam) vs official د — official wins",
+        "Q6": "published A (تابعة للجماعة الترابية) vs official C (مندمجة) — official wins",
+        "Q7": "published 'الامتحان الموحد على صعيد المؤسسة' vs official 'الامتحان الموحد المحلي' — official wins",
+        "Q8": "published 'العلوم' vs official 'مجال العلوم والرياضيات' — official wins",
+        "Q9": "published 'التربية على الاختيار' vs official 'تنظيم الدراسة' — official wins"
+      },
+      "correction_file": "exams-ibtida2i/2018/تصحيح مستجدات التعليم.pdf",
+      "duration_minutes": 90,
+      "exam": "exam_primary_2018_sciences_edu_dec",
+      "exam_date": "2018-12-22",
+      "exam_file": "exams-ibtida2i/2018/مستجدات التعليم - امتحان.pdf",
+      "flags": [
+        "Q24 (Situation 2 Q4): official key requires two illustrative examples; the knowledge-interaction example is the candidate's own, value examples are given in the key (العمل الجماعي، التعاون...)",
+        "Q22 (Situation 2 Q2): 'المقاربة العملية' as printed in the official key; the usual curriculum term is 'المقاربة بالفعل'",
+        "Task brief assumed all-open questions; the exam actually mixes QCM / fill-in / true-false / matching (Situation 1) + 5 open questions (Situation 2) — SQL uses qcm/matching/open accordingly, not 'open' for all",
+        "Source-text page number for Situation 2 (مديرية المناهج، غشت 2018) is unclear in the scan"
+      ],
+      "questions_count": 25,
+      "registry_index": 30,
+      "session": "دورة دجنبر 2018",
+      "skipped": [],
+      "solved_md": "exams-ibtida2i/solved/2018/مستجدات التعليم - امتحان.md",
+      "sources": {
+        "answers": "official key in workspace (تصحيح مستجدات التعليم.pdf, 3 pages)",
+        "published_solution_for_comparison": "https://www.taalimpress.info/2018/12/22-2018_26.html?hl=en (taalimpress, د. محمد كوحيلة — Situation 1 only, Q1-Q20)"
+      },
+      "sql_file": "supabase/seed_primary/exam_primary_2018_sciences_edu_dec.sql",
+      "status": "solved+sql",
+      "structure": {
+        "question_types": {
+          "matching": 5,
+          "open": 10,
+          "qcm": 10
+        },
+        "situation_1": "Q1-Q6 QCM (6), Q7-Q11 fill-in (5), Q12-Q15 true/false (4), Q16-Q20 matching (5)",
+        "situation_1_points": 20,
+        "situation_2": "5 open questions (3+4+4+5+4 points), SQL numbers 21-25",
+        "situation_2_points": 20
+      },
+      "subject_type": "sciences_edu",
+      "validation": "validate_sql.py: 1 exam INSERT + 25 question INSERTs; numbers 1-25 unique and complete; all options JSON-parse; every correct_answers value exists among option ids; all stems/option texts found in solved MD — ALL CHECKS PASSED",
+      "questions_inserted": 25
+    },
+    {
+      "answer_keys": {
+        "q1": "B",
+        "q10": "C",
+        "q11": "A",
+        "q12": "D",
+        "q13": "B",
+        "q14": "A",
+        "q15": "A",
+        "q16": "B",
+        "q17": "B",
+        "q18": "B",
+        "q19": "A",
+        "q2": "A",
+        "q20": "A",
+        "q3": "C",
+        "q4": "C",
+        "q5": "D",
+        "q6": "B",
+        "q7": "B",
+        "q8": "D",
+        "q9": "B"
+      },
+      "coefficient": 2,
+      "duration_minutes": 120,
+      "exam": "exam_primary_2018_sciences_edu_jan",
+      "files": {
+        "solved_md": "exams-ibtida2i/solved/2018/مستجدات التعليم - امتحان - دورة يناير 2018.md",
+        "sql": "mobarati/supabase/seed_primary/exam_primary_2018_sciences_edu_jan.sql"
+      },
+      "flags": [
+        "Q7: official key says B (إنجاز مشروع بحث); literature links the learner's personal project mainly to school orientation (D) — official key kept",
+        "Q18: statement garbles Howard Gardner's name as «أغاردير»; official key «خطأ» (B) kept",
+        "Q26: official key page 2 ends mid-sentence without listing the elements; answer elements taken from mesconcours.ma (which follows the official elements) and flagged in verification_note"
+      ],
+      "question_breakdown": {
+        "open": 6,
+        "qcm_4_options": 13,
+        "true_false": 7
+      },
+      "questions_inserted": 26,
+      "questions_skipped": [],
+      "registry_index": 32,
+      "session": "دورة يناير 2018",
+      "sources": {
+        "ai_studio_used": false,
+        "exam_pdf": "exams-ibtida2i/2018/مستجدات التعليم - امتحان - دورة يناير 2018.pdf",
+        "official_key_pdf": "exams-ibtida2i/2018/تصحيح مستجدات التعليم - دورة يناير 2018.pdf",
+        "published_solution": "https://mesconcours.ma/ar/concours/enseignement/2018-1021/",
+        "source_type": "official"
+      },
+      "status": "solved+sql",
+      "subject": "مستجدات نظام التربية والتكوين",
+      "total_points": 40,
+      "validation": "python /tmp/exam32/validate_sql.py — ALL CHECKS PASSED (1 exam INSERT + 26 question INSERTs, numbers 1..26 complete and unique, all options JSON-parse, all correct_answers among option ids, all stems verbatim in solved MD, duration 120, questions_count 26, 20 qcm + 6 open)",
+      "year": 2018
+    }
+  ]
+}

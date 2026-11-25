@@ -1,0 +1,13 @@
+{
+  "exam": "2021 ديداكتيك العلوم",
+  "exam_id": "exam_primary_2021_didactics_sciences_dec",
+  "status": "done",
+  "questions_inserted": 4,
+  "flags": [
+    "Q3 verified=false: source flags it 'إجابة مرجّحة' (could also be a summative assessment of the section)",
+    "Q2 verification note: drawing 1 — word 'مفصل' is a label in the lower part, but the bone is drawn straight with no visible joint in the upper part",
+    "source is third-party proposed correction only (manasseb.com), not official; site warns it may contain errors",
+    "duration_minutes=120 is the full didactics test duration, not component-specific"
+  ],
+  "skipped_numbers": []
+}
