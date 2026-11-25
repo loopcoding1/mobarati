@@ -23,7 +23,8 @@ export async function loadCatalog() {
 
 // توليد امتحان تجريبي شامل بأسئلة عشوائية من الامتحانات المحملة
 // (نفس منطق generateRandomExam في examsData.js لكن على أي قائمة امتحانات).
-export function generateRandomExam(exams, questionCount = 60) {
+// subjectLabel: اسم المادة التي سُحبت منها الأسئلة (يظهر في عنوان الامتحان).
+export function generateRandomExam(exams, questionCount = 60, subjectLabel = null) {
   const allQs = [];
   exams.forEach((exam) => {
     exam.questions.forEach((q) => {
@@ -55,9 +56,9 @@ export function generateRandomExam(exams, questionCount = 60) {
     specialtyId: exams[0]?.specialtyId || 'specialty_econ_admin',
     year: 'شامل',
     subjectType: 'random',
-    subjectTitle: 'امتحان شامل بأسئلة عشوائية',
-    title: 'امتحان تجريبي شامل بأسئلة عشوائية من امتحانات التخصص',
-    session: 'محاكاة شاملة لكافة الدورات',
+    subjectTitle: subjectLabel ? `امتحان شامل بأسئلة عشوائية — ${subjectLabel}` : 'امتحان شامل بأسئلة عشوائية',
+    title: subjectLabel ? `امتحان تجريبي شامل بأسئلة عشوائية من امتحانات ${subjectLabel}` : 'امتحان تجريبي شامل بأسئلة عشوائية من امتحانات التخصص',
+    session: subjectLabel ? `محاكاة شاملة لامتحانات ${subjectLabel}` : 'محاكاة شاملة لكافة الدورات',
     durationMinutes: 180,
     questionsCount: selected.length,
     questions: selected,

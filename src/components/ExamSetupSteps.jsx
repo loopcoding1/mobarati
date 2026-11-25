@@ -21,6 +21,25 @@ import {
 import { SPECIALTIES as LOCAL_SPECIALTIES } from '../data/examsData';
 import { generateRandomExam } from '../data/catalog';
 
+// أسماء المواد حسب نوعها — التوليد العشوائي يكون داخل مادة واحدة فقط
+// (في الابتدائي مثلاً: العربية والفرنسية والرياضيات والعلوم والديداكتيك...)
+const SUBJECT_LABELS = {
+  arabic: 'اللغة العربية',
+  french: 'اللغة الفرنسية',
+  maths: 'الرياضيات',
+  sciences: 'العلوم',
+  didactics_ar: 'ديداكتيك اللغة العربية',
+  didactics_fr: 'ديداكتيك اللغة الفرنسية',
+  didactics_maths: 'ديداكتيك الرياضيات',
+  didactics_sciences: 'ديداكتيك العلوم',
+  sciences_edu: 'علوم التربية',
+  mgmt: 'التدبير المادي والمالي والمحاسباتي',
+  tasks: 'المهام والاختصاصات',
+};
+const subjectLabel = (type) => SUBJECT_LABELS[type] || type;
+// ترتيب عرض المواد (الثابت قبل الديداكتيك)
+const SUBJECT_ORDER = ['arabic', 'french', 'maths', 'sciences', 'didactics_ar', 'didactics_fr', 'didactics_maths', 'didactics_sciences', 'sciences_edu', 'mgmt', 'tasks'];
+
 export default function ExamSetupSteps({
   allExams,
   specialties,
@@ -44,6 +63,12 @@ export default function ExamSetupSteps({
   // Random simulation settings
   const [isRandomMode, setIsRandomMode] = useState(false);
   const [randomCount, setRandomCount] = useState(60); // 30, 60, 80
+  // المادة المختارة للتوليد العشوائي (الأسئلة تُسحب من امتحانات هذه المادة فقط)
+  const [randomSubjectType, setRandomSubjectType] = useState(() => {
+    const firstSpecId = availableSpecialties[0]?.id || 'specialty_econ_admin';
+    const ex = allExams.filter(e => e.specialtyId === firstSpecId);
+    return SUBJECT_ORDER.find(t => ex.some(e => e.subjectType === t)) || 'arabic';
+  });
 
   // Exam Settings
   const [explanationMode, setExplanationMode] = useState('instant'); // 'instant' | 'end'
@@ -70,7 +95,16 @@ export default function ExamSetupSteps({
     setYearFilter('all');
     const first = allExams.find(e => e.specialtyId === id);
     if (first) setSelectedExamId(first.id);
+    const firstSubject = SUBJECT_ORDER.find(t => allExams.some(e => e.specialtyId === id && e.subjectType === t));
+    if (firstSubject) setRandomSubjectType(firstSubject);
   };
+
+  // مواد التخصص المختار (لاختيار مادة التوليد العشوائي)، مرتبة حسب SUBJECT_ORDER
+  const specialtySubjects = SUBJECT_ORDER.filter(t => specialtyExams.some(e => e.subjectType === t));
+  // التوليد العشوائي: أسئلة من امتحانات المادة المختارة فقط
+  const randomPool = specialtyExams.filter(e => e.subjectType === randomSubjectType);
+  const randomSubjectLabel = subjectLabel(randomSubjectType);
+  const randomPoolQuestions = randomPool.reduce((s, e) => s + (e.questions?.length || 0), 0);
 
   // Determine the active exam to display / launch
   let currentExam;
@@ -81,7 +115,7 @@ export default function ExamSetupSteps({
       year: 'شامل',
       subjectType: 'random',
       subjectTitle: 'امتحان شامل بأسئلة عشوائية',
-      title: `امتحان تجريبي شامل بأسئلة عشوائية (${randomCount} سؤالاً من امتحانات ${currentSpecialty?.name || 'التخصص'})`,
+      title: `امتحان تجريبي شامل بأسئلة عشوائية (${randomCount} سؤالاً من امتحانات ${randomSubjectLabel})`,
       session: 'محاكاة شاملة لكافة الدورات والمواضيع',
       durationMinutes: 180,
       questionsCount: randomCount,
@@ -110,7 +144,7 @@ export default function ExamSetupSteps({
   const handleLaunch = () => {
     let examToLaunch;
     if (isRandomMode) {
-      examToLaunch = generateRandomExam(specialtyExams, randomCount);
+      examToLaunch = generateRandomExam(randomPool, randomCount, randomSubjectLabel);
     } else {
       examToLaunch = currentExam;
     }
@@ -267,7 +301,7 @@ export default function ExamSetupSteps({
                   الخطوة 2: اختيار الامتحان والموضوع
                 </h2>
                 <p className="text-xs text-[#73786D]">
-                  اختر بين امتحانات الدورات الرسمية (موضوع التدبير أو موضوع المهام) أو امتحان بأسئلة عشوائية شاملة
+                  اختر بين امتحانات الدورات الرسمية أو امتحان تجريبي بأسئلة عشوائية من مادة تختارها
                 </p>
               </div>
 
@@ -289,15 +323,44 @@ export default function ExamSetupSteps({
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
                       <span className="text-sm md:text-base font-black text-[#191A15]">
-                        امتحان تجريبي شامل بأسئلة عشوائية من كل الامتحانات
+                        امتحان تجريبي بأسئلة عشوائية من مادة واحدة
                       </span>
                       <span className="text-[10px] font-black bg-amber-500 text-white px-2 py-0.5 rounded-full">
                         خيار مميز
                       </span>
                     </div>
                     <p className="text-xs text-[#73786D]">
-                      يتم توليد اختبار مخصص بسحب أسئلة عشوائية من جميع امتحانات هذا التخصص.
+                      اختر المادة أولاً، ثم يتم سحب أسئلة عشوائية من امتحانات تلك المادة فقط.
                     </p>
+
+                    {/* Subject Selector for random mode */}
+                    {isRandomMode && (
+                      <div className="pt-2">
+                        <span className="text-[11px] font-bold text-[#191A15]">المادة:</span>
+                        <div className="flex flex-wrap items-center gap-2 pt-1.5">
+                          {specialtySubjects.map(t => (
+                            <button
+                              key={t}
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setRandomSubjectType(t);
+                              }}
+                              className={`px-3 py-1 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+                                randomSubjectType === t
+                                  ? 'bg-amber-500 text-white'
+                                  : 'bg-white border border-[#D5D8CC] text-[#555A4E] hover:bg-gray-100'
+                              }`}
+                            >
+                              {subjectLabel(t)}
+                            </button>
+                          ))}
+                        </div>
+                        <p className="text-[11px] text-[#73786D] pt-1.5">
+                          {randomPool.length} امتحانات • {randomPoolQuestions} سؤالاً متاحاً في {randomSubjectLabel}
+                        </p>
+                      </div>
+                    )}
 
                     {/* Question Count Selector inside random card */}
                     {isRandomMode && (
@@ -574,7 +637,7 @@ export default function ExamSetupSteps({
                   <div className="flex items-center justify-between py-2">
                     <span className="text-[#73786D]">الدورة والموضوع:</span>
                     <span className="font-bold text-[#555A4E]">
-                      {isRandomMode ? 'سحب عشوائي شامل من امتحانات هذا التخصص' : `${examYearLabel(currentExam.year)} • ${currentExam.subjectTitle}`}
+                      {isRandomMode ? `سحب عشوائي من امتحانات ${randomSubjectLabel}` : `${examYearLabel(currentExam.year)} • ${currentExam.subjectTitle}`}
                     </span>
                   </div>
 
