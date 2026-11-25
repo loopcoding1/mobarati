@@ -52,11 +52,11 @@ export function generateRandomExam(exams, questionCount = 60) {
 
   return {
     id: 'exam_random_simulation',
-    specialtyId: 'specialty_econ_admin',
+    specialtyId: exams[0]?.specialtyId || 'specialty_econ_admin',
     year: 'شامل',
     subjectType: 'random',
     subjectTitle: 'امتحان شامل بأسئلة عشوائية',
-    title: 'امتحان تجريبي شامل بأسئلة عشوائية من كافة الامتحانات (2022 - 2024)',
+    title: 'امتحان تجريبي شامل بأسئلة عشوائية من امتحانات التخصص',
     session: 'محاكاة شاملة لكافة الدورات',
     durationMinutes: 180,
     questionsCount: selected.length,

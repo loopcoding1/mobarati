@@ -13,6 +13,7 @@ export default function App() {
   const [catalog, setCatalog] = useState(null); // { specialties, exams, source }
   const allExams = catalog?.exams || [];
   const allSpecialties = catalog?.specialties || [];
+  const totalQuestions = allExams.reduce((s, e) => s + (e.questions?.length || 0), 0);
 
   // Active exam state & options
   const [activeExam, setActiveExam] = useState(null);
@@ -125,6 +126,8 @@ export default function App() {
         <Header
           soundEnabled={soundEnabled}
           onToggleSound={handleToggleSound}
+          totalExams={allExams.length}
+          totalQuestions={totalQuestions}
         />
       )}
 

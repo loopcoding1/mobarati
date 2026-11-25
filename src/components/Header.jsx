@@ -8,7 +8,9 @@ import {
 
 export default function Header({ 
   soundEnabled, 
-  onToggleSound 
+  onToggleSound,
+  totalExams,
+  totalQuestions
 }) {
   return (
     <header className="bg-white border-b border-[#E6E8DE] px-4 md:px-8 py-3.5 sticky top-0 z-30 shadow-[0_2px_8px_rgba(0,0,0,0.02)] select-none">
@@ -29,7 +31,9 @@ export default function Header({
               </span>
             </div>
             <p className="text-[11px] text-[#73786D] hidden sm:block font-medium">
-              التحضير للامتحان الكتابي: مسلك مختصي الاقتصاد والإدارة (دورات 2024 - 2023 - 2022 • 412 سؤالاً)
+              {totalExams != null
+                ? `التحضير لمباريات التعليم: ${totalExams} امتحاناً • ${totalQuestions ?? 0} سؤالاً`
+                : 'التحضير لمباريات التعليم بالمغرب'}
             </p>
           </div>
         </div>

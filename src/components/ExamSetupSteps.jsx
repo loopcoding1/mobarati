@@ -32,11 +32,14 @@ export default function ExamSetupSteps({
   const availableSpecialties = (specialties?.length ? specialties : LOCAL_SPECIALTIES).filter(s => s.active);
   const [selectedSpecialtyId, setSelectedSpecialtyId] = useState(availableSpecialties[0]?.id || 'specialty_econ_admin');
 
-  // Year filter for Step 2: 'all' | '2024' | '2023' | '2022' | 'random'
-  const [yearFilter, setYearFilter] = useState('2024');
+  // Year filter for Step 2: 'all' | year
+  const [yearFilter, setYearFilter] = useState('all');
 
-  // Selected Exam
-  const [selectedExamId, setSelectedExamId] = useState(allExams[0]?.id || 'exam_2024_mgmt');
+  // Selected Exam (first exam of the default specialty)
+  const [selectedExamId, setSelectedExamId] = useState(() => {
+    const firstSpecId = availableSpecialties[0]?.id || 'specialty_econ_admin';
+    return allExams.find(e => e.specialtyId === firstSpecId)?.id || allExams[0]?.id || 'exam_2024_mgmt';
+  });
   
   // Random simulation settings
   const [isRandomMode, setIsRandomMode] = useState(false);
@@ -48,17 +51,37 @@ export default function ExamSetupSteps({
   const [timerEnabled, setTimerEnabled] = useState(true);
 
   const currentSpecialty = availableSpecialties.find(s => s.id === selectedSpecialtyId) || availableSpecialties[0];
-  
+
+  // Exams of the selected specialty ONLY — Step 2 must show these alone
+  const specialtyExams = allExams.filter(e => e.specialtyId === selectedSpecialtyId);
+
+  // Per-specialty counts (from the catalog when present, else computed here)
+  const countsFor = (spec) => {
+    const ex = allExams.filter(e => e.specialtyId === spec.id);
+    return {
+      exams: spec.examsCount ?? ex.length,
+      questions: spec.questionsCount ?? ex.reduce((s, e) => s + (e.questions?.length || 0), 0),
+    };
+  };
+
+  const handleSelectSpecialty = (id) => {
+    setSelectedSpecialtyId(id);
+    setIsRandomMode(false);
+    setYearFilter('all');
+    const first = allExams.find(e => e.specialtyId === id);
+    if (first) setSelectedExamId(first.id);
+  };
+
   // Determine the active exam to display / launch
   let currentExam;
   if (isRandomMode) {
     currentExam = {
       id: 'exam_random_simulation',
-      specialtyId: 'specialty_econ_admin',
+      specialtyId: selectedSpecialtyId,
       year: 'شامل',
       subjectType: 'random',
       subjectTitle: 'امتحان شامل بأسئلة عشوائية',
-      title: `امتحان تجريبي شامل بأسئلة عشوائية (${randomCount} سؤالاً من دورات 2022 - 2024)`,
+      title: `امتحان تجريبي شامل بأسئلة عشوائية (${randomCount} سؤالاً من امتحانات ${currentSpecialty?.name || 'التخصص'})`,
       session: 'محاكاة شاملة لكافة الدورات والمواضيع',
       durationMinutes: 180,
       questionsCount: randomCount,
@@ -75,16 +98,19 @@ export default function ExamSetupSteps({
     { num: 4, title: 'الانطلاق' }
   ];
 
-  // Filter exams by year
-  const displayedExams = allExams.filter(e => {
+  // Filter exams by the selected specialty AND by year
+  const displayedExams = specialtyExams.filter(e => {
     if (yearFilter === 'all') return true;
     return String(e.year) === String(yearFilter);
   });
 
+  // Year tabs, derived from the selected specialty's exams (newest first)
+  const specialtyYears = [...new Set(specialtyExams.map(e => String(e.year)))].sort((a, b) => Number(b) - Number(a));
+
   const handleLaunch = () => {
     let examToLaunch;
     if (isRandomMode) {
-      examToLaunch = generateRandomExam(allExams, randomCount);
+      examToLaunch = generateRandomExam(specialtyExams, randomCount);
     } else {
       examToLaunch = currentExam;
     }
@@ -107,7 +133,7 @@ export default function ExamSetupSteps({
           <span>مباريات التعليم بالمغرب • المراكز الجهوية لمهن التربية والتكوين CRMEF</span>
         </div>
         <h1 className="text-xl md:text-3xl font-black text-[#191A15] tracking-tight">
-          التحضير لمباراة التعليم: مختصي الاقتصاد والإدارة
+          التحضير لمباراة التعليم: {currentSpecialty?.name || 'التعليم'}
         </h1>
         <p className="text-xs md:text-sm text-[#73786D] max-w-lg mx-auto font-medium">
           اختر الدورة والموضوع المطلوب أو جرب الامتحان العشوائي الشامل مع التصحيح والتعليل القانوني المعتمد.
@@ -168,15 +194,23 @@ export default function ExamSetupSteps({
                   </p>
                 </div>
                 <span className="text-[11px] font-bold bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full">
-                  1 تخصص متاح
+                  {availableSpecialties.length === 1 ? 'تخصص واحد متاح' : availableSpecialties.length === 2 ? 'تخصصان متاحان' : `${availableSpecialties.length} تخصصات متاحة`}
                 </span>
               </div>
 
               <div className="space-y-3 pt-2">
-                {availableSpecialties.map(spec => (
+                {availableSpecialties.map(spec => {
+                  const isSelected = spec.id === selectedSpecialtyId;
+                  const counts = countsFor(spec);
+                  return (
                   <div
                     key={spec.id}
-                    className="p-5 rounded-2xl border-2 border-[#1C1D18] bg-[#FAFBF7] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                    onClick={() => handleSelectSpecialty(spec.id)}
+                    className={`p-5 rounded-2xl border-2 transition-all cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${
+                      isSelected
+                        ? 'border-[#1C1D18] bg-[#FAFBF7] shadow-xs ring-1 ring-[#1C1D18]/10'
+                        : 'border-[#E6E8DE] bg-white hover:border-gray-400'
+                    }`}
                   >
                     <div className="flex items-start gap-3.5">
                       <div className="w-11 h-11 rounded-2xl bg-[#1C1D18] text-white flex items-center justify-center shrink-0">
@@ -202,20 +236,25 @@ export default function ExamSetupSteps({
 
                     <div className="flex sm:flex-col items-center sm:items-end justify-between border-t sm:border-t-0 pt-2 sm:pt-0 border-gray-100 shrink-0">
                       <span className="text-xs font-black text-[#191A15] bg-[#F5F6F0] px-3 py-1 rounded-xl">
-                        {allExams.length} امتحانات • 412 سؤالاً
+                        {counts.exams} امتحانات • {counts.questions} سؤالاً
                       </span>
-                      <div className="flex items-center gap-1 text-[11px] text-emerald-800 font-bold mt-1">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                        <span>محدد للمباراة</span>
-                      </div>
+                      {isSelected ? (
+                        <div className="flex items-center gap-1 text-[11px] text-emerald-800 font-bold mt-1">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                          <span>محدد للمباراة</span>
+                        </div>
+                      ) : (
+                        <span className="text-[11px] text-[#73786D] font-bold mt-1">اضغط للاختيار</span>
+                      )}
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
 
               <div className="p-3.5 rounded-2xl bg-[#F5F6F0] border border-[#E6E8DE] text-xs text-[#555A4E] leading-relaxed flex items-center gap-2 mt-4">
                 <Check className="w-4 h-4 text-emerald-700 shrink-0" />
-                <span>يحتوي هذا التخصص على دورات 2024 و 2023 و 2022 كاملة مع كلا الموضوعين: التدبير المالي والمادي، والمهام والاختصاصات.</span>
+                <span>كل تخصص يحتوي على جميع دوراته الرسمية مع الحل والتعليل.</span>
               </div>
             </div>
           )}
@@ -257,7 +296,7 @@ export default function ExamSetupSteps({
                       </span>
                     </div>
                     <p className="text-xs text-[#73786D]">
-                      يتم توليد اختبار مخصص بسحب أسئلة عشوائية من جميع الدورات (2024، 2023، 2022) لموضوعي التدبير المالي والمادي والمهام.
+                      يتم توليد اختبار مخصص بسحب أسئلة عشوائية من جميع امتحانات هذا التخصص.
                     </p>
 
                     {/* Question Count Selector inside random card */}
@@ -302,12 +341,12 @@ export default function ExamSetupSteps({
                     أو اختر دورة وموضوع محدد:
                   </span>
                   <span className="text-[11px] text-[#73786D] font-bold">
-                    كل سنة تتكون من موضوعين
+                    «{currentSpecialty?.name}» — {specialtyExams.length} امتحاناً
                   </span>
                 </div>
 
                 <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
-                  {['2024', '2023', '2022', 'all'].map(yr => (
+                  {['all', ...specialtyYears].map(yr => (
                     <button
                       key={yr}
                       type="button"
@@ -320,7 +359,7 @@ export default function ExamSetupSteps({
                           : 'bg-[#F5F6F0] text-[#73786D] hover:bg-[#EAECE3] hover:text-[#191A15]'
                       }`}
                     >
-                      {yr === 'all' ? 'جميع السنوات (6 امتحانات)' : `دورة ${yr}`}
+                      {yr === 'all' ? `جميع السنوات (${specialtyExams.length} امتحاناً)` : `دورة ${yr}`}
                     </button>
                   ))}
                 </div>
@@ -489,7 +528,7 @@ export default function ExamSetupSteps({
                         : 'border-[#E6E8DE] bg-[#FAFBF7] hover:bg-[#F2F4EB] text-[#555A4E]'
                     }`}
                   >
-                    مؤقت رسمي (180 دقيقة / 3 ساعات)
+                    مؤقت رسمي ({currentExam.durationMinutes} دقيقة)
                   </div>
 
                   <div
@@ -535,7 +574,7 @@ export default function ExamSetupSteps({
                   <div className="flex items-center justify-between py-2">
                     <span className="text-[#73786D]">الدورة والموضوع:</span>
                     <span className="font-bold text-[#555A4E]">
-                      {isRandomMode ? 'سحب عشوائي شامل من دورات 2022 - 2024' : `${examYearLabel(currentExam.year)} • ${currentExam.subjectTitle}`}
+                      {isRandomMode ? 'سحب عشوائي شامل من امتحانات هذا التخصص' : `${examYearLabel(currentExam.year)} • ${currentExam.subjectTitle}`}
                     </span>
                   </div>
 
@@ -563,7 +602,7 @@ export default function ExamSetupSteps({
                   <div className="flex items-center justify-between py-2">
                     <span className="text-[#73786D]">المؤقت:</span>
                     <span className="font-extrabold text-[#191A15]">
-                      {timerEnabled ? '180 دقيقة (3 ساعات)' : 'وقت مفتوح'}
+                      {timerEnabled ? `${currentExam.durationMinutes} دقيقة` : 'وقت مفتوح'}
                     </span>
                   </div>
                 </div>
