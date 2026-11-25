@@ -18,16 +18,18 @@ import {
   Dices,
   Scale
 } from 'lucide-react';
-import { SPECIALTIES, generateRandomExam } from '../data/examsData';
+import { SPECIALTIES as LOCAL_SPECIALTIES } from '../data/examsData';
+import { generateRandomExam } from '../data/catalog';
 
-export default function ExamSetupSteps({ 
-  allExams, 
-  onStartExam 
+export default function ExamSetupSteps({
+  allExams,
+  specialties,
+  onStartExam
 }) {
   const [currentStep, setCurrentStep] = useState(1); // 1: Specialty, 2: Exam, 3: Settings, 4: Launch
 
-  // Filter only active/available specialties
-  const availableSpecialties = SPECIALTIES.filter(s => s.active);
+  // Filter only active/available specialties (from Supabase, local fallback if missing)
+  const availableSpecialties = (specialties?.length ? specialties : LOCAL_SPECIALTIES).filter(s => s.active);
   const [selectedSpecialtyId, setSelectedSpecialtyId] = useState(availableSpecialties[0]?.id || 'specialty_econ_admin');
 
   // Year filter for Step 2: 'all' | '2024' | '2023' | '2022' | 'random'
@@ -82,7 +84,7 @@ export default function ExamSetupSteps({
   const handleLaunch = () => {
     let examToLaunch;
     if (isRandomMode) {
-      examToLaunch = generateRandomExam(randomCount);
+      examToLaunch = generateRandomExam(allExams, randomCount);
     } else {
       examToLaunch = currentExam;
     }

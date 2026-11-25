@@ -3,20 +3,35 @@ import Header from './components/Header';
 import ExamSetupSteps from './components/ExamSetupSteps';
 import ExamView from './components/ExamView';
 import ResultView from './components/ResultView';
-import { EXAMS } from './data/examsData';
+import { loadCatalog } from './data/catalog';
 import { sound } from './utils/sound';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState('setup'); // 'setup' | 'exam' | 'result'
 
-  // Available Exams (official verified exams only)
-  const allExams = EXAMS;
+  // Catalog (specialties + exams): Supabase first, local data as fallback
+  const [catalog, setCatalog] = useState(null); // { specialties, exams, source }
+  const allExams = catalog?.exams || [];
+  const allSpecialties = catalog?.specialties || [];
 
   // Active exam state & options
-  const [activeExam, setActiveExam] = useState(allExams[0]);
-  const [activeQuestions, setActiveQuestions] = useState(allExams[0]?.questions || []);
+  const [activeExam, setActiveExam] = useState(null);
+  const [activeQuestions, setActiveQuestions] = useState([]);
   const [explanationMode, setExplanationMode] = useState('instant'); // 'instant' | 'end'
   const [timerEnabled, setTimerEnabled] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadCatalog().then(({ specialties, exams, source }) => {
+      if (cancelled) return;
+      setCatalog({ specialties, exams, source });
+      if (exams[0]) {
+        setActiveExam(exams[0]);
+        setActiveQuestions(exams[0].questions || []);
+      }
+    });
+    return () => { cancelled = true; };
+  }, []);
 
   // Sound effects preference
   const [soundEnabled, setSoundEnabled] = useState(() => {
@@ -90,6 +105,18 @@ export default function App() {
     setCurrentTab('exam');
   };
 
+  // Loading state while the catalog loads (Supabase, or local fallback)
+  if (!catalog) {
+    return (
+      <div className="min-h-screen bg-[#F5F6F0] flex items-center justify-center text-[#191A15]" dir="rtl">
+        <div className="text-center space-y-3">
+          <div className="text-2xl font-black">منصة «إتقان»</div>
+          <p className="text-sm text-[#73786D]">جارٍ تحميل الامتحانات...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#F5F6F0] flex flex-col text-[#191A15]" dir="rtl">
       
@@ -106,6 +133,7 @@ export default function App() {
         {currentTab === 'setup' && (
           <ExamSetupSteps
             allExams={allExams}
+            specialties={allSpecialties}
             onStartExam={handleStartExam}
           />
         )}
