@@ -137,6 +137,13 @@ omitted — same statements, same order). Verified:
   random exam draws from the selected specialty only; header + titles +
   timer labels dynamic. Verified live (bundle index-BUwvPuo2.js contains
   the new strings + Supabase ref).
+- Random per-subject 23:52 (commit 17e6553): random exam generation now
+  draws ONLY from the chosen subject's exams. Step 2 random card has a
+  subject picker (9 subjects for primary: arabic/french/maths/sciences/
+  didactics×4/sciences_edu; 2 for econ: mgmt/tasks) with pool size shown
+  (exams + questions available); the generated exam title/session and the
+  Step 4 summary name the subject. Verified live (bundle
+  index-B51XM7Rb.js contains «من مادة واحدة»).
 - PDF per exam 23:36 (commit 07d2fc4): Storage bucket `exam-pdfs`
   (public, read-only policy; temp anon INSERT policy created for the
   upload then DROPPED). 71 PDFs uploaded (~115 MB): 69 primary exam
