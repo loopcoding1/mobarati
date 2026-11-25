@@ -12,7 +12,8 @@ import {
   Scale, 
   Layers, 
   AlertTriangle,
-  ArrowRight
+  ArrowRight,
+  FileText
 } from 'lucide-react';
 import { sound } from '../utils/sound';
 
@@ -216,8 +217,21 @@ export default function ExamView({
             </div>
           )}
 
-          {/* Actions: Palette & Finish */}
+          {/* Actions: PDF, Palette & Finish */}
           <div className="flex items-center gap-1.5">
+            {exam.pdfUrl && (
+              <a
+                href={exam.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-[#F5F6F0] hover:bg-[#EAECE3] text-xs font-bold text-[#191A15] transition-colors cursor-pointer"
+                title="عرض ورقة الامتحان الأصلية (PDF)"
+              >
+                <FileText className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">PDF الامتحان</span>
+              </a>
+            )}
+
             <button
               onClick={() => setShowPalette(true)}
               className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-[#F5F6F0] hover:bg-[#EAECE3] text-xs font-bold text-[#191A15] transition-colors cursor-pointer"

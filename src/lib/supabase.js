@@ -37,6 +37,7 @@ function mapExam(row, questions) {
     session: row.session,
     durationMinutes: row.duration_minutes,
     questionsCount: questions.length,
+    pdfUrl: row.pdf_url || null,
     questions,
   };
 }
