@@ -158,3 +158,18 @@ omitted — same statements, same order). Verified:
   has a pdf_url; random exams have none. Verified live (bundle
   index-F_PGhBfA.js contains «PDF الامتحان» + pdf_url; a public PDF URL
   returns 200 application/pdf).
+
+- CLOSE-OUT 2026-11-26 00:04 (user: «دير المناسب» + «كمل كولشي»): all 5 pending
+  items resolved — (1) 2024 sciences_edu Q111–Q115 added from mesconcours
+  (exam_primary_2024_sciences_edu_oct_q111_115.sql, verified=false, 25/25);
+  (2) 2017 Arabic didactics solved from the official grid, NEW exam
+  exam_primary_2017_didactics_ar_jun (9 open Q, duration 60);
+  (3) Jan 2018 sciences found on mesconcours, verified 100% vs official key,
+  NEW exam exam_primary_2018_sciences_jan (22 Q, duration 120, no pdf_url);
+  (4) Q82 resolved E per official 2021 curriculum p. 392, loaded 25/25
+  (original file's questions_count fixed 24→25 + header updated);
+  (5) 2023 didactics Q2/Q3/Q23 corrected per official curriculum
+  (fix_2023_didactics_q2_q3_q23.sql): Q2 D→C, Q3 D→A, Q23 B→D, all
+  verified=true, source_type='mixed'. FINAL DB: exams=90, questions=2547,
+  6 rows without pdf_url. Registry 96 entries (71 exams done, 25 corrections
+  pending). Remaining gap: Nov 2025 Science Q99–Q102 (missing scan page).

@@ -99,6 +99,7 @@ export default function App() {
     const mistakes = result.questions.filter(q => {
       const userChoice = result.answers[q.id];
       if (!userChoice || userChoice.length === 0) return true;
+      if (q.questionType === 'open') return userChoice[0] !== '__correct';
       if (userChoice.length !== q.correctAnswers.length) return true;
       return !q.correctAnswers.every(ans => userChoice.includes(ans));
     });

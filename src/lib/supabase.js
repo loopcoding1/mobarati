@@ -19,6 +19,7 @@ function mapQuestion(row) {
     number: row.number,
     category: row.category,
     text: row.text,
+    questionType: row.question_type || 'qcm',
     isMultiple: row.is_multiple,
     options: row.options,
     correctAnswers: row.correct_answers,

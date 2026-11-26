@@ -13,6 +13,8 @@ import {
   Layers, 
   AlertTriangle,
   ArrowRight,
+  Eye,
+  PenLine,
   FileText
 } from 'lucide-react';
 import { sound } from '../utils/sound';
@@ -31,6 +33,7 @@ export default function ExamView({
   const [skipped, setSkipped] = useState({});
   const [showPalette, setShowPalette] = useState(false);
   const [showFinishConfirm, setShowFinishConfirm] = useState(false);
+  const [openRevealed, setOpenRevealed] = useState({}); // { [questionId]: true } — الأسئلة المفتوحة التي عُرض جوابها النموذجي
 
   // Timer: default 180 minutes or exam.durationMinutes
   const totalSeconds = (exam.durationMinutes || 180) * 60;
@@ -42,8 +45,17 @@ export default function ExamView({
   const isQConfirmed = !!confirmed[currentQ.id];
   const isQSkipped = !!skipped[currentQ.id];
 
-  // In instant mode, reveal when answered or confirmed or skipped
-  const isRevealed = explanationMode === 'instant' && (isQConfirmed || userSelected.length > 0 || isQSkipped);
+  // السؤال المفتوح (إجابة مكتوبة، بلا خيارات) والأسئلة التي لا خيارات لها أصلاً (صيغة مفقودة)
+  const isOpenQ = currentQ.questionType === 'open';
+  const hasNoOptions = !currentQ.options || currentQ.options.length === 0;
+  const isOpenRevealed = !!openRevealed[currentQ.id];
+  const openSelfMark = isOpenQ ? userSelected[0] : undefined;
+
+  // In instant mode, reveal when answered or confirmed or skipped.
+  // For open questions the model answer is revealed on demand, in either mode.
+  const isRevealed = isOpenQ
+    ? isOpenRevealed
+    : (explanationMode === 'instant' && (isQConfirmed || userSelected.length > 0 || isQSkipped));
 
   // Timer interval
   useEffect(() => {
@@ -71,6 +83,8 @@ export default function ExamView({
 
   const isAnswerCorrect = (q, choices) => {
     if (!choices || choices.length === 0) return false;
+    // السؤال المفتوح: التقييم ذاتي — '__correct' يعني أن المستخدم قيّم إجابته صحيحة
+    if (q.questionType === 'open') return choices[0] === '__correct';
     if (choices.length !== q.correctAnswers.length) return false;
     return q.correctAnswers.every(ans => choices.includes(ans));
   };
@@ -115,6 +129,22 @@ export default function ExamView({
       if (correct) sound.playCorrect();
       else sound.playIncorrect();
     }
+  };
+
+  // Self-assessment for open questions ('__correct' / '__incorrect')
+  const handleSelfMark = (mark) => {
+    sound.playClick();
+    setAnswers(prev => ({ ...prev, [currentQ.id]: [mark] }));
+    setConfirmed(prev => ({ ...prev, [currentQ.id]: true }));
+    if (skipped[currentQ.id]) {
+      setSkipped(prev => {
+        const next = { ...prev };
+        delete next[currentQ.id];
+        return next;
+      });
+    }
+    if (mark === '__correct') sound.playCorrect();
+    else sound.playIncorrect();
   };
 
   // Skip
@@ -272,7 +302,12 @@ export default function ExamView({
               </span>
             </div>
 
-            {currentQ.isMultiple ? (
+            {isOpenQ ? (
+              <span className="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-full flex items-center gap-1">
+                <PenLine className="w-3 h-3" />
+                سؤال مفتوح
+              </span>
+            ) : currentQ.isMultiple ? (
               <span className="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-full">
                 متعدد الاختيارات
               </span>
@@ -290,7 +325,60 @@ export default function ExamView({
 
           {/* Options */}
           <div className="space-y-2.5 pt-1">
-            {currentQ.options.map((opt) => {
+            {isOpenQ && (
+              <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 space-y-3">
+                <p className="text-xs md:text-sm font-bold text-amber-900 leading-relaxed">
+                  هذا سؤال مفتوح (إجابة مكتوبة) — فكّر في جوابك، ثم اعرض الجواب النموذجي وقارن، وقيّم نفسك.
+                </p>
+                {!isOpenRevealed ? (
+                  <button
+                    onClick={() => { sound.playClick(); setOpenRevealed(prev => ({ ...prev, [currentQ.id]: true })); }}
+                    className="px-4 py-2.5 rounded-2xl bg-[#1C1D18] text-white text-xs font-bold flex items-center gap-1.5 cursor-pointer hover:bg-[#2F322A] transition-colors"
+                  >
+                    <Eye className="w-4 h-4" />
+                    <span>عرض الجواب النموذجي</span>
+                  </button>
+                ) : (
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => handleSelfMark('__correct')}
+                        className={`flex-1 px-4 py-2.5 rounded-2xl text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer transition-colors ${
+                          openSelfMark === '__correct' ? 'bg-emerald-600 text-white' : 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200'
+                        }`}
+                      >
+                        <Check className="w-4 h-4 stroke-[3]" />
+                        <span>أجبت بشكل صحيح</span>
+                      </button>
+                      <button
+                        onClick={() => handleSelfMark('__incorrect')}
+                        className={`flex-1 px-4 py-2.5 rounded-2xl text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer transition-colors ${
+                          openSelfMark === '__incorrect' ? 'bg-rose-600 text-white' : 'bg-rose-100 text-rose-800 hover:bg-rose-200'
+                        }`}
+                      >
+                        <X className="w-4 h-4 stroke-[3]" />
+                        <span>أخطأت</span>
+                      </button>
+                    </div>
+                    {openSelfMark && (
+                      <p className="text-[11px] font-bold text-amber-800 text-center">
+                        قيّمت نفسك: {openSelfMark === '__correct' ? 'صحيحة ✓' : 'خاطئة ✗'} — يمكنك تغيير تقييمك أو المتابعة للسؤال التالي.
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {!isOpenQ && hasNoOptions && (
+              <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200">
+                <p className="text-xs md:text-sm font-bold text-amber-900 leading-relaxed">
+                  صيغة هذا السؤال غير متوفرة — الصفحة مفقودة من النسخة الممسوحة للامتحان، والجواب فقط معروف من مفتاح التصحيح الرسمي. يمكنك تخطيه والمتابعة.
+                </p>
+              </div>
+            )}
+
+            {!isOpenQ && !hasNoOptions && currentQ.options.map((opt) => {
               const isSelected = userSelected.includes(opt.id);
               const isOfficialCorrect = currentQ.correctAnswers.includes(opt.id);
 
@@ -343,14 +431,16 @@ export default function ExamView({
             <div className="p-4 rounded-2xl bg-[#F7F9F2] border border-[#DEE3D3] space-y-2 animate-fadeIn">
               <div className="flex items-center gap-1.5 text-xs font-black text-[#264D36]">
                 <Scale className="w-4 h-4 text-emerald-700" />
-                <span>التعليل الرسمي والسند القانوني والمحاسبي:</span>
+                <span>{isOpenQ ? 'الجواب النموذجي:' : 'التعليل الرسمي والسند القانوني والمحاسبي:'}</span>
               </div>
               <p className="text-xs md:text-sm text-[#2F3D33] leading-relaxed font-medium bg-white p-3.5 rounded-xl border border-[#E3E7DA] whitespace-pre-line">
                 {currentQ.explanation}
               </p>
-              <div className="text-[10px] text-emerald-800 font-bold text-left">
-                الجواب المعتمد: ({currentQ.correctAnswers.join(', ')})
-              </div>
+              {!isOpenQ && (
+                <div className="text-[10px] text-emerald-800 font-bold text-left">
+                  الجواب المعتمد: ({currentQ.correctAnswers.join(', ')})
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -381,7 +471,7 @@ export default function ExamView({
               <span>تخطي</span>
             </button>
 
-            {explanationMode === 'instant' && !isQConfirmed && (
+            {explanationMode === 'instant' && !isOpenQ && !isQConfirmed && (
               <button
                 onClick={handleConfirm}
                 disabled={userSelected.length === 0}

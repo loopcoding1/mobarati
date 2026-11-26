@@ -469,7 +469,7 @@ export default function ExamSetupSteps({
                             {exam.title}
                           </div>
                           <p className="text-[11px] text-[#73786D]">
-                            {exam.session} • {exam.questionsCount} سؤالاً QCM موثقاً بالحل والتعليل القانوني والمحاسبي
+                            {exam.session} • {exam.questionsCount} سؤالاً موثقاً بالحل والتعليل
                           </p>
                         </div>
                       </div>
@@ -644,7 +644,7 @@ export default function ExamSetupSteps({
                   <div className="flex items-center justify-between py-2">
                     <span className="text-[#73786D]">عدد الأسئلة:</span>
                     <span className="font-extrabold text-[#191A15]">
-                      {isRandomMode ? `${randomCount} سؤالاً عشوائياً` : `${currentExam.questionsCount} سؤالاً QCM`}
+                      {isRandomMode ? `${randomCount} سؤالاً عشوائياً` : `${currentExam.questionsCount} سؤالاً`}
                     </span>
                   </div>
 

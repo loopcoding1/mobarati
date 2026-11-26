@@ -35,6 +35,7 @@ export default function ResultView({
   const isQuestionCorrect = (q) => {
     const userChoice = result.answers[q.id];
     if (!userChoice || userChoice.length === 0) return false;
+    if (q.questionType === 'open') return userChoice[0] === '__correct';
     if (userChoice.length !== q.correctAnswers.length) return false;
     return q.correctAnswers.every(ans => userChoice.includes(ans));
   };
@@ -206,6 +207,11 @@ export default function ResultView({
                         <span className="text-[10px] font-bold bg-[#F5F6F0] text-[#555A4E] px-2 py-0.5 rounded-full">
                           {q.category}
                         </span>
+                        {q.questionType === 'open' && (
+                          <span className="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-full">
+                            سؤال مفتوح
+                          </span>
+                        )}
                         {isCorrect ? (
                           <span className="text-[10px] font-black text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
                             صحيح ✓
@@ -235,7 +241,17 @@ export default function ResultView({
                   <div className="mt-4 pt-3 border-t border-[#F5F6F0] space-y-3">
                     {/* Choices */}
                     <div className="space-y-1.5">
-                      {q.options.map(opt => {
+                      {q.questionType === 'open' && (
+                        <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-100 text-xs font-bold text-amber-900">
+                          سؤال مفتوح (إجابة مكتوبة) — {isSkipped ? 'لم تقيّم إجابتك' : isCorrect ? 'قيّمت إجابتك: صحيحة ✓' : 'قيّمت إجابتك: خاطئة ✗'}
+                        </div>
+                      )}
+                      {q.questionType !== 'open' && (!q.options || q.options.length === 0) && (
+                        <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-100 text-xs font-bold text-amber-900">
+                          صيغة هذا السؤال غير متوفرة — الصفحة مفقودة من النسخة الممسوحة للامتحان.
+                        </div>
+                      )}
+                      {q.questionType !== 'open' && q.options && q.options.length > 0 && q.options.map(opt => {
                         const isOptCorrect = q.correctAnswers.includes(opt.id);
                         const isUserChoice = userChoices.includes(opt.id);
 
@@ -272,7 +288,7 @@ export default function ResultView({
                     <div className="p-3 rounded-xl bg-[#F7F9F2] border border-[#DEE3D3] space-y-1">
                       <div className="flex items-center gap-1 text-[11px] font-black text-[#264D36]">
                         <Scale className="w-3.5 h-3.5 text-emerald-700" />
-                        <span>التعليل والسند القانوني والمحاسبي:</span>
+                        <span>{q.questionType === 'open' ? 'الجواب النموذجي:' : 'التعليل والسند القانوني والمحاسبي:'}</span>
                       </div>
                       <p className="text-xs text-[#2F3D33] leading-relaxed bg-white p-2.5 rounded-lg border border-[#E3E7DA] whitespace-pre-line">
                         {q.explanation}
