@@ -178,3 +178,13 @@ omitted — same statements, same order). Verified:
 - User report: exams with no options, e.g. 2016. Root cause is NOT a data error: 2016 papers are genuinely open/production questions (24 open Q in Arabic 2016, confirmed from the solved MD). Open questions in DB: 318 total (2016: 77/77, 2017: 40, 2018: 113, 2019: 43, 2020: 33, 2021: 12; 2022+: 0).
 - Fix: `mapQuestion` now passes `questionType`. ExamView shows a «سؤال مفتوح» badge, a «عرض الجواب النموذجي» button (reveals the model answer in either mode), and self-mark buttons «أجبت بشكل صحيح / أخطأت» stored as `__correct`/`__incorrect` in answers — feeds scoring, palette, ResultView and the retake-mistakes filter. QCM/matching rows with empty options (2021 Arabic Q17–Q20 — page 6/8 missing from the scan) now show an honest «صيغة غير متوفرة» notice instead of an empty card. Setup steps no longer label every exam «QCM».
 - A search for the missing 2021 Arabic page 6/8 (Q17–Q20 wording) is running in parallel; if found, the 4 rows will be filled, otherwise the notice stays.
+
+## 2021 Arabic Q17–Q20 recovered — 2026-11-26 00:26 (commit 968be6d)
+- Page 6/8 was missing from the workspace scan; recovered from the complete 8-photo
+  Facebook carousel of «منصة الأمازيغية التعليمية» (slide 6 = page 6/8; slides 7–8
+  verified as pages 7–8). All 4 answers cross-checked vs the official key — exact match
+  (Q17 matching أ←5·ب←3·ج←2·د←1; Q18 D; Q19 B; Q20 C).
+- File: supabase/seed_primary/fix_2021_arabic_q17_q20.sql (loaded + REST-verified).
+  Solved MD + registry index 77 updated. Zero qcm/matching rows with empty options remain.
+- Q20 caution: 978px scan; hamza seats verified at codepoint level
+  (A alif+sukun, B below alif, C waw+damma = correct, D alif+damma).

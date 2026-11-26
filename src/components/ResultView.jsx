@@ -12,6 +12,7 @@ import {
   Printer
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { AdBanner, SupportAdButton } from './Ads';
 
 export default function ResultView({
   result,
@@ -300,6 +301,12 @@ export default function ResultView({
             );
           })}
         </div>
+      </div>
+
+      {/* إعلانات دعم المنصة — بانر + زر دعم (بلا Popunder) */}
+      <div className="space-y-3">
+        <AdBanner />
+        <SupportAdButton />
       </div>
     </div>
   );

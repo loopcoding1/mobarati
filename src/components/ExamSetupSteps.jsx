@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { SPECIALTIES as LOCAL_SPECIALTIES } from '../data/examsData';
 import { generateRandomExam } from '../data/catalog';
+import { AdBanner, SupportAdButton } from './Ads';
 
 // أسماء المواد حسب نوعها — التوليد العشوائي يكون داخل مادة واحدة فقط
 // (في الابتدائي مثلاً: العربية والفرنسية والرياضيات والعلوم والديداكتيك...)
@@ -715,6 +716,12 @@ export default function ExamSetupSteps({
           ) : null}
         </div>
 
+      </div>
+
+      {/* إعلانات دعم المنصة — بانر + زر دعم (بلا Popunder) */}
+      <div className="mt-4 space-y-3">
+        <AdBanner />
+        <SupportAdButton />
       </div>
 
     </div>
