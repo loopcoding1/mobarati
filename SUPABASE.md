@@ -188,3 +188,20 @@ omitted — same statements, same order). Verified:
   Solved MD + registry index 77 updated. Zero qcm/matching rows with empty options remain.
 - Q20 caution: 978px scan; hamza seats verified at codepoint level
   (A alif+sukun, B below alif, C waw+damma = correct, D alif+damma).
+
+## Adsterra ads — 2026-11-26 12:14 (commit 134f039)
+- User: Adsterra publisher account elkhabazzakaria, site mobarati.vercel.app (ID 6228772, Approved).
+  Codes copied read-only from the dashboard by the browser (no settings changed).
+- Banners used: 728x90 (key 80ebd6b209581e10a8a3d24a024cfe4c, unit 728x90_1) desktop,
+  320x50 (key c8bb8dcdc09d2425b132f8be0b903227, unit 320x50_1) mobile. Script host is
+  bauval.org/22/<key> (Adsterra's current code — NOT invoke.js). Other units exist
+  (300x250, 468x60, 160x300, 160x600, Popunder_1, NativeBanner_1, SocialBar_1) — NOT used.
+- Smartlink (Direct Link) Smartlink_1: https://araplhn.org/4/11a472392816d1b0715605c73a5ee8f9
+- Implementation: src/components/Ads.jsx (AdBanner injects the script in useEffect;
+  SupportAdButton opens the Smartlink in a new tab). Placed under the setup card
+  (ExamSetupSteps) and under the results review (ResultView). Every placement is
+  labelled «إعلان» + «الإعلانات كتدعم استمرار المنصة مجاناً»; the support button
+  states BEFORE clicking that it opens an ad. NO ads inside the active exam.
+  NO Popunder/SocialBar/Native anywhere — user: do not make the site annoying.
+- Git quirk: `git push` sometimes fails with "could not read Username" — re-run
+  `gh auth setup-git` and push again (recurs between sessions).

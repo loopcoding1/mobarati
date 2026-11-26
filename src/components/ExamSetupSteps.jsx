@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import { SPECIALTIES as LOCAL_SPECIALTIES } from '../data/examsData';
 import { generateRandomExam } from '../data/catalog';
-import { AdBanner, SupportAdButton } from './Ads';
+import { AdBanner, SupportAdButton, PopAdModal } from './Ads';
 
 // أسماء المواد حسب نوعها — التوليد العشوائي يكون داخل مادة واحدة فقط
 // (في الابتدائي مثلاً: العربية والفرنسية والرياضيات والعلوم والديداكتيك...)
@@ -47,6 +47,7 @@ export default function ExamSetupSteps({
   onStartExam
 }) {
   const [currentStep, setCurrentStep] = useState(1); // 1: Specialty, 2: Exam, 3: Settings, 4: Launch
+  const [showPopModal, setShowPopModal] = useState(false); // بطاقة إعلان POP قبل بدء الاختبار
 
   // Filter only active/available specialties (from Supabase, local fallback if missing)
   const availableSpecialties = (specialties?.length ? specialties : LOCAL_SPECIALTIES).filter(s => s.active);
@@ -142,7 +143,7 @@ export default function ExamSetupSteps({
   // Year tabs, derived from the selected specialty's exams (newest first)
   const specialtyYears = [...new Set(specialtyExams.map(e => String(e.year)))].sort((a, b) => Number(b) - Number(a));
 
-  const handleLaunch = () => {
+  const launchExam = () => {
     let examToLaunch;
     if (isRandomMode) {
       examToLaunch = generateRandomExam(randomPool, randomCount, randomSubjectLabel);
@@ -156,6 +157,24 @@ export default function ExamSetupSteps({
       orderMode,
       timerEnabled
     });
+  };
+
+  // بدء الاختبار: أول مرة فالجلسة كتبان بطاقة إعلان POP اللي كتعلم المستخدم
+  // وكتفتح الإعلان غير منين يضغط هو؛ من بعد كيبدا الاختبار مباشرة.
+  const handleLaunch = () => {
+    let prompted = false;
+    try { prompted = sessionStorage.getItem('pop_ad_prompted') === '1'; } catch {}
+    if (prompted) {
+      launchExam();
+      return;
+    }
+    setShowPopModal(true);
+  };
+
+  const handlePopConfirm = () => {
+    try { sessionStorage.setItem('pop_ad_prompted', '1'); } catch {}
+    setShowPopModal(false);
+    launchExam();
   };
 
   return (
@@ -723,6 +742,14 @@ export default function ExamSetupSteps({
         <AdBanner />
         <SupportAdButton />
       </div>
+
+      {/* بطاقة إعلان POP المنبثقة قبل بدء الاختبار */}
+      {showPopModal && (
+        <PopAdModal
+          onConfirm={handlePopConfirm}
+          onCancel={() => setShowPopModal(false)}
+        />
+      )}
 
     </div>
   );
