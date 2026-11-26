@@ -12,40 +12,24 @@ const BANNERS = {
 // رابط الدعم المباشر (Smartlink_1) — كيتفتح إعلان فتبويب جديد.
 export const SMARTLINK_URL = 'https://araplhn.org/4/11a472392816d1b0715605c73a5ee8f9';
 
-// كود الـ Popunder (Popunder_1 — ID 32479612). السكريبت كيتسلح على أول ضغطة
-// من بعد ما يتحمل (هو اللي كيفتح النافذة المنبثقة)، لداكشي كنحمّلوه مسبقاً
-// منين كتبان البطاقة، وكنحقنوه غير منين المستخدم يضغط «فتح الإعلان» —
-// الضغطة ديالو هي اللي كتفتح الإعلان، وما كيتفتح حتى إعلان بلا علمو.
+// كود الـ Popunder (Popunder_1 — ID 32479612).
+// تنبيه: هاد السكريبت ما كيتستعملش فالبطاقة المنبثقة، حيت طبيعتو ما كتسمحش
+// بفتح الإعلان على نفس الضغطة: منين كيتحمل كيحط طبقة شفافة فوق الصفحة
+// وكيسنى أول ضغطة جاية — فالضغطة ديال «فتح الإعلان» ما كتفتح والو،
+// والضغطة اللي من بعد (أول جواب فالاختبار) هي اللي كتفتح الإعلان
+// وكتتبلع — الجواب ما كيتسجلش. (مثبت بفحص مباشر 2026-11-26 12:27.)
+// لداكشي البطاقة كتفتح رابط الدعم المباشر (Smartlink) بنفس الضغطة.
 export const POPUNDER_URL = 'https://abscloud.org/1/02fa6991cddcfc0cc1ff9852c97f364a';
-
-function injectPopunder() {
-  if (typeof document === 'undefined') return;
-  if (document.querySelector(`script[src="${POPUNDER_URL}"]`)) return;
-  const script = document.createElement('script');
-  script.setAttribute('data-cfasync', 'false');
-  script.src = POPUNDER_URL;
-  document.head.appendChild(script);
-}
 
 // بطاقة منبثقة كتعلم المستخدم قبل ما يتفتح إعلان POP: كتبان مرة وحدة
 // فالجلسة منين يضغط «انطلاق الاختبار»، والإعلان ما كيتفتح حتى يضغط هو
-// على «فتح الإعلان وبدء الاختبار».
+// على «فتح الإعلان وبدء الاختبار» — والضغطة ديالو هي اللي كتفتحو
+// (window.open مباشرة فـ handler ديال الضغطة، بلا ما يتبلع حتى كليك).
 export function PopAdModal({ onConfirm, onCancel }) {
-  // تحميل مسبق لسكريبت الـ Popunder باش منين يضغط المستخدم يتنفذ بسرعة
-  // (التفعيل المؤقت ديال الضغطة كيبقى صالح لثواني قليلة).
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'script';
-    link.href = POPUNDER_URL;
-    document.head.appendChild(link);
-    return () => {
-      link.remove();
-    };
-  }, []);
-
   const handleConfirm = () => {
-    injectPopunder();
+    if (typeof window !== 'undefined') {
+      window.open(SMARTLINK_URL, '_blank', 'noopener');
+    }
     onConfirm();
   };
 

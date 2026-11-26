@@ -205,3 +205,19 @@ omitted — same statements, same order). Verified:
   NO Popunder/SocialBar/Native anywhere — user: do not make the site annoying.
 - Git quirk: `git push` sometimes fails with "could not read Username" — re-run
   `gh auth setup-git` and push again (recurs between sessions).
+
+## POP modal gate — 2026-11-26 12:21 (commits c0083eb, 58dcc0e)
+- Banner verification: slot was BLANK in the cloud browser (that environment blocks
+  ad networks) but RENDERS in real Chrome — animated green "Incoming Message!" creative
+  + iframe present, bauval.org/22/<key> loads fine. Implementation is correct.
+- Popunder_1 (ID 32479612): <script data-cfasync="false"
+  src="https://abscloud.org/1/02fa6991cddcfc0cc1ff9852c97f364a"></script>
+  (single tag; script arms on next user click, frequency-capped via pp_clicks_*).
+- PopAdModal (Ads.jsx): appears ONCE per session (sessionStorage pop_ad_prompted)
+  when the user clicks «انطلاق الاختبار». It informs the user a pop ad will open
+  to support the free platform. Confirm («فتح الإعلان وبدء الاختبار») injects the
+  popunder script (preloaded while the modal is open) and starts the exam — the
+  user's click is what opens the ad. Cancel just closes the modal; nothing is
+  loaded/armed, no surprise pops. No popunder script is ever loaded on page load.
+- Also defined the missing animate-fadeIn keyframes in index.css (the class was
+  used in several components but defined nowhere).
