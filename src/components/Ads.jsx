@@ -21,11 +21,17 @@ export const SMARTLINK_URL = 'https://araplhn.org/4/11a472392816d1b0715605c73a5e
 // لداكشي البطاقة كتفتح رابط الدعم المباشر (Smartlink) بنفس الضغطة.
 export const POPUNDER_URL = 'https://abscloud.org/1/02fa6991cddcfc0cc1ff9852c97f364a';
 
-// بطاقة منبثقة كتعلم المستخدم قبل ما يتفتح إعلان POP: كتبان مرة وحدة
-// فالجلسة منين يضغط «انطلاق الاختبار»، والإعلان ما كيتفتح حتى يضغط هو
-// على «فتح الإعلان وبدء الاختبار» — والضغطة ديالو هي اللي كتفتحو
+// بطاقة منبثقة كتعلم المستخدم قبل ما يتفتح إعلان POP: كتبان عند كل انطلاق
+// وعند كل نهاية اختبار (قبل النتائج)، والإعلان ما كيتفتح حتى يضغط هو
+// على زر التأكيد — والضغطة ديالو هي اللي كتفتحو
 // (window.open مباشرة فـ handler ديال الضغطة، بلا ما يتبلع حتى كليك).
-export function PopAdModal({ onConfirm, onCancel }) {
+export function PopAdModal({
+  onConfirm,
+  onCancel,
+  title = 'قبل ما تبدا — إعلان دعم',
+  body = 'المنصة مجانية بفضل الإعلانات. قبل ما يبدا الاختبار، غادي يتفتح إعلان (نافذة منبثقة) لدعم استمرارها. اضغط «فتح الإعلان وبدء الاختبار» باش يتفتح الإعلان وتبدا الاختبار ديالك.',
+  confirmLabel = 'فتح الإعلان وبدء الاختبار',
+}) {
   const handleConfirm = () => {
     if (typeof window !== 'undefined') {
       window.open(SMARTLINK_URL, '_blank', 'noopener');
@@ -41,7 +47,7 @@ export function PopAdModal({ onConfirm, onCancel }) {
             <Megaphone className="w-5 h-5 text-amber-600" />
           </span>
           <div>
-            <h3 className="text-sm font-black text-[#191A15]">قبل ما تبدا — إعلان دعم</h3>
+            <h3 className="text-sm font-black text-[#191A15]">{title}</h3>
             <span className="text-[10px] font-bold text-[#8E9387] bg-[#F5F6F0] px-2 py-0.5 rounded-full">
               إعلان
             </span>
@@ -49,9 +55,7 @@ export function PopAdModal({ onConfirm, onCancel }) {
         </div>
 
         <p className="text-xs md:text-sm text-[#555A4E] leading-relaxed">
-          المنصة مجانية بفضل الإعلانات. قبل ما يبدا الاختبار، غادي يتفتح إعلان
-          (نافذة منبثقة) لدعم استمرارها. اضغط «فتح الإعلان وبدء الاختبار» باش
-          يتفتح الإعلان وتبدا الاختبار ديالك.
+          {body}
         </p>
 
         <div className="space-y-2">
@@ -60,7 +64,7 @@ export function PopAdModal({ onConfirm, onCancel }) {
             onClick={handleConfirm}
             className="w-full bg-[#1C1D18] hover:bg-[#2F322A] text-white py-3.5 rounded-2xl text-xs font-black transition-colors cursor-pointer"
           >
-            فتح الإعلان وبدء الاختبار
+            {confirmLabel}
           </button>
           <button
             type="button"
@@ -72,7 +76,7 @@ export function PopAdModal({ onConfirm, onCancel }) {
         </div>
 
         <p className="text-[10px] text-[#8E9387] text-center">
-          هاد البطاقة كتبان مرة وحدة فهاد الجلسة.
+          الإعلانات كتدعم استمرار المنصة مجاناً.
         </p>
       </div>
     </div>

@@ -3,6 +3,7 @@ import Header from './components/Header';
 import ExamSetupSteps from './components/ExamSetupSteps';
 import ExamView from './components/ExamView';
 import ResultView from './components/ResultView';
+import { PopAdModal } from './components/Ads';
 import { loadCatalog } from './data/catalog';
 import { sound } from './utils/sound';
 
@@ -45,6 +46,10 @@ export default function App() {
 
   const [activeResult, setActiveResult] = useState(null);
 
+  // بطاقة إعلان POP قبل عرض النتائج (الموضع الثاني للإعلان المنبثق)
+  const [pendingResult, setPendingResult] = useState(null);
+  const [showResultPop, setShowResultPop] = useState(false);
+
   useEffect(() => {
     try {
       localStorage.setItem('mobarati_sound', soundEnabled.toString());
@@ -82,9 +87,17 @@ export default function App() {
     setCurrentTab('exam');
   };
 
-  // Finish exam handler
+  // Finish exam handler — النتيجة ما كتبانش حتى تتحل بطاقة إعلان POP:
+  // التأكيد كيفتح الإعلان وكيعرض النتائج، والإلغاء كيعرض النتائج بلا إعلان.
   const handleFinishExam = (result) => {
-    setActiveResult(result);
+    setPendingResult(result);
+    setShowResultPop(true);
+  };
+
+  const showResults = () => {
+    setActiveResult(pendingResult);
+    setPendingResult(null);
+    setShowResultPop(false);
     setCurrentTab('result');
   };
 
@@ -168,6 +181,17 @@ export default function App() {
         <footer className="border-t border-[#E6E8DE] bg-white py-4 text-center text-xs text-[#73786D]">
           منصة «مباراتي» • التحضير لمباريات المراكز الجهوية لمهن التربية والتكوين CRMEF بالمغرب
         </footer>
+      )}
+
+      {/* بطاقة إعلان POP المنبثقة قبل عرض النتائج */}
+      {showResultPop && (
+        <PopAdModal
+          title="قبل عرض النتائج — إعلان دعم"
+          body="المنصة مجانية بفضل الإعلانات. قبل ما تشوف النتيجة ديالك، غادي يتفتح إعلان (نافذة منبثقة) لدعم استمرارها. اضغط «فتح الإعلان وعرض النتائج» باش يتفتح الإعلان وتشوف نتيجتك."
+          confirmLabel="فتح الإعلان وعرض النتائج"
+          onConfirm={showResults}
+          onCancel={showResults}
+        />
       )}
 
     </div>

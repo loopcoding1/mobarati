@@ -221,3 +221,13 @@ omitted — same statements, same order). Verified:
   loaded/armed, no surprise pops. No popunder script is ever loaded on page load.
 - Also defined the missing animate-fadeIn keyframes in index.css (the class was
   used in several components but defined nowhere).
+
+## POP modal fix — 2026-11-26 12:27 (commit 5a1f518)
+- Diagnosis (verified live twice): the Popunder script does NOT open on the
+  click that loads it. It lays a transparent layer over the page and fires on
+  the NEXT click — which was the user's first answer click in the exam. Worse,
+  that click was SWALLOWED: the answer was not selected (confirm stayed
+  disabled). The ad tab that opened was melbet-ma.com (clickunder URL).
+- Fix: PopAdModal's confirm now opens the Smartlink directly with window.open
+  in the click handler — the ad opens on the same click, no click is swallowed,
+  no mid-exam pop. Popunder_1 is NOT injected anywhere in the gated flow.

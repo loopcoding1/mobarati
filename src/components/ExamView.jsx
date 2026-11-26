@@ -51,11 +51,13 @@ export default function ExamView({
   const isOpenRevealed = !!openRevealed[currentQ.id];
   const openSelfMark = isOpenQ ? userSelected[0] : undefined;
 
-  // In instant mode, reveal when answered or confirmed or skipped.
+  // In instant mode, reveal ONLY after confirm (or skip) — never on mere
+  // selection, so the user can pick several answers on a multi-answer
+  // question before the correct ones are shown.
   // For open questions the model answer is revealed on demand, in either mode.
   const isRevealed = isOpenQ
     ? isOpenRevealed
-    : (explanationMode === 'instant' && (isQConfirmed || userSelected.length > 0 || isQSkipped));
+    : (explanationMode === 'instant' && (isQConfirmed || isQSkipped));
 
   // Timer interval
   useEffect(() => {
@@ -91,6 +93,8 @@ export default function ExamView({
 
   // Select Option
   const handleSelectOption = (optId) => {
+    // بعد التأكيد الجواب مقفول — ما يمكنش يتبدل من بعد ما بان الجواب الصحيح
+    if (isQConfirmed) return;
     sound.playClick();
     let updated;
     if (currentQ.isMultiple) {
@@ -112,12 +116,9 @@ export default function ExamView({
         return next;
       });
     }
-
-    if (explanationMode === 'instant') {
-      const correct = isAnswerCorrect(currentQ, updated);
-      if (correct) sound.playCorrect();
-      else sound.playIncorrect();
-    }
+    // ملاحظة: ما كاين حتى صوت صح/خطأ هنا — الجواب الصحيح ما كيبانش
+    // حتى يضغط المستخدم «تأكيد الإجابة»، باش يقدر يختار عدة أجوبة
+    // فالأسئلة متعددة الاختيارات بلا ما يتسرب ليه الجواب.
   };
 
   // Confirm

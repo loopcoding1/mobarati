@@ -99,6 +99,8 @@ export default function ExamSetupSteps({
     if (first) setSelectedExamId(first.id);
     const firstSubject = SUBJECT_ORDER.find(t => allExams.some(e => e.specialtyId === id && e.subjectType === t));
     if (firstSubject) setRandomSubjectType(firstSubject);
+    // الانتقال مباشرة للخطوة 2 منين يضغط على بطاقة التخصص (بلا زر «التالي»)
+    setCurrentStep(2);
   };
 
   // مواد التخصص المختار (لاختيار مادة التوليد العشوائي)، مرتبة حسب SUBJECT_ORDER
@@ -159,20 +161,14 @@ export default function ExamSetupSteps({
     });
   };
 
-  // بدء الاختبار: أول مرة فالجلسة كتبان بطاقة إعلان POP اللي كتعلم المستخدم
-  // وكتفتح الإعلان غير منين يضغط هو؛ من بعد كيبدا الاختبار مباشرة.
+  // بدء الاختبار: بطاقة إعلان POP كتبان عند كل انطلاق (ماشي مرة وحدة
+  // فالجلسة) — كتعلم المستخدم وكتفتح الإعلان غير منين يضغط هو؛
+  // من بعد كيبدا الاختبار مباشرة.
   const handleLaunch = () => {
-    let prompted = false;
-    try { prompted = sessionStorage.getItem('pop_ad_prompted') === '1'; } catch {}
-    if (prompted) {
-      launchExam();
-      return;
-    }
     setShowPopModal(true);
   };
 
   const handlePopConfirm = () => {
-    try { sessionStorage.setItem('pop_ad_prompted', '1'); } catch {}
     setShowPopModal(false);
     launchExam();
   };
@@ -459,6 +455,8 @@ export default function ExamSetupSteps({
                       onClick={() => {
                         setIsRandomMode(false);
                         setSelectedExamId(exam.id);
+                        // الانتقال مباشرة للخطوة 3 منين يضغط على بطاقة الامتحان
+                        setCurrentStep(3);
                       }}
                       className={`p-4 md:p-5 rounded-2xl border-2 transition-all cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${
                         isSelected 
@@ -723,7 +721,12 @@ export default function ExamSetupSteps({
             </div>
           )}
 
-          {currentStep < 4 ? (
+          {/* زر «التالي» كاين غير فالخطوتين 2 و3:
+              - الخطوة 1: الضغط على بطاقة التخصص كينتقل مباشرة للخطوة 2
+              - الخطوة 2: الضغط على بطاقة الامتحان كينتقل مباشرة للخطوة 3،
+                والزر باقي للوضع العشوائي (خاص يختار المادة والعدد أولاً)
+              - الخطوة 3: الإعدادات أزرار، ما كاين بطاقة تنتقل بيها */}
+          {(currentStep === 2 || currentStep === 3) && (
             <button
               type="button"
               onClick={() => setCurrentStep(currentStep + 1)}
@@ -732,7 +735,7 @@ export default function ExamSetupSteps({
               <span>التالي ({stepLabels[currentStep].title})</span>
               <ChevronLeft className="w-4 h-4" />
             </button>
-          ) : null}
+          )}
         </div>
 
       </div>
