@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   Clock, 
   Pause, 
@@ -18,6 +18,13 @@ import {
   FileText
 } from 'lucide-react';
 import { sound } from '../utils/sound';
+import { PopAdModal } from './Ads';
+
+// إعلان POP بعد عدد من الضغطات داخل الاختبار: كل 30 ضغطة (اختيار جواب،
+// تأكيد، تنقل...) كتبان بطاقة كتعلم المستخدم بلي غادي يتفتح إعلان،
+// والإعلان ما كيتفتح حتى يضغط هو على زر التأكيد. العداد كيتصفر منين
+// كتبان البطاقة (سواء أكد أو لغى).
+const CLICK_POP_INTERVAL = 30;
 
 export default function ExamView({
   exam,
@@ -34,6 +41,8 @@ export default function ExamView({
   const [showPalette, setShowPalette] = useState(false);
   const [showFinishConfirm, setShowFinishConfirm] = useState(false);
   const [openRevealed, setOpenRevealed] = useState({}); // { [questionId]: true } — الأسئلة المفتوحة التي عُرض جوابها النموذجي
+  const [showClickPopModal, setShowClickPopModal] = useState(false); // بطاقة إعلان POP بعد عدد من الضغطات
+  const clickCountRef = useRef(0); // عداد الضغطات داخل الاختبار
 
   // Timer: default 180 minutes or exam.durationMinutes
   const totalSeconds = (exam.durationMinutes || 180) * 60;
@@ -172,6 +181,18 @@ export default function ExamView({
     }
   };
 
+  // عداد الضغطات: كل CLICK_POP_INTERVAL ضغطة داخل منطقة السؤال والشريط
+  // السفلي كتبان بطاقة إعلان POP. كليكات الهيدر (الخروج، القائمة، الإنهاء)
+  // ما كيتحسبوش باش البطاقة ما تتعارضش مع نوافذ أخرى.
+  const handleExamClick = () => {
+    if (showClickPopModal) return;
+    clickCountRef.current += 1;
+    if (clickCountRef.current >= CLICK_POP_INTERVAL) {
+      clickCountRef.current = 0;
+      setShowClickPopModal(true);
+    }
+  };
+
   // Finish Exam
   const handleSubmitExam = () => {
     sound.playComplete();
@@ -290,7 +311,7 @@ export default function ExamView({
       </header>
 
       {/* Main Question Area */}
-      <main className="max-w-4xl mx-auto w-full px-4 py-5 md:py-8 flex-1">
+      <main className="max-w-4xl mx-auto w-full px-4 py-5 md:py-8 flex-1" onClick={handleExamClick}>
         <div className="bg-white rounded-3xl p-5 md:p-8 border border-[#E6E8DE] shadow-xs space-y-5">
           {/* Question Badges */}
           <div className="flex items-center justify-between gap-2 pb-3 border-b border-[#F5F6F0]">
@@ -448,7 +469,7 @@ export default function ExamView({
       </main>
 
       {/* Sticky Bottom Action Bar for Mobile & Desktop */}
-      <footer className="bg-white border-t border-[#E6E8DE] p-3 md:p-4 sticky bottom-0 z-20 shadow-lg">
+      <footer className="bg-white border-t border-[#E6E8DE] p-3 md:p-4 sticky bottom-0 z-20 shadow-lg" onClick={handleExamClick}>
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-2">
           {/* Prev */}
           <button
@@ -593,6 +614,17 @@ export default function ExamView({
             </div>
           </div>
         </div>
+      )}
+      {/* بطاقة إعلان POP بعد عدد من الضغطات داخل الاختبار */}
+      {showClickPopModal && (
+        <PopAdModal
+          title="استراحة إعلانية — إعلان دعم"
+          body={`المنصة مجانية بفضل الإعلانات. من بعد ${CLICK_POP_INTERVAL} ضغطة، غادي يتفتح إعلان (نافذة منبثقة) لدعم استمرارها. اضغط «فتح الإعلان والمتابعة» باش يتفتح الإعلان وتكمل الاختبار ديالك.`}
+          confirmLabel="فتح الإعلان والمتابعة"
+          cancelLabel="متابعة بدون إعلان"
+          onConfirm={() => setShowClickPopModal(false)}
+          onCancel={() => setShowClickPopModal(false)}
+        />
       )}
     </div>
   );

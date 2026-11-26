@@ -255,3 +255,10 @@ omitted — same statements, same order). Verified:
   Q&As MUST stay identical to the JSON-LD FAQPage. sitemap.xml + robots.txt.
 - Google Search Console: NOT yet submitted — verification meta tag still
   needed from the user's Search Console account (HTML-tag method).
+
+## Google Search Console — DONE 2026-11-26 12:50
+- Property https://mobarati.vercel.app/ (URL prefix) verified via HTML tag
+  under loopcodingofficial@gmail.com (verification meta in index.html,
+  commit 6fa1012). Sitemap submitted: Success, 1 discovered page, last read
+  26 Nov 2026 (first attempt transient "Couldn't fetch", resubmitted OK).
+  No performance data yet (new property, ~1 day); no errors/manual actions.

@@ -31,6 +31,7 @@ export function PopAdModal({
   title = 'قبل ما تبدا — إعلان دعم',
   body = 'المنصة مجانية بفضل الإعلانات. قبل ما يبدا الاختبار، غادي يتفتح إعلان (نافذة منبثقة) لدعم استمرارها. اضغط «فتح الإعلان وبدء الاختبار» باش يتفتح الإعلان وتبدا الاختبار ديالك.',
   confirmLabel = 'فتح الإعلان وبدء الاختبار',
+  cancelLabel = 'إلغاء',
 }) {
   const handleConfirm = () => {
     if (typeof window !== 'undefined') {
@@ -71,7 +72,7 @@ export function PopAdModal({
             onClick={onCancel}
             className="w-full py-2.5 rounded-2xl text-xs font-bold text-[#73786D] hover:bg-[#F5F6F0] transition-colors cursor-pointer"
           >
-            إلغاء
+            {cancelLabel}
           </button>
         </div>
 
