@@ -231,3 +231,27 @@ omitted — same statements, same order). Verified:
 - Fix: PopAdModal's confirm now opens the Smartlink directly with window.open
   in the click handler — the ad opens on the same click, no click is swallowed,
   no mid-exam pop. Popunder_1 is NOT injected anywhere in the gated flow.
+
+## Batch 1 — POP x2 + direct navigation + multi-select (commit bc49c66, verified live 2026-11-26 12:42)
+- POP modal now shows on EVERY launch AND before results (PopAdModal with
+  title/body/confirmLabel props; App.jsx gates results). Both verified: launch
+  modal opens the Smartlink ad; results modal «قبل عرض النتائج» opens the ad
+  then shows the results screen.
+- Setup: specialty card click jumps to step 2, exam card click jumps to step 3;
+  footer Next removed on step 1, kept on steps 2 (random mode) and 3.
+- ExamView instant mode: correct answers reveal ONLY on «تأكيد الإجابة» (never
+  on selection), so multi-answer questions take several picks; no correct/
+  incorrect sound on selection; selection locks after confirming. Verified on
+  2022 mgmt Q1 (multi, correct B+C): A red, B+C green, locked after confirm.
+
+## SEO/AEO + icon (commit 9f1c557, 2026-11-26)
+- Transparent icon: graduation cap #1C1D18 + emerald tassel, no background.
+  favicon.svg, favicon-16/32 PNG, icon-192/512, maskable 512, apple-touch-icon,
+  icon-white.svg (header tile). Builders: build_icon.py, build_og.py.
+  OG image 1200x630 (og-image.png). Old Vite purple-bolt favicon replaced.
+- index.html: title/description/keywords, canonical, robots, OG + Twitter
+  cards, theme-color, manifest, JSON-LD (WebSite + Organization + FAQPage),
+  noscript summary. FAQ section (FaqSection.jsx) on the setup page — its
+  Q&As MUST stay identical to the JSON-LD FAQPage. sitemap.xml + robots.txt.
+- Google Search Console: NOT yet submitted — verification meta tag still
+  needed from the user's Search Console account (HTML-tag method).
