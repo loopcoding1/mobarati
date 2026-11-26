@@ -1,0 +1,17 @@
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2016_didactics.pdf' WHERE id = 'exam_eps_2016_didactics_college';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2016_didactics.pdf' WHERE id = 'exam_eps_2016_didactics_lycee';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2016_specialty.pdf' WHERE id = 'exam_eps_2016_specialty_college';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2016_specialty.pdf' WHERE id = 'exam_eps_2016_specialty_lycee';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2017.pdf' WHERE id = 'exam_eps_2017_college';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2017.pdf' WHERE id = 'exam_eps_2017_lycee';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2018.pdf' WHERE id = 'exam_eps_2018_college';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2018.pdf' WHERE id = 'exam_eps_2018_lycee';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2019.pdf' WHERE id = 'exam_eps_2019_college';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2019.pdf' WHERE id = 'exam_eps_2019_lycee';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2020.pdf' WHERE id = 'exam_eps_2020_college';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2020.pdf' WHERE id = 'exam_eps_2020_lycee';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2021.pdf' WHERE id = 'exam_eps_2021_college';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/eps_2021.pdf' WHERE id = 'exam_eps_2021_lycee';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/exam_eps_kf_2021_college.pdf' WHERE id = 'exam_eps_kf_2021_college';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/exam_eps_kf_2024_lycee.pdf' WHERE id = 'exam_eps_kf_2024_lycee';
+UPDATE public.exams SET pdf_url = 'https://aieeonrqwfpdvkseglck.supabase.co/storage/v1/object/public/exam-pdfs/exam_eps_kf_2025_lycee.pdf' WHERE id = 'exam_eps_kf_2025_lycee';

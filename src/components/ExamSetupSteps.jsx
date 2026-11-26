@@ -37,10 +37,13 @@ const SUBJECT_LABELS = {
   sciences_edu: 'علوم التربية',
   mgmt: 'التدبير المادي والمالي والمحاسباتي',
   tasks: 'المهام والاختصاصات',
+  eps_specialty: 'مادة التخصص (التربية البدنية)',
+  eps_didactics: 'ديداكتيك التربية البدنية',
+  eps_aptitude: 'الكفاءة المهنية — ديداكتيك',
 };
 const subjectLabel = (type) => SUBJECT_LABELS[type] || type;
 // ترتيب عرض المواد (الثابت قبل الديداكتيك)
-const SUBJECT_ORDER = ['arabic', 'french', 'maths', 'sciences', 'didactics_ar', 'didactics_fr', 'didactics_maths', 'didactics_sciences', 'sciences_edu', 'mgmt', 'tasks'];
+const SUBJECT_ORDER = ['arabic', 'french', 'maths', 'sciences', 'didactics_ar', 'didactics_fr', 'didactics_maths', 'didactics_sciences', 'sciences_edu', 'mgmt', 'tasks', 'eps_specialty', 'eps_didactics', 'eps_aptitude'];
 
 export default function ExamSetupSteps({
   allExams,
