@@ -2,16 +2,120 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231C1D18'><path d='M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 13l-7-3.18V17c0 3.31 3.13 6 7 6s7-2.69 7-6v-5.18L12 15z'/></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="منصة مباراتي الرقمية للتحضير للامتحانات الكتابية لمباريات التعليم بالمغرب - مسلك أطر التدبير والدعم الإداري ومختصي الاقتصاد والإدارة" />
-    <title>مباراتي | منصة التحضير لمباريات التعليم بالمغرب</title>
+
+    <!-- ===== SEO الأساسي ===== -->
+    <title>مباراتي | التحضير لمباراة التعليم بالمغرب — امتحانات رسمية محلولة</title>
+    <meta name="description" content="منصة مباراتي للتحضير لمباراة التعليم بالمغرب (CRMEF): امتحانات رسمية محلولة من دورات 2016 إلى 2025 للتعليم الابتدائي ومختصي الاقتصاد والإدارة، مع الحلول والتعليلات القانونية المعتمدة — مجاناً." />
+    <meta name="keywords" content="مباراة التعليم, مباراتي, التعليم الابتدائي, مختصي الاقتصاد والإدارة, CRMEF, امتحانات مباراة التعليم, مباراة التعليم 2025, مباراة التعليم 2026, ديداكتيك, علوم التربية, تحضير مباراة التعليم" />
+    <meta name="author" content="مباراتي" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://mobarati.vercel.app/" />
+
+    <!-- ===== الأيقونة (بدون خلفية) ===== -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#1C1D18" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="مباراتي" />
+
+    <!-- ===== Open Graph (المشاركة على فيسبوك وواتساب...) ===== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_MA" />
+    <meta property="og:site_name" content="مباراتي" />
+    <meta property="og:title" content="مباراتي | التحضير لمباراة التعليم بالمغرب" />
+    <meta property="og:description" content="امتحانات رسمية محلولة من دورات 2016 إلى 2025 للتعليم الابتدائي ومختصي الاقتصاد والإدارة، مع الحلول والتعليلات القانونية المعتمدة — مجاناً." />
+    <meta property="og:url" content="https://mobarati.vercel.app/" />
+    <meta property="og:image" content="https://mobarati.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="منصة مباراتي — التحضير لمباراة التعليم بالمغرب" />
+
+    <!-- ===== Twitter / X ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="مباراتي | التحضير لمباراة التعليم بالمغرب" />
+    <meta name="twitter:description" content="امتحانات رسمية محلولة من دورات 2016 إلى 2025 للتعليم الابتدائي ومختصي الاقتصاد والإدارة، مع الحلول والتعليلات القانونية المعتمدة — مجاناً." />
+    <meta name="twitter:image" content="https://mobarati.vercel.app/og-image.png" />
+
+    <!-- ===== بيانات منظمة (JSON-LD) — لمحركات البحث ومحركات الإجابات ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://mobarati.vercel.app/#website",
+          "url": "https://mobarati.vercel.app/",
+          "name": "مباراتي",
+          "alternateName": "Mobarati",
+          "inLanguage": "ar",
+          "description": "منصة مجانية للتحضير لمباراة التعليم بالمغرب: امتحانات رسمية محلولة مع الحلول والتعليلات القانونية المعتمدة."
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://mobarati.vercel.app/#organization",
+          "name": "مباراتي",
+          "url": "https://mobarati.vercel.app/",
+          "logo": "https://mobarati.vercel.app/icon-512.png"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://mobarati.vercel.app/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "ما هي مباراة التعليم في المغرب؟",
+              "acceptedAnswer": { "@type": "Answer", "text": "مباراة وطنية تنظمها وزارة التربية الوطنية والتعليم الأولي والرياضة لتوظيف أساتذة التعليم الابتدائي والثانوي وأطر الدعم التربوي والإداري، عبر المراكز الجهوية لمهن التربية والتكوين (CRMEF)." }
+            },
+            {
+              "@type": "Question",
+              "name": "هل أسئلة منصة مباراتي رسمية؟",
+              "acceptedAnswer": { "@type": "Answer", "text": "نعم، جميع الامتحانات مأخوذة من دورات رسمية سابقة، منها دورات 2016 إلى 2025 للتعليم الابتدائي، مع الحلول والتعليلات المعتمدة." }
+            },
+            {
+              "@type": "Question",
+              "name": "كيف أستعمل منصة مباراتي للتحضير؟",
+              "acceptedAnswer": { "@type": "Answer", "text": "اختر التخصص، ثم الامتحان والدورة، ثم إعدادات الاختبار (عرض الجواب فور كل سؤال أو في النهاية فقط)، واضغط «انطلاق الاختبار الآن» وابدأ الحل." }
+            },
+            {
+              "@type": "Question",
+              "name": "هل منصة مباراتي مجانية؟",
+              "acceptedAnswer": { "@type": "Answer", "text": "نعم، المنصة مجانية بالكامل، وتستمر بفضل الإعلانات." }
+            },
+            {
+              "@type": "Question",
+              "name": "ما هي التخصصات المتوفرة في المنصة؟",
+              "acceptedAnswer": { "@type": "Answer", "text": "التعليم الابتدائي بجميع مواده وديداكتيكها، ومختصي الاقتصاد والإدارة." }
+            },
+            {
+              "@type": "Question",
+              "name": "هل يمكنني مراجعة أخطائي بعد الاختبار؟",
+              "acceptedAnswer": { "@type": "Answer", "text": "نعم، بعد إنهاء الاختبار تظهر نتيجتك مع مراجعة كل سؤال وجوابه الصحيح وتعليله، ويمكنك إعادة الأسئلة التي أخطأت فيها فقط." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   </head>
   <body class="bg-[#F5F6F0] text-[#191A15] antialiased selection:bg-[#1C1D18] selection:text-white">
     <div id="root"></div>
+    <noscript>
+      <main style="max-width: 640px; margin: 2rem auto; padding: 0 1rem; font-family: sans-serif; direction: rtl; text-align: right;">
+        <h1>مباراتي — التحضير لمباراة التعليم بالمغرب</h1>
+        <p>منصة مجانية للتحضير لمباراة التعليم (CRMEF): امتحانات رسمية محلولة من دورات 2016 إلى 2025 للتعليم الابتدائي ومختصي الاقتصاد والإدارة، مع الحلول والتعليلات القانونية المعتمدة. اختر التخصص والامتحان وابدأ الحل مع مؤقت رسمي وتصحيح فوري أو في نهاية الاختبار.</p>
+        <p>هذه المنصة تعمل بالجافاسكريبت — فعّل الجافاسكريبت في متصفحك لاستعمالها.</p>
+      </main>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

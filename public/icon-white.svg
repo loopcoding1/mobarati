@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Mobarati — graduation cap, transparent background -->
+  <path d="M140,300 A116,100 0 0 1 372,300 Z" fill="#FFFFFF"/>
+  <polygon points="256,150 470,245 256,340 42,245" fill="#FFFFFF"/>
+  <line x1="470" y1="245" x2="470" y2="330" stroke="#34D399" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="470" cy="245" r="12" fill="#34D399"/>
+  <ellipse cx="470" cy="344" rx="14" ry="16" fill="#34D399"/>
+</svg>

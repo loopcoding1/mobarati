@@ -1,6 +1,5 @@
 import React from 'react';
 import { 
-  GraduationCap, 
   Volume2, 
   VolumeX,
   Sparkles
@@ -18,8 +17,8 @@ export default function Header({
         
         {/* Brand & Platform Identity */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-[#1C1D18] text-white flex items-center justify-center shadow-xs shrink-0">
-            <GraduationCap className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-2xl bg-[#1C1D18] flex items-center justify-center shadow-xs shrink-0">
+            <img src="/icon-white.svg" alt="مباراتي" className="w-6 h-6" />
           </div>
           <div>
             <div className="flex items-center gap-2">

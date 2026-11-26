@@ -21,6 +21,7 @@ import {
 import { SPECIALTIES as LOCAL_SPECIALTIES } from '../data/examsData';
 import { generateRandomExam } from '../data/catalog';
 import { AdBanner, SupportAdButton, PopAdModal } from './Ads';
+import FaqSection from './FaqSection';
 
 // أسماء المواد حسب نوعها — التوليد العشوائي يكون داخل مادة واحدة فقط
 // (في الابتدائي مثلاً: العربية والفرنسية والرياضيات والعلوم والديداكتيك...)
@@ -745,6 +746,9 @@ export default function ExamSetupSteps({
         <AdBanner />
         <SupportAdButton />
       </div>
+
+      {/* الأسئلة الشائعة — محتوى SEO/AEO */}
+      <FaqSection />
 
       {/* بطاقة إعلان POP المنبثقة قبل بدء الاختبار */}
       {showPopModal && (
