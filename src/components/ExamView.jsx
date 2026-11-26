@@ -217,7 +217,7 @@ export default function ExamView({
     <div className="min-h-screen bg-[#F5F6F0] flex flex-col justify-between select-none">
       {/* Top Navbar */}
       <header className="bg-white border-b border-[#E6E8DE] px-4 py-3 sticky top-0 z-30 shadow-xs">
-        <div className="max-w-3xl mx-auto flex items-center justify-between gap-2">
+        <div className="max-w-4xl mx-auto flex items-center justify-between gap-2">
           {/* Exit & Question Counter */}
           <div className="flex items-center gap-2.5">
             <button
@@ -280,7 +280,7 @@ export default function ExamView({
         </div>
 
         {/* Progress Bar */}
-        <div className="max-w-3xl mx-auto w-full bg-[#EFF1E8] h-1 mt-2.5 rounded-full overflow-hidden">
+        <div className="max-w-4xl mx-auto w-full bg-[#EFF1E8] h-1 mt-2.5 rounded-full overflow-hidden">
           <div 
             className="bg-[#1C1D18] h-full transition-all duration-300"
             style={{ width: `${progressPercent}%` }}
@@ -289,7 +289,7 @@ export default function ExamView({
       </header>
 
       {/* Main Question Area */}
-      <main className="max-w-3xl mx-auto w-full px-4 py-5 md:py-8 flex-1">
+      <main className="max-w-4xl mx-auto w-full px-4 py-5 md:py-8 flex-1">
         <div className="bg-white rounded-3xl p-5 md:p-8 border border-[#E6E8DE] shadow-xs space-y-5">
           {/* Question Badges */}
           <div className="flex items-center justify-between gap-2 pb-3 border-b border-[#F5F6F0]">
@@ -319,7 +319,7 @@ export default function ExamView({
           </div>
 
           {/* Question Text */}
-          <h2 className="text-base md:text-lg font-extrabold text-[#191A15] leading-relaxed whitespace-pre-line">
+          <h2 className="text-lg md:text-xl font-extrabold text-[#191A15] leading-relaxed whitespace-pre-line">
             {currentQ.text}
           </h2>
 
@@ -327,7 +327,7 @@ export default function ExamView({
           <div className="space-y-2.5 pt-1">
             {isOpenQ && (
               <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 space-y-3">
-                <p className="text-xs md:text-sm font-bold text-amber-900 leading-relaxed">
+                <p className="text-sm md:text-base font-bold text-amber-900 leading-relaxed">
                   هذا سؤال مفتوح (إجابة مكتوبة) — فكّر في جوابك، ثم اعرض الجواب النموذجي وقارن، وقيّم نفسك.
                 </p>
                 {!isOpenRevealed ? (
@@ -372,7 +372,7 @@ export default function ExamView({
 
             {!isOpenQ && hasNoOptions && (
               <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200">
-                <p className="text-xs md:text-sm font-bold text-amber-900 leading-relaxed">
+                <p className="text-sm md:text-base font-bold text-amber-900 leading-relaxed">
                   صيغة هذا السؤال غير متوفرة — الصفحة مفقودة من النسخة الممسوحة للامتحان، والجواب فقط معروف من مفتاح التصحيح الرسمي. يمكنك تخطيه والمتابعة.
                 </p>
               </div>
@@ -418,7 +418,7 @@ export default function ExamView({
                     )}
                   </div>
 
-                  <div className="flex-1 text-xs md:text-sm leading-relaxed pt-0.5">
+                  <div className="flex-1 text-sm md:text-base leading-relaxed pt-0.5">
                     {opt.text}
                   </div>
                 </div>
@@ -433,7 +433,7 @@ export default function ExamView({
                 <Scale className="w-4 h-4 text-emerald-700" />
                 <span>{isOpenQ ? 'الجواب النموذجي:' : 'التعليل الرسمي والسند القانوني والمحاسبي:'}</span>
               </div>
-              <p className="text-xs md:text-sm text-[#2F3D33] leading-relaxed font-medium bg-white p-3.5 rounded-xl border border-[#E3E7DA] whitespace-pre-line">
+              <p className="text-sm md:text-base text-[#2F3D33] leading-relaxed font-medium bg-white p-3.5 rounded-xl border border-[#E3E7DA] whitespace-pre-line">
                 {currentQ.explanation}
               </p>
               {!isOpenQ && (
@@ -448,7 +448,7 @@ export default function ExamView({
 
       {/* Sticky Bottom Action Bar for Mobile & Desktop */}
       <footer className="bg-white border-t border-[#E6E8DE] p-3 md:p-4 sticky bottom-0 z-20 shadow-lg">
-        <div className="max-w-3xl mx-auto flex items-center justify-between gap-2">
+        <div className="max-w-4xl mx-auto flex items-center justify-between gap-2">
           {/* Prev */}
           <button
             onClick={handlePrev}

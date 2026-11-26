@@ -173,3 +173,8 @@ omitted — same statements, same order). Verified:
   verified=true, source_type='mixed'. FINAL DB: exams=90, questions=2547,
   6 rows without pdf_url. Registry 96 entries (71 exams done, 25 corrections
   pending). Remaining gap: Nov 2025 Science Q99–Q102 (missing scan page).
+
+## Open-question UX fix — 2026-11-26 00:13 (commit 114bc41)
+- User report: exams with no options, e.g. 2016. Root cause is NOT a data error: 2016 papers are genuinely open/production questions (24 open Q in Arabic 2016, confirmed from the solved MD). Open questions in DB: 318 total (2016: 77/77, 2017: 40, 2018: 113, 2019: 43, 2020: 33, 2021: 12; 2022+: 0).
+- Fix: `mapQuestion` now passes `questionType`. ExamView shows a «سؤال مفتوح» badge, a «عرض الجواب النموذجي» button (reveals the model answer in either mode), and self-mark buttons «أجبت بشكل صحيح / أخطأت» stored as `__correct`/`__incorrect` in answers — feeds scoring, palette, ResultView and the retake-mistakes filter. QCM/matching rows with empty options (2021 Arabic Q17–Q20 — page 6/8 missing from the scan) now show an honest «صيغة غير متوفرة» notice instead of an empty card. Setup steps no longer label every exam «QCM».
+- A search for the missing 2021 Arabic page 6/8 (Q17–Q20 wording) is running in parallel; if found, the 4 rows will be filled, otherwise the notice stays.

@@ -61,7 +61,7 @@ export default function ResultView({
   const evaluation = getEvaluation(result.scorePercentage);
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-6 md:py-10 space-y-6 select-none print:p-0">
+    <div className="max-w-3xl mx-auto px-4 py-6 md:py-10 space-y-6 select-none print:p-0">
       {/* Result Card */}
       <div className="bg-white rounded-3xl p-6 md:p-8 border border-[#E6E8DE] shadow-xs text-center space-y-5">
         <div className="space-y-1.5">
@@ -226,7 +226,7 @@ export default function ResultView({
                           </span>
                         )}
                       </div>
-                      <h3 className="text-xs md:text-sm font-extrabold text-[#191A15] leading-relaxed">
+                      <h3 className="text-sm md:text-base font-extrabold text-[#191A15] leading-relaxed">
                         {q.text}
                       </h3>
                     </div>
@@ -242,12 +242,12 @@ export default function ResultView({
                     {/* Choices */}
                     <div className="space-y-1.5">
                       {q.questionType === 'open' && (
-                        <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-100 text-xs font-bold text-amber-900">
+                        <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-100 text-sm font-bold text-amber-900">
                           سؤال مفتوح (إجابة مكتوبة) — {isSkipped ? 'لم تقيّم إجابتك' : isCorrect ? 'قيّمت إجابتك: صحيحة ✓' : 'قيّمت إجابتك: خاطئة ✗'}
                         </div>
                       )}
                       {q.questionType !== 'open' && (!q.options || q.options.length === 0) && (
-                        <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-100 text-xs font-bold text-amber-900">
+                        <div className="p-3 rounded-xl bg-amber-50/70 border border-amber-100 text-sm font-bold text-amber-900">
                           صيغة هذا السؤال غير متوفرة — الصفحة مفقودة من النسخة الممسوحة للامتحان.
                         </div>
                       )}
@@ -265,7 +265,7 @@ export default function ResultView({
                         return (
                           <div 
                             key={opt.id}
-                            className={`p-2.5 rounded-xl border text-xs flex items-start gap-2 ${style}`}
+                            className={`p-2.5 rounded-xl border text-sm flex items-start gap-2 ${style}`}
                           >
                             <span className="font-bold shrink-0">{opt.id}.</span>
                             <span className="flex-1">{opt.text}</span>
@@ -290,7 +290,7 @@ export default function ResultView({
                         <Scale className="w-3.5 h-3.5 text-emerald-700" />
                         <span>{q.questionType === 'open' ? 'الجواب النموذجي:' : 'التعليل والسند القانوني والمحاسبي:'}</span>
                       </div>
-                      <p className="text-xs text-[#2F3D33] leading-relaxed bg-white p-2.5 rounded-lg border border-[#E3E7DA] whitespace-pre-line">
+                      <p className="text-sm text-[#2F3D33] leading-relaxed bg-white p-2.5 rounded-lg border border-[#E3E7DA] whitespace-pre-line">
                         {q.explanation}
                       </p>
                     </div>
