@@ -178,7 +178,7 @@ export default function ExamSetupSteps({
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-6 md:py-10 space-y-6 select-none">
+    <div className="max-w-3xl mx-auto px-4 py-6 md:py-10 space-y-6">
       
       {/* Title & Introduction */}
       <div className="text-center space-y-2">

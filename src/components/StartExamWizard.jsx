@@ -80,7 +80,7 @@ export default function StartExamWizard({
   ];
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 select-none">
+    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4">
       <div className="bg-white rounded-3xl max-w-xl w-full border border-[#E6E8DE] shadow-2xl flex flex-col max-h-[92vh] overflow-hidden animate-fadeIn">
         
         {/* Top Header & Step Progress Bar - Pinned */}

@@ -12,7 +12,7 @@ export default function Header({
   totalQuestions
 }) {
   return (
-    <header className="bg-white border-b border-[#E6E8DE] px-4 md:px-8 py-3.5 sticky top-0 z-30 shadow-[0_2px_8px_rgba(0,0,0,0.02)] select-none">
+    <header className="bg-white border-b border-[#E6E8DE] px-4 md:px-8 py-3.5 sticky top-0 z-30 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
       <div className="max-w-4xl mx-auto flex items-center justify-between gap-3">
         
         {/* Brand & Platform Identity */}

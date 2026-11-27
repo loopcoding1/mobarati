@@ -16,7 +16,7 @@ import {
 export default function AnalyticsView({ examHistory, onStartExam }) {
   if (!examHistory || examHistory.length === 0) {
     return (
-      <div className="p-8 max-w-4xl mx-auto select-none">
+      <div className="p-8 max-w-4xl mx-auto">
         <div className="bg-white rounded-3xl p-12 text-center border border-[#E6E8DE] space-y-4">
           <div className="w-16 h-16 rounded-3xl bg-[#F5F6F0] flex items-center justify-center text-[#1C1D18] mx-auto">
             <BarChart3 className="w-8 h-8" />
@@ -45,7 +45,7 @@ export default function AnalyticsView({ examHistory, onStartExam }) {
   const totalCorrect = examHistory.reduce((acc, h) => acc + h.correctCount, 0);
 
   return (
-    <div className="p-8 space-y-8 max-w-5xl mx-auto select-none">
+    <div className="p-8 space-y-8 max-w-5xl mx-auto">
       {/* Top Banner */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-[#E6E8DE]">
         <div>

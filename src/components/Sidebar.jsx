@@ -33,7 +33,7 @@ export default function Sidebar({
   ];
 
   const sidebarContent = (
-    <div className="w-72 bg-[#FFFFFF] border-l border-[#E6E8DE] flex flex-col justify-between shrink-0 h-full select-none shadow-[2px_0_12px_rgba(0,0,0,0.02)]">
+    <div className="w-72 bg-[#FFFFFF] border-l border-[#E6E8DE] flex flex-col justify-between shrink-0 h-full shadow-[2px_0_12px_rgba(0,0,0,0.02)]">
       {/* Top Branding */}
       <div>
         <div className="p-6 pb-4 border-b border-[#F0F2EA] flex items-center justify-between">

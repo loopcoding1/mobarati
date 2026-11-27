@@ -45,3 +45,9 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.25s ease-out;
 }
+
+/* النص قابل للتحديد في الموقع بالكامل (2026-11-27) */
+html, body, #root {
+  -webkit-user-select: text;
+  user-select: text;
+}

@@ -48,7 +48,7 @@ export default function QuestionBank({ initialCategory = null }) {
   };
 
   return (
-    <div className="p-8 space-y-6 max-w-6xl mx-auto select-none">
+    <div className="p-8 space-y-6 max-w-6xl mx-auto">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-[#E6E8DE]">
         <div>

@@ -36,7 +36,7 @@ export default function SettingsView({
   };
 
   return (
-    <div className="p-8 space-y-8 max-w-4xl mx-auto select-none">
+    <div className="p-8 space-y-8 max-w-4xl mx-auto">
       <div className="pb-2 border-b border-[#E6E8DE]">
         <h1 className="text-2xl font-black text-[#191A15]">
           الإعدادات وتفضيلات الاختبار

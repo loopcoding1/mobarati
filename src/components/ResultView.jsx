@@ -62,7 +62,7 @@ export default function ResultView({
   const evaluation = getEvaluation(result.scorePercentage);
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-6 md:py-10 space-y-6 select-none print:p-0">
+    <div className="max-w-3xl mx-auto px-4 py-6 md:py-10 space-y-6 print:p-0">
       {/* Result Card */}
       <div className="bg-white rounded-3xl p-6 md:p-8 border border-[#E6E8DE] shadow-xs text-center space-y-5">
         <div className="space-y-1.5">

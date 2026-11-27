@@ -90,7 +90,7 @@ export default function ExamResult({
   const secondsSpent = result.timeSpentSeconds % 60;
 
   return (
-    <div className="min-h-screen bg-[#F5F6F0] py-10 px-6 select-none print:bg-white print:p-0">
+    <div className="min-h-screen bg-[#F5F6F0] py-10 px-6 print:bg-white print:p-0">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Top Header Card: Score & Evaluation */}
         <div className="bg-white rounded-3xl p-8 border border-[#E6E8DE] shadow-xs text-center space-y-6 relative overflow-hidden">

@@ -237,7 +237,7 @@ export default function ExamView({
   const progressPercent = Math.round(((currentIndex + 1) / questions.length) * 100);
 
   return (
-    <div className="min-h-screen bg-[#F5F6F0] flex flex-col justify-between select-none">
+    <div className="min-h-screen bg-[#F5F6F0] flex flex-col justify-between">
       {/* Top Navbar */}
       <header className="bg-white border-b border-[#E6E8DE] px-4 py-3 sticky top-0 z-30 shadow-xs">
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-2">

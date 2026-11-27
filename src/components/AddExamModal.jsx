@@ -116,7 +116,7 @@ export default function AddExamModal({ isOpen, onClose, onAddExam, initialSpecia
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-4 select-none">
+    <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-4">
       <div className="bg-white rounded-3xl p-6 md:p-8 max-w-2xl w-full border border-[#E6E8DE] shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between pb-4 border-b border-[#F0F2EA]">
           <div className="flex items-center gap-2.5">

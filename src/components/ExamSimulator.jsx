@@ -245,7 +245,7 @@ export default function ExamSimulator({
   const progressPercent = Math.round(((currentIndex + 1) / allQuestions.length) * 100);
 
   return (
-    <div className="min-h-screen bg-[#F5F6F0] flex flex-col justify-between select-none">
+    <div className="min-h-screen bg-[#F5F6F0] flex flex-col justify-between">
       {/* Top Floating Exam Navbar */}
       <div className="bg-white border-b border-[#E6E8DE] px-6 py-3.5 sticky top-0 z-30 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
