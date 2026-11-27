@@ -444,3 +444,27 @@ omitted — same statements, same order). Verified:
   **758ac48** (pushed to main; Vercel auto-deploys). Specialty totals
   now: **eps_college 22 exams / 1088 questions; eps_lycee 23 exams /
   1142 questions.**
+
+## Site analytics — VISITOR TRACKING LIVE from 2026-11-27 22:36 UTC
+
+- **Table `site_analytics`** (Migration 4, `supabase/migration_analytics.sql`):
+  id, created_at, session_id, event_type ('pageview'|'exam_start'|
+  'exam_finish'|'support_click'|'pdf_open'), page, specialty_id, exam_id,
+  exam_title, mode, score_pct, correct_count, total_questions, device,
+  referrer (hostname only). Indexes on created_at / event_type / exam_id.
+- **Privacy: NO PII.** session_id is a random UUID in the visitor's own
+  browser (localStorage `mobarati_session`); no IP, name or email is ever
+  stored. RLS: anon INSERT + anon SELECT (the dashboard Space reads it
+  with the publishable key). The exam catalog tables keep SELECT-only.
+  Open anon INSERT is spam-able in theory; acceptable for a free site.
+- **Tracking code:** `src/lib/siteAnalytics.js` (fire-and-forget, never
+  blocks UI, silent on failure). Hooks: App.jsx (pageview per tab change,
+  exam_start on start, exam_finish when results are shown), ExamView.jsx
+  (pdf_open), Ads.jsx SupportAdButton (support_click). Commit 8143491,
+  pushed; Vercel auto-deployed.
+- **Dashboard Space:** «إحصائيات مباراتي» (slug hsy-yt-mbrty) — reads
+  `site_analytics` live via Supabase REST with the publishable key.
+- **History: NONE before 2026-11-27.** No analytics existed on the site
+  before this date (no GA, no Vercel Analytics); counts start from the
+  deploy. Verified anon round-trip 2026-11-27 (test row inserted + read
+  via REST, then deleted).
