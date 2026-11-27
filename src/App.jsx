@@ -6,6 +6,7 @@ import ResultView from './components/ResultView';
 import { PopAdModal } from './components/Ads';
 import { loadCatalog } from './data/catalog';
 import { sound } from './utils/sound';
+import { trackPageview, trackSiteEvent } from './lib/siteAnalytics';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState('setup'); // 'setup' | 'exam' | 'result'
@@ -46,6 +47,19 @@ export default function App() {
 
   const [activeResult, setActiveResult] = useState(null);
 
+  // تتبع الزوار (مجمّع، بلا بيانات شخصية): مشاهدة صفحة عند كل تبديل تبويب
+  useEffect(() => {
+    if (!catalog) return;
+    const extra = {};
+    if (activeExam) {
+      extra.exam_id = activeExam.id;
+      extra.exam_title = activeExam.title;
+      extra.specialty_id = activeExam.specialtyId;
+    }
+    trackPageview(currentTab, extra);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentTab]);
+
   // بطاقة إعلان POP قبل عرض النتائج (الموضع الثاني للإعلان المنبثق)
   const [pendingResult, setPendingResult] = useState(null);
   const [showResultPop, setShowResultPop] = useState(false);
@@ -85,6 +99,14 @@ export default function App() {
     }
     setActiveQuestions(questions);
     setCurrentTab('exam');
+    trackSiteEvent({
+      event_type: 'exam_start',
+      page: 'exam',
+      specialty_id: config.exam.specialtyId,
+      exam_id: config.exam.id,
+      exam_title: config.exam.title,
+      mode: config.explanationMode + '/' + (config.orderMode || 'ordered'),
+    });
   };
 
   // Finish exam handler — النتيجة ما كتبانش حتى تتحل بطاقة إعلان POP:
@@ -95,6 +117,19 @@ export default function App() {
   };
 
   const showResults = () => {
+    if (pendingResult) {
+      trackSiteEvent({
+        event_type: 'exam_finish',
+        page: 'result',
+        specialty_id: activeExam?.specialtyId,
+        exam_id: pendingResult.examId,
+        exam_title: pendingResult.examTitle,
+        score_pct: pendingResult.scorePercentage,
+        correct_count: pendingResult.correctCount,
+        total_questions: pendingResult.totalQuestions,
+        mode: pendingResult.explanationMode,
+      });
+    }
     setActiveResult(pendingResult);
     setPendingResult(null);
     setShowResultPop(false);

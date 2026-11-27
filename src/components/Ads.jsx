@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { HeartHandshake, Megaphone } from 'lucide-react';
+import { trackSiteEvent } from '../lib/siteAnalytics';
 
 // إعلانات Adsterra لموقع mobarati.vercel.app (Site ID 6228772 — Approved).
 // بانر فقط — بلا Popunder وبلا SocialBar وبلا Native، باش الموقع ما يبقاش مزعج.
@@ -141,6 +142,7 @@ export function SupportAdButton() {
       href={SMARTLINK_URL}
       target="_blank"
       rel="noopener sponsored"
+      onClick={() => trackSiteEvent({ event_type: 'support_click' })}
       className="bg-white rounded-3xl border border-[#E6E8DE] p-4 flex items-center gap-3 hover:bg-[#FAFBF7] transition-colors cursor-pointer"
     >
       <span className="w-10 h-10 rounded-2xl bg-rose-50 border border-rose-100 flex items-center justify-center shrink-0">

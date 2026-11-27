@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { sound } from '../utils/sound';
 import { PopAdModal } from './Ads';
+import { trackSiteEvent } from '../lib/siteAnalytics';
 
 // إعلان POP بعد عدد من الضغطات داخل الاختبار: كل 30 ضغطة (اختيار جواب،
 // تأكيد، تنقل...) كتبان بطاقة كتعلم المستخدم بلي غادي يتفتح إعلان،
@@ -276,6 +277,15 @@ export default function ExamView({
                 href={exam.pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  trackSiteEvent({
+                    event_type: 'pdf_open',
+                    page: 'exam',
+                    specialty_id: exam.specialtyId,
+                    exam_id: exam.id,
+                    exam_title: exam.title,
+                  })
+                }
                 className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-[#F5F6F0] hover:bg-[#EAECE3] text-xs font-bold text-[#191A15] transition-colors cursor-pointer"
                 title="عرض ورقة الامتحان الأصلية (PDF)"
               >
